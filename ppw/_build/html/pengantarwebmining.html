@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -57,9 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Pengantar Web Mining';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pengantarwebmining';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Web Crawling" href="22_006_webcrawling.html" />
+    <link rel="prev" title="Profil" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +124,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -153,8 +153,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/pp.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/pp.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
@@ -179,10 +179,25 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pengantar Web Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="22_006_webcrawling.html">Web Crawling</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </ul>
 
     </div>
@@ -254,7 +269,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPengantar Web Mining.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpengantarwebmining.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -284,7 +299,7 @@
       
       
       
-      <li><a href="_sources/Pengantar Web Mining.ipynb" target="_blank"
+      <li><a href="_sources/pengantarwebmining.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -294,7 +309,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.ipynb</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -355,9 +370,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -368,22 +381,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Pengantar Web Mining</h1>
+    <h1>Pengantar Web Mining</h1></h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-mining-menggabungkan-berbagai-metode-termasuk">Web mining menggabungkan berbagai metode, termasuk:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-kategori-utama-web-mining">Tiga Kategori Utama Web Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proses-web-mining">Tahapan Proses Web Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-referensi">Daftar Referensi</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -394,65 +396,49 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="pengantar-web-mining">
-<h1>Pengantar Web Mining<a class="headerlink" href="#pengantar-web-mining" title="Link to this heading">#</a></h1>
-<p>Web mining adalah pendekatan yang menggunakan berbagai metode untuk mengekstrak data dari internet. Bidang ini memanfaatkan teknik <strong>data mining</strong> untuk menemukan informasi dan pola berharga di dunia maya, seperti hubungan antar halaman web, konten di dalamnya, atau jejak aktivitas pengguna saat menjelajah. Wawasan yang didapatkan dari web mining dapat digunakan oleh perusahaan untuk membuat keputusan dan kebijakan yang lebih baik.</p>
-<hr class="docutils" />
-<section id="web-mining-menggabungkan-berbagai-metode-termasuk">
-<h2>Web mining menggabungkan berbagai metode, termasuk:<a class="headerlink" href="#web-mining-menggabungkan-berbagai-metode-termasuk" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p><strong>Pembelajaran Mesin (Machine Learning)</strong></p></li>
-<li><p><strong>Sistem Basis Data</strong></p></li>
-<li><p><strong>Analisis Jaringan Sosial dan Graf</strong></p></li>
-<li><p><strong>Pemrosesan Bahasa Alami (Natural Language Processing)</strong></p></li>
-</ul>
-</section>
-<hr class="docutils" />
-<section id="tiga-kategori-utama-web-mining">
-<h2>Tiga Kategori Utama Web Mining<a class="headerlink" href="#tiga-kategori-utama-web-mining" title="Link to this heading">#</a></h2>
-<ol class="arabic">
-<li><h3 class="rubric" id="penambangan-konten-web-web-content-mining">Penambangan Konten Web (Web Content Mining)</h3>
-<p>Kategori ini berfokus pada penemuan informasi relevan dari dokumen digital di internet, seperti:</p>
-<ul class="simple">
-<li><p><strong>Teks</strong>: Artikel, deskripsi produk, atau ulasan.</p></li>
-<li><p><strong>Media</strong>: Gambar, audio, dan video.</p></li>
-<li><p><strong>Data Terstruktur</strong>: Tabel dan daftar.</p></li>
-</ul>
-<p>Penerapannya mencakup ekstraksi informasi, pemodelan topik, pembuatan ringkasan otomatis, pengelompokan dokumen (<em>clustering</em>), dan analisis sentimen. Algoritma yang umum digunakan adalah <strong>Naive Bayes</strong>, <strong>Support Vector Machines (SVM)</strong>, dan <strong>Jaringan Saraf Tiruan Mendalam (Deep Neural Nets)</strong>.</p>
-</li>
-<li><h3 class="rubric" id="penambangan-pola-penggunaan-web-web-usage-mining">Penambangan Pola Penggunaan Web (Web Usage Mining)</h3>
-<p>Kategori ini menganalisis data yang dihasilkan dari interaksi pengguna dengan situs web, yang biasanya terekam dalam <em>log file</em> server, <em>log</em> referensi, dan <em>cookie</em>.</p>
-<p>Salah satu teknik utama yang digunakan adalah <strong>analisis <em>clickstream</em></strong>, di mana urutan klik pengguna saat menjelajah situs direkam untuk mempelajari perilaku mereka. Hasil penambangan ini sangat berguna untuk membangun sistem rekomendasi produk atau personalisasi hasil pencarian.</p>
-</li>
-<li><h3 class="rubric" id="penambangan-struktur-web-web-structure-mining">Penambangan Struktur Web (Web Structure Mining)</h3>
-<p>Proses ini bertujuan untuk menemukan pola-pola dalam struktur tautan (<strong>hyperlink</strong>) dan hubungan antar halaman web. Visualisasi dari halaman web dan tautan yang menghubungkannya disebut <strong>grafik web</strong>, di mana setiap halaman adalah simpul (<em>node</em>) dan setiap tautan adalah sisi (<em>edge</em>) yang menghubungkannya.</p>
+<h1>Pengantar Web Mining</h1><a class="headerlink" href="#pengantar-web-mining" title="Link to this heading">#</a></h1>
+<p>Web mining adalah pendekatan yang menggunakan berbagai metode untuk mengekstrak data dari internet. Bidang ini memanfaatkan teknik data mining untuk menemukan informasi dan pola berharga di dunia maya, seperti hubungan antar halaman web, konten di dalamnya, atau jejak aktivitas pengguna saat menjelajah. Wawasan yang didapatkan dari web mining dapat digunakan oleh perusahaan untuk membuat keputusan dan kebijakan yang lebih baik.</p>
+<h2> Metode yang Digunakan dalam Web Mining </h2>
+Web mining menggabungkan berbagai metode, termasuk:
+<p>Pembelajaran Mesin (Machine Learning)</p>
+<p>Sistem Basis Data</p>
+<p>Analisis Jaringan Sosial dan Graf</p>
+<p>Pemrosesan Bahasa Alami (Natural Language Processing)</p>
+<h2> Tiga Kategori Utama Web Mining 
+</h2>
+1. Penambangan Konten Web (Web Content Mining)
+Kategori ini berfokus pada penemuan informasi relevan dari dokumen digital di internet, seperti:
+<p>Teks: Artikel, deskripsi produk, atau ulasan.</p>
+<p>Media: Gambar, audio, dan video.</p>
+<p>Data Terstruktur: Tabel dan daftar.</p>
+<p>Penerapannya mencakup ekstraksi informasi, pemodelan topik, pembuatan ringkasan otomatis, pengelompokan dokumen (clustering), dan analisis sentimen. Algoritma yang umum digunakan adalah Naive Bayes, Support Vector Machines (SVM), dan Jaringan Saraf Tiruan Mendalam (Deep Neural Nets).</p>
+<ol class="arabic simple" start="2">
+<li><p>Penambangan Pola Penggunaan Web (Web Usage Mining)
+Kategori ini menganalisis data yang dihasilkan dari interaksi pengguna dengan situs web, yang biasanya terekam dalam log file server, log referensi, dan cookie.</p></li>
+</ol>
+<p>Salah satu teknik utama yang digunakan adalah analisis clickstream, di mana urutan klik pengguna saat menjelajah situs direkam untuk mempelajari perilaku mereka. Hasil penambangan ini sangat berguna untuk membangun sistem rekomendasi produk atau personalisasi hasil pencarian.</p>
+<ol class="arabic simple" start="3">
+<li><p>Penambangan Struktur Web (Web Structure Mining)
+Proses ini bertujuan untuk menemukan pola-pola dalam struktur tautan (hyperlink) dan hubungan antar halaman web. Visualisasi dari halaman web dan tautan yang menghubungkannya disebut grafik web, di mana setiap halaman adalah simpul (node) dan setiap tautan adalah sisi (edge) yang menghubungkannya.</p></li>
+</ol>
 <p>Analisis struktur web memiliki beberapa manfaat penting, seperti:</p>
-<ul class="simple">
-<li><p>Mengukur tingkat otoritas suatu halaman (seperti algoritma <strong>PageRank</strong>).</p></li>
-<li><p>Mengidentifikasi terbentuknya komunitas virtual.</p></li>
-<li><p>Menganalisis jaringan sosial digital.</p></li>
-<li><p>Mengidentifikasi akun atau tokoh penting di media sosial.</p></li>
-</ul>
-</li>
-</ol>
-</section>
-<hr class="docutils" />
-<section id="tahapan-proses-web-mining">
-<h2>Tahapan Proses Web Mining<a class="headerlink" href="#tahapan-proses-web-mining" title="Link to this heading">#</a></h2>
-<p>Proses web mining mirip dengan proses data mining pada umumnya, namun dengan karakteristik unik pada tahap pengumpulan dan pemrosesan data:</p>
+<p>Mengukur tingkat otoritas suatu halaman (seperti algoritma PageRank).</p>
+<p>Mengidentifikasi terbentuknya komunitas virtual.</p>
+<p>Menganalisis jaringan sosial digital.</p>
+<p>Mengidentifikasi akun atau tokoh penting di media sosial.</p>
+<h2> Tahapan Proses Web Mining </h2>
+Proses web mining mirip dengan proses data mining pada umumnya, namun dengan karakteristik unik pada tahap pengumpulan dan pemrosesan data:
 <ol class="arabic simple">
-<li><p><strong>Pengambilan Data Web</strong>: Data dikumpulkan melalui proses <strong>crawling</strong> otomatis atau dengan memanfaatkan <strong>Antarmuka Pemrograman Aplikasi (API)</strong> web.</p></li>
-<li><p><strong>Pra-pemrosesan dan Transformasi Data</strong>: Data mentah diubah ke dalam format yang siap dianalisis. Tahap ini sering kali memakan 70% hingga 80% dari total waktu proyek.</p></li>
-<li><p><strong>Implementasi Data Mining</strong>: Metode data mining diterapkan untuk menghasilkan model atau pola yang diinginkan, yang kemudian dievaluasi.</p></li>
+<li><p>Pengambilan Data Web: Data dikumpulkan melalui proses crawling otomatis atau dengan memanfaatkan Antarmuka Pemrograman Aplikasi (API) web.</p></li>
+<li><p>Pra-pemrosesan dan Transformasi Data: Data mentah diubah ke dalam format yang siap dianalisis. Tahap ini sering kali memakan 70% hingga 80% dari total waktu proyek.</p></li>
+<li><p>Implementasi Data Mining: Metode data mining diterapkan untuk menghasilkan model atau pola yang diinginkan, yang kemudian dievaluasi.</p></li>
 </ol>
-</section>
-<hr class="docutils" />
-<section id="daftar-referensi">
-<h2>Daftar Referensi<a class="headerlink" href="#daftar-referensi" title="Link to this heading">#</a></h2>
-<p><b>Han, J., Kamber, M., & Pei, J. (2011).</b> <i>Data Mining: Concepts and Techniques (3rd ed.).</i> Morgan Kaufmann.</p>
-<p><b>Liu, B. (2011).</b> <i>Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data (2nd ed.).</i> Springer.</p>
-<p><b>Chakrabarti, S. (2002).</b> <i>Mining the Web: Discovering Knowledge from Hypertext Data.</i> Morgan Kaufmann.</p>
-<p><b>Fayyad, U., Piatetsky-Shapiro, G., & Smyth, P. (1996).</b> <i>From data mining to knowledge discovery in databases. AI Magazine, 17(3), 37-54.</i></p>
-<p><b>Aggarwal, C. C. (2015).</b> <i>Data Mining: The Textbook.</i> Springer.</p></section>
+<h2> Daftar Referensi</h2>
+Han, J., Kamber, M., & Pei, J. (2011). Data Mining: Concepts and Techniques (3rd ed.). Morgan Kaufmann.
+<p>Liu, B. (2011). Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data (2nd ed.). Springer.</p>
+<p>Chakrabarti, S. (2002). Mining the Web: Discovering Knowledge from Hypertext Data. Morgan Kaufmann.</p>
+<p>Fayyad, U., Piatetsky-Shapiro, G., &amp; Smyth, P. (1996). From data mining to knowledge discovery in databases. AI Magazine, 17(3), 37-54.</p>
+<p>Aggarwal, C. C. (2015). Data Mining: The Textbook. Springer.</p>
 </section>
 
     <script type="text/x-thebe-config">
@@ -485,30 +471,30 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profil</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="22_006_webcrawling.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Web Crawling</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#web-mining-menggabungkan-berbagai-metode-termasuk">Web mining menggabungkan berbagai metode, termasuk:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-kategori-utama-web-mining">Tiga Kategori Utama Web Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proses-web-mining">Tahapan Proses Web Mining</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-referensi">Daftar Referensi</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
               
             
           </div>
