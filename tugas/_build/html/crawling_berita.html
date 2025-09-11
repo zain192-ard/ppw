@@ -484,16 +484,8 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Scraping halaman 1...
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] Selain Satori, KPK Panggil Petinggi BI-Anggota DPR Terkait Kasus CSR
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2] 2 Tersangka Penyiksaan Bocah di Jaksel Dijerat Pasal Berlapis
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3] Konflik Gaza Jadi Perhatian Dunia Perfilman
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4] Data Banjir Bali, Korban Tewas Bertambah Jadi 14 Orang
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gagal ambil halaman 1: HTTPSConnectionPool(host=&#39;news.detik.com&#39;, port=443): Read timed out.
+Berhasil menyimpan ke berita_detik.csv
 </pre></div>
 </div>
 </div>
@@ -513,113 +505,57 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>=== Contoh Data Hasil Crawling ===
-   idberita                                       judul_berita  \
-0         1  Rudy Tanoesoedibjo Melawan Usai Jadi Tersangka...   
-1         2  Netanyahu Desak Qatar Usir Hamas: Jika Tidak, ...   
-2         3  Identitas Palsu Sopir Bank Pembawa Kabur Rp 10...   
-3         4  Bongkar Jagal Anjing, Polda Riau Dibanjiri Kar...   
-4         5  Benny Demokrat: Koalisi Gemuk Tak Harus Buat D...   
-5         6  TNI Bakal Tindak Tegas Prajurit Diduga Terliba...   
-6         7  Ditekan Pemerintah, Kaum Feminis China Teruska...   
-7         8  Brimob Pemukul Staf KLH di Serang Disanksi Tun...   
-8         9  Info Pencairan KJP Plus 2025 Tahap 2 Bulan Sep...   
-9        10  Putra Mahkota Arab Saudi Tegaskan Gaza Milik P...   
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">EmptyDataError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># === BAGIAN 2: Membaca &amp; Menampilkan CSV ===</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;berita_detik.csv&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Contoh Data Hasil Crawling ===&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>  <span class="c1"># tampilkan 10 berita pertama</span>
 
-                                          isi_berita  kategori_berita  \
-0  Komisaris Utama PT Dosni Roha Logistik,Bambang...  Tidak diketahui   
-1  Perdana Menteri (PM) IsraelBenjamin Netanyahum...  Tidak diketahui   
-2  Sopir bank,Anggun Tyas, yang membawa kabur uan...  Tidak diketahui   
-3  Kepolisian Daerah (Polda) Riau melalui Polrest...  Tidak diketahui   
-4  Anggota Komisi III DPR RI, Benny K Harman, men...  Tidak diketahui   
-5  Oknum TNI AD berinisial F diduga terlibat dala...  Tidak diketahui   
-6  Menjelang Hari Perempuan Internasional di tahu...  Tidak diketahui   
-7  Polda Banten telah menggelar sidang etik dan m...  Tidak diketahui   
-8  Pemprov DKI Jakarta mengumumkan pencairanKJP P...  Tidak diketahui   
-9  Putra Mahkota Arab Saudi, Pangeran Mohammed bi...  Tidak diketahui   
+<span class="nn">File ~\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\readers.py:1026,</span> in <span class="ni">read_csv</span><span class="nt">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1013</span> <span class="n">kwds_defaults</span> <span class="o">=</span> <span class="n">_refine_defaults_read</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1014</span>     <span class="n">dialect</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1015</span>     <span class="n">delimiter</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>   <span class="mi">1022</span>     <span class="n">dtype_backend</span><span class="o">=</span><span class="n">dtype_backend</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1023</span> <span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1024</span> <span class="n">kwds</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">kwds_defaults</span><span class="p">)</span>
+<span class="ne">-&gt; </span><span class="mi">1026</span> <span class="k">return</span> <span class="n">_read</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="n">kwds</span><span class="p">)</span>
 
-                                                 url  
-0  https://news.detik.com/berita/d-8106716/rudy-t...  
-1  https://news.detik.com/internasional/d-8106715...  
-2  https://news.detik.com/berita/d-8106703/identi...  
-3  https://news.detik.com/melindungi-tuah-marwah/...  
-4  https://news.detik.com/berita/d-8106679/benny-...  
-5  https://news.detik.com/berita/d-8106664/tni-ba...  
-6  https://news.detik.com/dw/d-8106653/ditekan-pe...  
-7  https://news.detik.com/berita/d-8106640/brimob...  
-8  https://news.detik.com/berita/d-8106632/info-p...  
-9  https://news.detik.com/internasional/d-8106629...  
+<span class="nn">File ~\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\readers.py:620,</span> in <span class="ni">_read</span><span class="nt">(filepath_or_buffer, kwds)</span>
+<span class="g g-Whitespace">    </span><span class="mi">617</span> <span class="n">_validate_names</span><span class="p">(</span><span class="n">kwds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;names&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">619</span> <span class="c1"># Create the parser.</span>
+<span class="ne">--&gt; </span><span class="mi">620</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">TextFileReader</span><span class="p">(</span><span class="n">filepath_or_buffer</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">622</span> <span class="k">if</span> <span class="n">chunksize</span> <span class="ow">or</span> <span class="n">iterator</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">623</span>     <span class="k">return</span> <span class="n">parser</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\readers.py:1620,</span> in <span class="ni">TextFileReader.__init__</span><span class="nt">(self, f, engine, **kwds)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1617</span>     <span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;has_index_names&quot;</span><span class="p">]</span>
+<span class="g g-Whitespace">   </span><span class="mi">1619</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span><span class="p">:</span> <span class="n">IOHandles</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="ne">-&gt; </span><span class="mi">1620</span> <span class="bp">self</span><span class="o">.</span><span class="n">_engine</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_make_engine</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">engine</span><span class="p">)</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\readers.py:1898,</span> in <span class="ni">TextFileReader._make_engine</span><span class="nt">(self, f, engine)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1895</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1897</span> <span class="k">try</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">1898</span>     <span class="k">return</span> <span class="n">mapping</span><span class="p">[</span><span class="n">engine</span><span class="p">](</span><span class="n">f</span><span class="p">,</span> <span class="o">**</span><span class="bp">self</span><span class="o">.</span><span class="n">options</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1899</span> <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1900</span>     <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">handles</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">File ~\AppData\Local\Programs\Python\Python313\Lib\site-packages\pandas\io\parsers\c_parser_wrapper.py:93,</span> in <span class="ni">CParserWrapper.__init__</span><span class="nt">(self, src, **kwds)</span>
+<span class="g g-Whitespace">     </span><span class="mi">90</span> <span class="k">if</span> <span class="n">kwds</span><span class="p">[</span><span class="s2">&quot;dtype_backend&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;pyarrow&quot;</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">91</span>     <span class="c1"># Fail here loudly instead of in cython after reading</span>
+<span class="g g-Whitespace">     </span><span class="mi">92</span>     <span class="n">import_optional_dependency</span><span class="p">(</span><span class="s2">&quot;pyarrow&quot;</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">93</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span> <span class="o">=</span> <span class="n">parsers</span><span class="o">.</span><span class="n">TextReader</span><span class="p">(</span><span class="n">src</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">95</span> <span class="bp">self</span><span class="o">.</span><span class="n">unnamed_cols</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_reader</span><span class="o">.</span><span class="n">unnamed_cols</span>
+<span class="g g-Whitespace">     </span><span class="mi">97</span> <span class="c1"># error: Cannot determine type of &#39;names&#39;</span>
+
+<span class="nn">File parsers.pyx:581,</span> in <span class="ni">pandas._libs.parsers.TextReader.__cinit__</span><span class="nt">()</span>
+
+<span class="ne">EmptyDataError</span>: No columns to parse from file
 </pre></div>
 </div>
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>idberita</th>
-      <th>judul_berita</th>
-      <th>isi_berita</th>
-      <th>kategori_berita</th>
-      <th>url</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>Rudy Tanoesoedibjo Melawan Usai Jadi Tersangka...</td>
-      <td>Komisaris Utama PT Dosni Roha Logistik,Bambang...</td>
-      <td>Tidak diketahui</td>
-      <td>https://news.detik.com/berita/d-8106716/rudy-t...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>2</td>
-      <td>Netanyahu Desak Qatar Usir Hamas: Jika Tidak, ...</td>
-      <td>Perdana Menteri (PM) IsraelBenjamin Netanyahum...</td>
-      <td>Tidak diketahui</td>
-      <td>https://news.detik.com/internasional/d-8106715...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>3</td>
-      <td>Identitas Palsu Sopir Bank Pembawa Kabur Rp 10...</td>
-      <td>Sopir bank,Anggun Tyas, yang membawa kabur uan...</td>
-      <td>Tidak diketahui</td>
-      <td>https://news.detik.com/berita/d-8106703/identi...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>4</td>
-      <td>Bongkar Jagal Anjing, Polda Riau Dibanjiri Kar...</td>
-      <td>Kepolisian Daerah (Polda) Riau melalui Polrest...</td>
-      <td>Tidak diketahui</td>
-      <td>https://news.detik.com/melindungi-tuah-marwah/...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5</td>
-      <td>Benny Demokrat: Koalisi Gemuk Tak Harus Buat D...</td>
-      <td>Anggota Komisi III DPR RI, Benny K Harman, men...</td>
-      <td>Tidak diketahui</td>
-      <td>https://news.detik.com/berita/d-8106679/benny-...</td>
-    </tr>
-  </tbody>
-</table>
-</div></div></div>
+</div>
 </div>
 </section>
 

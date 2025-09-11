@@ -44,8 +44,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-df_all = scrape_all()
-
-
+['import requests', '', '# Masukkan API key yang kamu dapat dari https://dev.springernature.com/#api', 'api_key = "9aa2aa513b78be3c8250c64138c84ed8"   # ganti dengan API key punyamu', '']
+...
+['        print(f"Title: {title}")', '        print(f"Abstract: {abstract}")', '        print(f"URL: {url_val}\\n")', 'else:', '    print("Error:", response.status_code, response.text)']
 -------------------
 
