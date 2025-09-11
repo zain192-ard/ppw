@@ -1,0 +1,591 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Pengantar Web Mining &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Pengantar_web_mining';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Crawling" href="Crawling.html" />
+    <link rel="prev" title="Profil" href="intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pp.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/pp.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profil
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Pengantar Web Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_berita.html">Crawling Berita</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FPengantar_web_mining.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/Pengantar_web_mining.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Pengantar Web Mining</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-kategori-utama-web-mining">Tiga Kategori Utama Web Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proses-web-mining">Tahapan Proses Web Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-referensi">Daftar Referensi</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="pengantar-web-mining">
+<h1>Pengantar Web Mining<a class="headerlink" href="#pengantar-web-mining" title="Link to this heading">#</a></h1>
+<p>Web mining adalah sebuah pendekatan yang menggunakan berbagai metode untuk mengekstrak data yang ada di internet. Bidang ini menggunakan berbagai metode penambangan data untuk mengekstrak informasi berharga. Tujuannya adalah untuk mengidentifikasi pola-pola yang signifikan dari data di dunia maya, seperti cara halaman-halaman web saling terhubung, konten yang ada di dalamnya, atau bahkan jejak aktivitas pengguna saat menjelajah. Wawasan yang didapat dari bidang ini dapat dimanfaatkan oleh perusahaan untuk membuat kebijakan yang lebih baik dan terarah.</p>
+<p>Web mining menggabungkan berbagai metode, termasuk:</p>
+<ul class="simple">
+<li><p><strong>Pembelajaran Mesin (Machine Learning)</strong></p></li>
+<li><p><strong>Sistem Basis Data</strong></p></li>
+<li><p><strong>Analisis Jaringan Sosial dan Graf</strong></p></li>
+<li><p><strong>Pemrosesan Bahasa Alami (Natural Language Processing)</strong></p></li>
+</ul>
+<section id="tiga-kategori-utama-web-mining">
+<h2>Tiga Kategori Utama Web Mining<a class="headerlink" href="#tiga-kategori-utama-web-mining" title="Link to this heading">#</a></h2>
+<ol class="arabic">
+<li><h3 class="rubric" id="penambangan-konten-web-web-content-mining">Penambangan Konten Web (Web Content Mining)</h3>
+<p>Kategori ini fokus pada penemuan informasi yang relevan dari beragam dokumen digital di web. Analisisnya mencakup berbagai jenis konten, seperti:</p>
+<ul class="simple">
+<li><p><strong>Teks</strong>: artikel, deskripsi, atau ulasan.</p></li>
+<li><p><strong>Media</strong>: gambar, audio, dan video.</p></li>
+<li><p><strong>Data terstruktur</strong>: tabel dan daftar.</p></li>
+</ul>
+<p>Penerapannya mencakup ekstraksi informasi spesifik, pemodelan topik, pembuatan ringkasan otomatis, pengelompokan dokumen (misalnya analisis sentimen), dan identifikasi kata kunci. Dalam klasifikasi, tujuannya adalah untuk mengkategorikan dokumen atau gambar baru dengan akurasi setinggi mungkin. Algoritma yang umum digunakan adalah Naive Bayes, Support Vector Machines (SVM), dan Jaringan Saraf Tiruan Mendalam (Deep Neural Nets).</p>
+</li>
+<li><h3 class="rubric" id="penambangan-pola-penggunaan-web-web-usage-mining">Penambangan Pola Penggunaan Web (Web Usage Mining)</h3>
+<p>Kategori ini menganalisis data yang dihasilkan dari interaksi pengguna dengan situs web. Informasi ini biasanya direkam dalam file log akses server, log referensi, dan cookie.</p>
+<p>Analisis clickstream adalah salah satu teknik utama yang digunakan untuk mempelajari pola perilaku pengguna dengan merekam urutan klik mereka saat menjelajahi suatu situs. Hasil dari penambangan ini sangat berguna untuk membangun sistem rekomendasi produk atau personalisasi hasil pencarian.</p>
+</li>
+<li><h3 class="rubric" id="penambangan-struktur-web-web-structure-mining">Penambangan Struktur Web (Web Structure Mining)</h3>
+<p>Proses ini bertujuan untuk menemukan dan menginterpretasikan pola-pola yang terdapat dalam struktur tautan (hyperlink) dan hubungan antar pengguna di internet. Visualisasi dari halaman web dan tautan yang menghubungkannya disebut sebagai <strong>grafik web</strong>, di mana setiap halaman web mewakili simpul (node) dan setiap hyperlink adalah sisi (edge) yang menghubungkannya.</p>
+<p>Analisis struktur web memiliki beberapa manfaat penting, seperti:</p>
+<ul class="simple">
+<li><p>Mengukur tingkat otoritas suatu halaman (seperti algoritma <strong>PageRank</strong>).</p></li>
+<li><p>Mengidentifikasi terbentuknya komunitas virtual.</p></li>
+<li><p>Menganalisis jaringan sosial digital.</p></li>
+<li><p>Menganalisis dan mengidentifikasi entitas-entitas penting dalam suatu jaringan, seperti akun yang kredibel atau tokoh-tokoh berpengaruh di media sosial.</p></li>
+</ul>
+<p>Contoh nyata dari penerapan ini dapat dilihat pada cara Google Search menggunakan PageRank untuk mengurutkan hasil pencarian, serta bagaimana platform seperti Twitter atau Instagram merekomendasikan akun influencer kepada penggunanya.</p>
+</li>
+</ol>
+</section>
+<section id="tahapan-proses-web-mining">
+<h2>Tahapan Proses Web Mining<a class="headerlink" href="#tahapan-proses-web-mining" title="Link to this heading">#</a></h2>
+<p>Proses web mining memiliki kemiripan dengan data mining pada umumnya, namun dengan karakteristik unik pada tahap pengumpulan dan pemrosesan data.</p>
+<ul class="simple">
+<li><p><strong>Pengambilan Data Web</strong>: Data dikumpulkan melalui proses crawling dokumen otomatis atau dengan memanfaatkan Antarmuka Pemrograman Aplikasi (Application Programming Interface - API) web.</p></li>
+<li><p><strong>Pra-pemrosesan dan Transformasi Data</strong>: Data mentah diubah menjadi format yang siap untuk dianalisis. Tahap ini mencakup pengurangan dimensi, pemilihan fitur, dan penggabungan data dari berbagai sumber. Tahap ini sering kali memakan sebagian besar waktu proyek, sekitar 70% hingga 80%.</p></li>
+<li><p><strong>Implementasi Data Mining</strong>: Metode data mining diterapkan untuk menghasilkan model atau pola yang diinginkan, yang kemudian dievaluasi.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="daftar-referensi">
+<h2>Daftar Referensi<a class="headerlink" href="#daftar-referensi" title="Link to this heading">#</a></h2>
+<p>Han, J., Kamber, M., &amp; Pei, J. (2011). <strong>Data Mining: Concepts and Techniques (3rd ed.)</strong>. Morgan Kaufmann.</p>
+<blockquote>
+<div><p>Buku ini dianggap sebagai salah satu sumber fundamental dalam data mining, dan sering digunakan sebagai referensi untuk topik web mining.</p>
+</div></blockquote>
+<p>Liu, B. (2011). <strong>Web Data Mining: Exploring Hyperlinks, Contents, and Usage Data (2nd ed.)</strong>. Springer.</p>
+<blockquote>
+<div><p>Buku ini secara spesifik berfokus pada web mining, membahas tiga kategori utama yang Anda sebutkan: konten, penggunaan, dan struktur. Buku ini ideal untuk pemahaman yang lebih teknis.</p>
+</div></blockquote>
+<p>Chakrabarti, S. (2002). <strong>Mining the Web: Discovering Knowledge from Hypertext Data</strong>. Morgan Kaufmann.</p>
+<blockquote>
+<div><p>Ini adalah buku klasik di bidang web mining yang memberikan wawasan mendalam tentang bagaimana pengetahuan diekstrak dari data hypertext.</p>
+</div></blockquote>
+<p>Fayyad, U., Piatetsky-Shapiro, G., &amp; Smyth, P. (1996). <strong>From data mining to knowledge discovery in databases</strong>. AI Magazine, 17(3), 37-54.</p>
+<blockquote>
+<div><p>Jurnal ini adalah salah satu yang pertama kali mendefinisikan hubungan antara data mining dan penemuan pengetahuan, yang menjadi dasar konsep web mining.</p>
+</div></blockquote>
+<p>Aggarwal, C. C. (2015). <strong>Data Mining: The Textbook</strong>. Springer.</p>
+<blockquote>
+<div><p>Buku ini mencakup bab-bab yang relevan tentang analisis data web, termasuk topik-topik seperti pemrosesan teks, analisis graf, dan analisis jaringan sosial.</p>
+</div></blockquote>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Profil</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Crawling.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Crawling</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tiga-kategori-utama-web-mining">Tiga Kategori Utama Web Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tahapan-proses-web-mining">Tahapan Proses Web Mining</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#daftar-referensi">Daftar Referensi</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

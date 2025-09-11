@@ -1,0 +1,10 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+  - file: Pengantar_web_mining
+  - file: Crawling
+  - file: crawling_pta
+  - file: crawling_berita
