@@ -60,6 +60,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'scraping_manengemet';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Link Graph Scraping" href="linkscraping.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -179,12 +178,18 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Pengantar_web_mining.html">Pengantar Web Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crawling_berita.html">Crawling Berita</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linkscraping.html">Link Graph Scraping</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PREPROCESING</a></li>
+
+
+
+
+
 </ul>
 
     </div>
@@ -574,12 +579,12 @@ Ditemukan 207 halaman untuk di-scrape.
 <span class="g g-Whitespace">    </span><span class="mi">131</span>     <span class="k">if</span> <span class="n">df_hasil</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">    </span><span class="mi">132</span>         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Contoh 5 data pertama yang diambil:&quot;</span><span class="p">)</span>
 
-<span class="nn">Cell In[1], line 64,</span> in <span class="ni">scrape_prodi</span><span class="nt">(prodi_id)</span>
-<span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="n">url</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">BASE_URL</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">prodi_id</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">page</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">63</span> <span class="k">try</span><span class="p">:</span>
-<span class="ne">---&gt; </span><span class="mi">64</span>     <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-<span class="g g-Whitespace">     </span><span class="mi">65</span>     <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
-<span class="g g-Whitespace">     </span><span class="mi">66</span>     <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+<span class="nn">Cell In[1], line 74,</span> in <span class="ni">scrape_prodi</span><span class="nt">(prodi_id)</span>
+<span class="g g-Whitespace">     </span><span class="mi">71</span> <span class="n">id_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/detail/(\d+)&quot;</span><span class="p">,</span> <span class="n">link_detail</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span> <span class="n">pta_id</span> <span class="o">=</span> <span class="n">id_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="k">if</span> <span class="n">id_match</span> <span class="k">else</span> <span class="kc">None</span>
+<span class="ne">---&gt; </span><span class="mi">74</span> <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">link_detail</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span> <span class="n">soup_detail</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span> <span class="n">isi</span> <span class="o">=</span> <span class="n">soup_detail</span><span class="o">.</span><span class="n">select_one</span><span class="p">(</span><span class="s1">&#39;div#content_journal&#39;</span><span class="p">)</span>
 
 <span class="nn">File ~/.local/lib/python3.12/site-packages/requests/api.py:73,</span> in <span class="ni">get</span><span class="nt">(url, params, **kwargs)</span>
 <span class="g g-Whitespace">     </span><span class="mi">62</span> <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -9505,6 +9510,15 @@ None
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="linkscraping.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Link Graph Scraping</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
