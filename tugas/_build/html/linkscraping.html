@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>Link Graph Scraping &#8212; My sample book</title>
   
   
   
@@ -178,11 +178,12 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Pengantar_web_mining.html">Pengantar Web Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crawling_berita.html">Crawling Berita</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Link Graph Scraping</a></li>
 </ul>
 
     </div>
@@ -355,9 +356,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -368,19 +367,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Link Graph Scraping</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -390,7 +381,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="link-graph-scraping">
+<h1>Link Graph Scraping<a class="headerlink" href="#link-graph-scraping" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -462,31 +455,31 @@ document.write(`
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/7
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_contact/
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/2
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/29
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/32
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/38
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byfac/6
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/35
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_template/
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byfac/3
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/37
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/6
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/welcome/detail/080211100070
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/22
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/12
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/5
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byfac/7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/31
 </pre></div>
 </div>
 </div>
@@ -524,27 +517,27 @@ document.write(`
     <tr>
       <th>0</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_contact/</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/2</td>
     </tr>
     <tr>
       <th>1</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/29</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/32</td>
     </tr>
     <tr>
       <th>2</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/38</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byfac/6</td>
     </tr>
     <tr>
       <th>3</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/35</td>
+      <td>https://pta.trunojoyo.ac.id/c_template/</td>
     </tr>
     <tr>
       <th>4</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/10</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
     </tr>
     <tr>
       <th>...</th>
@@ -552,35 +545,36 @@ document.write(`
       <td>...</td>
     </tr>
     <tr>
-      <th>600</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/99</td>
+      <th>592</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/31</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/28</td>
     </tr>
     <tr>
-      <th>601</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/welcome/detail/110...</td>
+      <th>593</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/31</td>
+      <td>https://pta.trunojoyo.ac.id/c_contact/</td>
     </tr>
     <tr>
-      <th>602</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
+      <th>594</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/31</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/35</td>
     </tr>
     <tr>
-      <th>603</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/41</td>
+      <th>595</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/31</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byfac/1</td>
     </tr>
     <tr>
-      <th>604</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/40</td>
+      <th>596</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/31</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/1</td>
     </tr>
   </tbody>
 </table>
-<p>605 rows × 2 columns</p>
+<p>597 rows × 2 columns</p>
 </div></div></div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -627,21 +621,6 @@ document.write(`
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
