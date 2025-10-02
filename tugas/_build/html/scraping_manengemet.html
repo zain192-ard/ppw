@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>PREPROCESING &#8212; My sample book</title>
+    <title>PTA Management &#8212; My sample book</title>
   
   
   
@@ -184,11 +184,7 @@
 <li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crawling_berita.html">Crawling Berita</a></li>
 <li class="toctree-l1"><a class="reference internal" href="linkscraping.html">Link Graph Scraping</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">PREPROCESING</a></li>
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">PTA Management</a></li>
 
 </ul>
 
@@ -375,7 +371,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>PREPROCESING</h1>
+    <h1>PTA Management</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -385,12 +381,20 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PREPROCESING</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hapus-missing-value-dan-data-duplicat">Hapus Missing Value dan Data Duplicat</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi">Tokenisasi</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">Stopword Removal</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PTA Management</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hapus-missing-value-dan-data-duplicat">Hapus Missing Value dan Data Duplicat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi">Tokenisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">Stopword Removal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-tfid-pta-manajemen">Ekstraksi fitur TFID PTA Manajemen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-tf-idf">Ekstraksi Fitur TF-IDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-vectorization">TF-IDF Vectorization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cbo-pta-manajement">CBO PTA Manajement</a></li>
+</ul>
+</li>
 </ul>
 
             </nav>
@@ -403,8 +407,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="preprocesing">
-<h1>PREPROCESING<a class="headerlink" href="#preprocesing" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="pta-management">
+<h1>PTA Management<a class="headerlink" href="#pta-management" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
@@ -826,9 +830,8 @@ Name: abstrak_id, Length: 1031, dtype: object
 </div>
 </div>
 </div>
-</section>
 <section id="hapus-missing-value-dan-data-duplicat">
-<h1>Hapus Missing Value dan Data Duplicat<a class="headerlink" href="#hapus-missing-value-dan-data-duplicat" title="Link to this heading">#</a></h1>
+<h2>Hapus Missing Value dan Data Duplicat<a class="headerlink" href="#hapus-missing-value-dan-data-duplicat" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Hapus baris dengan Missing Value di &#39;abstrak_id&#39;</span>
@@ -842,7 +845,7 @@ Name: abstrak_id, Length: 1031, dtype: object
 </div>
 </section>
 <section id="cleaning">
-<h1>Cleaning<a class="headerlink" href="#cleaning" title="Link to this heading">#</a></h1>
+<h2>Cleaning<a class="headerlink" href="#cleaning" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
@@ -917,7 +920,7 @@ Name: abstrak_id, Length: 1031, dtype: object
 </div>
 </section>
 <section id="tokenisasi">
-<h1>Tokenisasi<a class="headerlink" href="#tokenisasi" title="Link to this heading">#</a></h1>
+<h2>Tokenisasi<a class="headerlink" href="#tokenisasi" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nltk.tokenize</span><span class="w"> </span><span class="kn">import</span> <span class="n">word_tokenize</span>
@@ -996,7 +999,7 @@ Name: abstrak_id, Length: 1031, dtype: object
 </div>
 </section>
 <section id="stopword-removal">
-<h1>Stopword Removal<a class="headerlink" href="#stopword-removal" title="Link to this heading">#</a></h1>
+<h2>Stopword Removal<a class="headerlink" href="#stopword-removal" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">nltk.corpus</span><span class="w"> </span><span class="kn">import</span> <span class="n">stopwords</span>
@@ -1077,7 +1080,7 @@ Name: abstrak_id, Length: 1031, dtype: object
 </div>
 </section>
 <section id="stemming">
-<h1>Stemming<a class="headerlink" href="#stemming" title="Link to this heading">#</a></h1>
+<h2>Stemming<a class="headerlink" href="#stemming" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip<span class="w"> </span>install<span class="w"> </span>Sastrawi
@@ -9283,7 +9286,11 @@ mediator: 1
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Buat DataFrame baru dengan abstrak asli dan abstrak stemmed</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># (Asumsikan df, word_frequencies sudah ada dari proses sebelumnya)</span>
+
+<span class="c1"># Buat DataFrame baru dengan abstrak asli dan abstrak stemmed</span>
 <span class="n">processed_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;abstrak_id&#39;</span><span class="p">,</span> <span class="s1">&#39;stemmed_abstrak_id&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 
 <span class="c1"># Ganti nama kolom</span>
@@ -9294,17 +9301,30 @@ mediator: 1
 <span class="n">frequency_df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;word&#39;</span>
 <span class="n">frequency_df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;frequency&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
-<span class="c1"># Simpan kedua DataFrame ke lembar yang berbeda dalam file Excel yang sama</span>
-<span class="k">with</span> <span class="n">pd</span><span class="o">.</span><span class="n">ExcelWriter</span><span class="p">(</span><span class="s1">&#39;processed_data_and_frequencies.xlsx&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">writer</span><span class="p">:</span>
-    <span class="n">processed_df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Hasil Preprocessing&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-    <span class="n">frequency_df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="n">writer</span><span class="p">,</span> <span class="n">sheet_name</span><span class="o">=</span><span class="s1">&#39;Frekuensi Kata&#39;</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hasil preprocessing dan frekuensi kata berhasil disimpan ke dalam file &#39;processed_data_and_frequencies.xlsx&#39;&quot;</span><span class="p">)</span>
+<span class="c1"># --- PERUBAHAN DIMULAI DARI SINI ---</span>
+
+<span class="c1"># Tentukan nama untuk kedua file CSV yang akan dibuat</span>
+<span class="n">nama_file_preprocessing</span> <span class="o">=</span> <span class="s1">&#39;hasil_preprocessing_managementpta.csv&#39;</span>
+<span class="n">nama_file_frekuensi</span> <span class="o">=</span> <span class="s1">&#39;preprocessing_managementpta.csv&#39;</span>
+
+<span class="c1"># Simpan DataFrame hasil preprocessing ke file CSV pertama</span>
+<span class="c1"># Opsi index=False agar nomor baris (0, 1, 2, ...) tidak ikut disimpan dalam file</span>
+<span class="c1"># Opsi encoding=&#39;utf-8-sig&#39; agar file dapat dibuka dengan benar di berbagai program (termasuk Excel)</span>
+<span class="n">processed_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">nama_file_preprocessing</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span>
+
+<span class="c1"># Simpan DataFrame frekuensi kata ke file CSV kedua</span>
+<span class="c1"># Di sini kita tidak menggunakan index=False karena &#39;word&#39; adalah index dan kita ingin menyimpannya</span>
+<span class="n">frequency_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">nama_file_frekuensi</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8-sig&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hasil preprocessing berhasil disimpan ke dalam file &#39;</span><span class="si">{</span><span class="n">nama_file_preprocessing</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Frekuensi kata berhasil disimpan ke dalam file &#39;</span><span class="si">{</span><span class="n">nama_file_frekuensi</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil preprocessing dan frekuensi kata berhasil disimpan ke dalam file &#39;processed_data_and_frequencies.xlsx&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil preprocessing berhasil disimpan ke dalam file &#39;hasil_preprocessing_managementpta.csv&#39;
+Frekuensi kata berhasil disimpan ke dalam file &#39;preprocessing_managementpta.csv&#39;
 </pre></div>
 </div>
 </div>
@@ -9313,22 +9333,33 @@ mediator: 1
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
-<span class="c1"># Baca file Excel</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;processed_data_and_frequencies.xlsx&quot;</span><span class="p">)</span>
+<span class="c1"># Tentukan nama file</span>
+<span class="n">nama_file</span> <span class="o">=</span> <span class="s2">&quot;hasil_preprocessing_managementpta.csv&quot;</span>
 
-<span class="c1"># Lihat 5 baris pertama</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># GUNAKAN pd.read_csv() UNTUK MEMBACA FILE .csv</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">nama_file</span><span class="p">)</span>
 
-<span class="c1"># Lihat informasi kolom dan tipe datanya</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+    <span class="c1"># Sisa kode Anda sudah benar dan bisa langsung digunakan</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- 5 Baris Pertama Data ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Informasi DataFrame ---&quot;</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Nama Kolom ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
 
-<span class="c1"># Jika ingin menampilkan nama semua kolom</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">())</span>
+<span class="k">except</span> <span class="ne">FileNotFoundError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: File &#39;</span><span class="si">{</span><span class="n">nama_file</span><span class="si">}</span><span class="s2">&#39; tidak ditemukan. Pastikan file tersebut berada di direktori yang sama dengan notebook Anda.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Terjadi error saat membaca file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                          abstrak_id  \
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- 5 Baris Pertama Data ---
+                                          abstrak_id  \
 0  ABSTRAK\r\nSatiyah, Pengaruh Faktor-faktor Pel...   
 1  Tujuan penelitian ini adalah untuk mengetahui ...   
 2  Aplikasi nyata pemanfaatan teknologi informasi...   
@@ -9341,6 +9372,8 @@ mediator: 1
 2  [&#39;aplikasi&#39;, &#39;nyata&#39;, &#39;manfaat&#39;, &#39;teknologi&#39;, ...  
 3  [&#39;abstrak&#39;, &#39;teliti&#39;, &#39;metode&#39;, &#39;kuantitatif&#39;,...  
 4  [&#39;abstrak&#39;, &#39;aththaariq&#39;, &#39;pengaruh&#39;, &#39;kompete...  
+
+--- Informasi DataFrame ---
 &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 1026 entries, 0 to 1025
 Data columns (total 2 columns):
@@ -9350,12 +9383,774 @@ Data columns (total 2 columns):
  1   hasil_preprocessing  1026 non-null   object
 dtypes: object(2)
 memory usage: 16.2+ KB
-None
+
+--- Nama Kolom ---
 [&#39;abstrak_id&#39;, &#39;hasil_preprocessing&#39;]
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="ekstraksi-fitur-tfid-pta-manajemen">
+<h1>Ekstraksi fitur TFID PTA Manajemen<a class="headerlink" href="#ekstraksi-fitur-tfid-pta-manajemen" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="c1"># Load data from pta_manajemen.csv</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;hasil_preprocessing_managementpta.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display basic information about the dataset</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Dataset shape:&quot;</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Dataset shape: (1026, 2)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>abstrak_id</th>
+      <th>hasil_preprocessing</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ABSTRAK\r\nSatiyah, Pengaruh Faktor-faktor Pel...</td>
+      <td>['abstrak', 'satiyah', 'pengaruh', 'faktorfakt...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Tujuan penelitian ini adalah untuk mengetahui ...</td>
+      <td>['tuju', 'teliti', 'persepsi', 'brand', 'assoc...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Aplikasi nyata pemanfaatan teknologi informasi...</td>
+      <td>['aplikasi', 'nyata', 'manfaat', 'teknologi', ...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Abstrak\r\nPenelitian ini menggunakan metode k...</td>
+      <td>['abstrak', 'teliti', 'metode', 'kuantitatif',...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Abstrak\r\n\r\nAththaariq, Pengaruh Kompetensi...</td>
+      <td>['abstrak', 'aththaariq', 'pengaruh', 'kompete...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1021</th>
+      <td>ABSTRAK\nPenelitian ini bertujuan untuk menget...</td>
+      <td>['abstrak', 'teliti', 'tuju', 'hitung', 'tingk...</td>
+    </tr>
+    <tr>
+      <th>1022</th>
+      <td>ABSTRAK\nUswatun Hasanah, 160211100291, Pengar...</td>
+      <td>['abstrak', 'uswatun', 'hasanah', 'pengaruh', ...</td>
+    </tr>
+    <tr>
+      <th>1023</th>
+      <td>ABSTRAK\nTujuan dari penelitian ini adalah unt...</td>
+      <td>['abstrak', 'tuju', 'teliti', 'peran', 'servic...</td>
+    </tr>
+    <tr>
+      <th>1024</th>
+      <td>ABSTRAK\nPenelitian ini bertujuan: (1) Untuk m...</td>
+      <td>['abstrak', 'teliti', 'tuju', 'baur', 'promosi...</td>
+    </tr>
+    <tr>
+      <th>1025</th>
+      <td>Penelitian ini bertujuan untuk dapat mengetahu...</td>
+      <td>['teliti', 'tuju', 'pengaruh', 'motivasi', 'ke...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1026 rows × 2 columns</p>
+</div></div></div>
+</div>
+<section id="ekstraksi-fitur-tf-idf">
+<h2>Ekstraksi Fitur TF-IDF<a class="headerlink" href="#ekstraksi-fitur-tf-idf" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>scikit-learn
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scikit-learn in /home/codespace/.local/lib/python3.12/site-packages (1.7.0)
+Requirement already satisfied: numpy&gt;=1.22.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from scikit-learn) (1.26.4)
+Requirement already satisfied: scipy&gt;=1.8.0 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from scikit-learn) (1.13.1)
+Requirement already satisfied: joblib&gt;=1.2.0 in /home/codespace/.local/lib/python3.12/site-packages (from scikit-learn) (1.5.1)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /home/codespace/.local/lib/python3.12/site-packages (from scikit-learn) (3.6.0)
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Kolom teks hasil preprocessing</span>
+<span class="n">texts</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;hasil_preprocessing&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>
+
+<span class="c1"># Kalau ada kolom label</span>
+<span class="n">labels</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;abstrak_id&quot;</span><span class="p">]</span> 
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="tf-idf-vectorization">
+<h2>TF-IDF Vectorization<a class="headerlink" href="#tf-idf-vectorization" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction.text</span><span class="w"> </span><span class="kn">import</span> <span class="n">TfidfVectorizer</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vectorizer</span> <span class="o">=</span> <span class="n">TfidfVectorizer</span><span class="p">()</span>
+
+<span class="c1"># Fit &amp; transform ke matriks TF-IDF</span>
+<span class="n">tfidf_matrix</span> <span class="o">=</span> <span class="n">vectorizer</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">texts</span><span class="p">)</span>
+
+<span class="c1"># Konversi ke DataFrame agar lebih mudah dibaca</span>
+<span class="n">tfidf_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">tfidf_matrix</span><span class="o">.</span><span class="n">toarray</span><span class="p">(),</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">vectorizer</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+<span class="p">)</span>
+
+<span class="c1"># Tambahkan kolom label</span>
+<span class="n">tfidf_df</span><span class="p">[</span><span class="s2">&quot;abstrak_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">labels</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ukuran matriks TF-IDF:&quot;</span><span class="p">,</span> <span class="n">tfidf_df</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">tfidf_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ukuran matriks TF-IDF: (1026, 6477)
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>aaa</th>
+      <th>aaaamanahsyariah</th>
+      <th>aar</th>
+      <th>abadi</th>
+      <th>abai</th>
+      <th>abalisis</th>
+      <th>abc</th>
+      <th>abcs</th>
+      <th>abd</th>
+      <th>abdul</th>
+      <th>...</th>
+      <th>zuhruf</th>
+      <th>zulfi</th>
+      <th>zulia</th>
+      <th>zuliana</th>
+      <th>zulkifli</th>
+      <th>zulkiflimsi</th>
+      <th>zulpah</th>
+      <th>zy</th>
+      <th>zyn</th>
+      <th>abstrak_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>ABSTRAK\r\nSatiyah, Pengaruh Faktor-faktor Pel...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Tujuan penelitian ini adalah untuk mengetahui ...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Aplikasi nyata pemanfaatan teknologi informasi...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Abstrak\r\nPenelitian ini menggunakan metode k...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Abstrak\r\n\r\nAththaariq, Pengaruh Kompetensi...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1021</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>ABSTRAK\nPenelitian ini bertujuan untuk menget...</td>
+    </tr>
+    <tr>
+      <th>1022</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>ABSTRAK\nUswatun Hasanah, 160211100291, Pengar...</td>
+    </tr>
+    <tr>
+      <th>1023</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>ABSTRAK\nTujuan dari penelitian ini adalah unt...</td>
+    </tr>
+    <tr>
+      <th>1024</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>ABSTRAK\nPenelitian ini bertujuan: (1) Untuk m...</td>
+    </tr>
+    <tr>
+      <th>1025</th>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>Penelitian ini bertujuan untuk dapat mengetahu...</td>
+    </tr>
+  </tbody>
+</table>
+<p>1026 rows × 6477 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="o">!{</span>sys.executable<span class="o">}</span><span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>openpyxl
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: openpyxl in /usr/local/python/3.12.1/lib/python3.12/site-packages (3.1.5)
+Requirement already satisfied: et-xmlfile in /usr/local/python/3.12.1/lib/python3.12/site-packages (from openpyxl) (2.0.0)
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python -m pip install --upgrade pip</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Ganti nama file output menjadi .csv</span>
+<span class="n">output_file</span> <span class="o">=</span> <span class="s2">&quot;hasil_tfidf_manajemenpta.csv&quot;</span>
+
+<span class="c1"># Gunakan metode .to_csv() untuk menyimpan ke file CSV</span>
+<span class="c1"># index=False agar tidak ikut menyimpan indeks DataFrame</span>
+<span class="n">tfidf_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Hasil TF-IDF berhasil disimpan ke file: </span><span class="si">{</span><span class="n">output_file</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hasil TF-IDF berhasil disimpan ke file: hasil_tfidf_manajemenpta.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cbo-pta-manajement">
+<h2>CBO PTA Manajement<a class="headerlink" href="#cbo-pta-manajement" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- Import semua library yang dibutuhkan ---</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ast</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gensim.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Word2Vec</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> <span class="c1"># Untuk menampilkan log proses training</span>
+
+<span class="c1"># --- 1. Persiapan Corpus ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- TAHAP 1: MEMPERSIAPKAN CORPUS ---&quot;</span><span class="p">)</span>
+<span class="c1"># Load data dari file CSV hasil preprocessing Anda</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;hasil_preprocessing_managementpta.csv&#39;</span><span class="p">)</span>
+
+<span class="c1"># Mengubah kolom &#39;hasil_preprocessing&#39; dari string menjadi list python sungguhan</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;hasil_preprocessing&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">)</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proses persiapan corpus selesai.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Berikut adalah contoh 1 abstrak yang sudah diubah menjadi daftar token:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- TAHAP 1: MEMPERSIAPKAN CORPUS ---
+Proses persiapan corpus selesai.
+Berikut adalah contoh 1 abstrak yang sudah diubah menjadi daftar token:
+[&#39;abstrak&#39;, &#39;satiyah&#39;, &#39;pengaruh&#39;, &#39;faktorfaktor&#39;, &#39;latih&#39;, &#39;kembang&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;, &#39;dinas&#39;, &#39;laut&#39;, &#39;ikan&#39;, &#39;bangkal&#39;, &#39;bawah&#39;, &#39;bimbing&#39;, &#39;drahjsanugrahini&#39;, &#39;irawatimm&#39;, &#39;helm&#39;, &#39;buyung&#39;, &#39;auliasstsemmt&#39;, &#39;upaya&#39;, &#39;tingkat&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;, &#39;mudah&#39;, &#39;salah&#39;, &#39;usaha&#39;, &#39;produktivitas&#39;, &#39;tingkat&#39;, &#39;terap&#39;, &#39;program&#39;, &#39;latih&#39;, &#39;kembang&#39;, &#39;sumber&#39;, &#39;daya&#39;, &#39;manusia&#39;, &#39;sdm&#39;, &#39;laksana&#39;, &#39;instansi&#39;, &#39;produktivitas&#39;, &#39;capai&#39;, &#39;tingkat&#39;, &#39;mampu&#39;, &#39;pegawai&#39;, &#39;efektif&#39;, &#39;efisien&#39;, &#39;latih&#39;, &#39;pengembnagan&#39;, &#39;harap&#39;, &#39;pegawai&#39;, &#39;sesuai&#39;, &#39;kebutuhankebutuhan&#39;, &#39;sikap&#39;, &#39;tingkah&#39;, &#39;laku&#39;, &#39;terampil&#39;, &#39;tahu&#39;, &#39;sesuai&#39;, &#39;tuntut&#39;, &#39;ubah&#39;, &#39;latih&#39;, &#39;kembang&#39;, &#39;pegawai&#39;, &#39;dukung&#39;, &#39;cipta&#39;, &#39;suasana&#39;, &#39;kerja&#39;, &#39;kondusif&#39;, &#39;instansi&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;, &#39;tingkat&#39;, &#39;tuju&#39;, &#39;teliti&#39;, &#39;pengaruh&#39;, &#39;faktorfaktor&#39;, &#39;latih&#39;, &#39;kembang&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;, &#39;dinas&#39;, &#39;laut&#39;, &#39;ikan&#39;, &#39;bangkal&#39;, &#39;ukur&#39;, &#39;menganalisa&#39;, &#39;hubung&#39;, &#39;variabel&#39;, &#39;teliti&#39;, &#39;dekat&#39;, &#39;observasional&#39;, &#39;analitik&#39;, &#39;amat&#39;, &#39;langsung&#39;, &#39;responden&#39;, &#39;sebar&#39;, &#39;kuisioner&#39;, &#39;analis&#39;, &#39;teliti&#39;, &#39;teliti&#39;, &#39;populasi&#39;, &#39;responden&#39;, &#39;sampel&#39;, &#39;olah&#39;, &#39;spss&#39;, &#39;versi&#39;, &#39;analis&#39;, &#39;metode&#39;, &#39;statistik&#39;, &#39;metode&#39;, &#39;non&#39;, &#39;probality&#39;, &#39;sampling&#39;, &#39;simple&#39;, &#39;random&#39;, &#39;sampling&#39;, &#39;simpul&#39;, &#39;teliti&#39;, &#39;a&#39;, &#39;faktorfaktor&#39;, &#39;latih&#39;, &#39;kembang&#39;, &#39;beda&#39;, &#39;individu&#39;, &#39;pegawai&#39;, &#39;x&#39;, &#39;hubung&#39;, &#39;analisis&#39;, &#39;jabat&#39;, &#39;x&#39;, &#39;motivasi&#39;, &#39;x&#39;, &#39;partisipasi&#39;, &#39;aktif&#39;, &#39;x&#39;, &#39;seleksi&#39;, &#39;serta&#39;, &#39;x&#39;, &#39;seleksi&#39;, &#39;instruktur&#39;, &#39;x&#39;, &#39;metode&#39;, &#39;latih&#39;, &#39;kembang&#39;, &#39;x&#39;, &#39;pengaruh&#39;, &#39;simultan&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;, &#39;pegawai&#39;, &#39;dinas&#39;, &#39;laut&#39;, &#39;ikan&#39;, &#39;kabupaten&#39;, &#39;bangkal&#39;, &#39;bukti&#39;, &#39;nilai&#39;, &#39;koefisien&#39;, &#39;determinasi&#39;, &#39;ganda&#39;, &#39;r&#39;, &#39;r&#39;, &#39;square&#39;, &#39;fhitung&#39;, &#39;ftabel&#39;, &#39;b&#39;, &#39;faktor&#39;, &#39;hubung&#39;, &#39;analisis&#39;, &#39;jabat&#39;, &#39;pengaruh&#39;, &#39;parsial&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;, &#39;pegawai&#39;, &#39;dinas&#39;, &#39;laut&#39;, &#39;ikan&#39;, &#39;kabupaten&#39;, &#39;bangkal&#39;, &#39;uji&#39;, &#39;hipotesis&#39;, &#39;variabel&#39;, &#39;motivasi&#39;, &#39;x&#39;, &#39;bukti&#39;, &#39;nilai&#39;, &#39;thitung&#39;, &#39;seleksi&#39;, &#39;serta&#39;, &#39;x&#39;, &#39;pengaruh&#39;, &#39;dominan&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;, &#39;pegawai&#39;, &#39;instansi&#39;, &#39;dinas&#39;, &#39;laut&#39;, &#39;ikan&#39;, &#39;bangkal&#39;, &#39;kunci&#39;, &#39;dinas&#39;, &#39;laut&#39;, &#39;ikan&#39;, &#39;faktorfaktor&#39;, &#39;latih&#39;, &#39;kembang&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- 2. Melatih Model Word2Vec (dengan Proses Terlihat) ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- TAHAP 2: MELATIH MODEL WORD2VEC (CBOW) ---&quot;</span><span class="p">)</span>
+
+<span class="c1"># Mengaktifkan logging untuk melihat proses training dari Gensim</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%(asctime)s</span><span class="s1"> : </span><span class="si">%(levelname)s</span><span class="s1"> : </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+
+<span class="c1"># Tentukan parameter model. Anda bisa mengubah nilai embedding_dim.</span>
+<span class="n">embedding_dim</span> <span class="o">=</span> <span class="mi">150</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Parameter: Dimensi vektor = </span><span class="si">{</span><span class="n">embedding_dim</span><span class="si">}</span><span class="s2">, Arsitektur = CBOW&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gensim akan menampilkan log proses training di bawah ini:&quot;</span><span class="p">)</span>
+
+<span class="n">model_cbow</span> <span class="o">=</span> <span class="n">Word2Vec</span><span class="p">(</span>
+    <span class="n">sentences</span><span class="o">=</span><span class="n">corpus</span><span class="p">,</span>
+    <span class="n">vector_size</span><span class="o">=</span><span class="n">embedding_dim</span><span class="p">,</span>
+    <span class="n">window</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
+    <span class="n">min_count</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="c1"># Mengabaikan kata yang muncul kurang dari 2 kali</span>
+    <span class="n">sg</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>        <span class="c1"># sg=0 untuk arsitektur CBOW</span>
+    <span class="n">workers</span><span class="o">=</span><span class="mi">4</span>    <span class="c1"># Memanfaatkan beberapa core CPU</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Pelatihan model selesai!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Melihat Hasil Pelatihan Model ---&quot;</span><span class="p">)</span>
+<span class="c1"># Mengetahui ukuran kosakata yang berhasil dipelajari model</span>
+<span class="n">vocab_size</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">model_cbow</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">index_to_key</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Model berhasil mempelajari </span><span class="si">{</span><span class="n">vocab_size</span><span class="si">}</span><span class="s2"> kata unik.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Melihat kata-kata yang paling mirip secara semantik</span>
+<span class="c1"># Ini membuktikan model sudah belajar konteks dari data abstrak manajemen</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Contoh kata yang paling mirip dengan &#39;pengaruh&#39;:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">model_cbow</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s1">&#39;pengaruh&#39;</span><span class="p">,</span> <span class="n">topn</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Contoh kata yang paling mirip dengan &#39;kinerja&#39;:&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">model_cbow</span><span class="o">.</span><span class="n">wv</span><span class="o">.</span><span class="n">most_similar</span><span class="p">(</span><span class="s1">&#39;kinerja&#39;</span><span class="p">,</span> <span class="n">topn</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="k">except</span> <span class="ne">KeyError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Kata </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2"> tidak ditemukan di vocabulary (mungkin karena jarang muncul).&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-02 04:44:43,687 : INFO : collecting all words and their counts
+2025-10-02 04:44:43,689 : INFO : PROGRESS: at sentence #0, processed 0 words, keeping 0 word types
+2025-10-02 04:44:43,742 : INFO : collected 6498 word types from a corpus of 148249 raw words and 1026 sentences
+2025-10-02 04:44:43,749 : INFO : Creating a fresh vocabulary
+2025-10-02 04:44:43,785 : INFO : Word2Vec lifecycle event {&#39;msg&#39;: &#39;effective_min_count=2 retains 3544 unique words (54.54% of original 6498, drops 2954)&#39;, &#39;datetime&#39;: &#39;2025-10-02T04:44:43.785333&#39;, &#39;gensim&#39;: &#39;4.3.3&#39;, &#39;python&#39;: &#39;3.12.1 (main, Jul 10 2025, 11:57:50) [GCC 13.3.0]&#39;, &#39;platform&#39;: &#39;Linux-6.8.0-1030-azure-x86_64-with-glibc2.39&#39;, &#39;event&#39;: &#39;prepare_vocab&#39;}
+2025-10-02 04:44:43,791 : INFO : Word2Vec lifecycle event {&#39;msg&#39;: &#39;effective_min_count=2 leaves 145295 word corpus (98.01% of original 148249, drops 2954)&#39;, &#39;datetime&#39;: &#39;2025-10-02T04:44:43.791458&#39;, &#39;gensim&#39;: &#39;4.3.3&#39;, &#39;python&#39;: &#39;3.12.1 (main, Jul 10 2025, 11:57:50) [GCC 13.3.0]&#39;, &#39;platform&#39;: &#39;Linux-6.8.0-1030-azure-x86_64-with-glibc2.39&#39;, &#39;event&#39;: &#39;prepare_vocab&#39;}
+2025-10-02 04:44:43,842 : INFO : deleting the raw counts dictionary of 6498 items
+2025-10-02 04:44:43,845 : INFO : sample=0.001 downsamples 67 most-common words
+2025-10-02 04:44:43,846 : INFO : Word2Vec lifecycle event {&#39;msg&#39;: &#39;downsampling leaves estimated 108970.73386089882 word corpus (75.0%% of prior 145295)&#39;, &#39;datetime&#39;: &#39;2025-10-02T04:44:43.846104&#39;, &#39;gensim&#39;: &#39;4.3.3&#39;, &#39;python&#39;: &#39;3.12.1 (main, Jul 10 2025, 11:57:50) [GCC 13.3.0]&#39;, &#39;platform&#39;: &#39;Linux-6.8.0-1030-azure-x86_64-with-glibc2.39&#39;, &#39;event&#39;: &#39;prepare_vocab&#39;}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- TAHAP 2: MELATIH MODEL WORD2VEC (CBOW) ---
+Parameter: Dimensi vektor = 150, Arsitektur = CBOW
+Gensim akan menampilkan log proses training di bawah ini:
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2025-10-02 04:44:43,954 : INFO : estimated required memory for 3544 words and 150 dimensions: 6024800 bytes
+2025-10-02 04:44:43,956 : INFO : resetting layer weights
+2025-10-02 04:44:43,963 : INFO : Word2Vec lifecycle event {&#39;update&#39;: False, &#39;trim_rule&#39;: &#39;None&#39;, &#39;datetime&#39;: &#39;2025-10-02T04:44:43.963499&#39;, &#39;gensim&#39;: &#39;4.3.3&#39;, &#39;python&#39;: &#39;3.12.1 (main, Jul 10 2025, 11:57:50) [GCC 13.3.0]&#39;, &#39;platform&#39;: &#39;Linux-6.8.0-1030-azure-x86_64-with-glibc2.39&#39;, &#39;event&#39;: &#39;build_vocab&#39;}
+2025-10-02 04:44:43,965 : INFO : Word2Vec lifecycle event {&#39;msg&#39;: &#39;training model with 4 workers on 3544 vocabulary and 150 features, using sg=0 hs=0 sample=0.001 negative=5 window=5 shrink_windows=True&#39;, &#39;datetime&#39;: &#39;2025-10-02T04:44:43.965214&#39;, &#39;gensim&#39;: &#39;4.3.3&#39;, &#39;python&#39;: &#39;3.12.1 (main, Jul 10 2025, 11:57:50) [GCC 13.3.0]&#39;, &#39;platform&#39;: &#39;Linux-6.8.0-1030-azure-x86_64-with-glibc2.39&#39;, &#39;event&#39;: &#39;train&#39;}
+2025-10-02 04:44:44,190 : INFO : EPOCH 0: training on 148249 raw words (109020 effective words) took 0.2s, 500640 effective words/s
+2025-10-02 04:44:44,488 : INFO : EPOCH 1: training on 148249 raw words (108929 effective words) took 0.3s, 369708 effective words/s
+2025-10-02 04:44:44,828 : INFO : EPOCH 2: training on 148249 raw words (109186 effective words) took 0.3s, 325037 effective words/s
+2025-10-02 04:44:45,111 : INFO : EPOCH 3: training on 148249 raw words (108915 effective words) took 0.3s, 403855 effective words/s
+2025-10-02 04:44:45,376 : INFO : EPOCH 4: training on 148249 raw words (108991 effective words) took 0.3s, 416191 effective words/s
+2025-10-02 04:44:45,377 : INFO : Word2Vec lifecycle event {&#39;msg&#39;: &#39;training on 741245 raw words (545041 effective words) took 1.4s, 386342 effective words/s&#39;, &#39;datetime&#39;: &#39;2025-10-02T04:44:45.377422&#39;, &#39;gensim&#39;: &#39;4.3.3&#39;, &#39;python&#39;: &#39;3.12.1 (main, Jul 10 2025, 11:57:50) [GCC 13.3.0]&#39;, &#39;platform&#39;: &#39;Linux-6.8.0-1030-azure-x86_64-with-glibc2.39&#39;, &#39;event&#39;: &#39;train&#39;}
+2025-10-02 04:44:45,379 : INFO : Word2Vec lifecycle event {&#39;params&#39;: &#39;Word2Vec&lt;vocab=3544, vector_size=150, alpha=0.025&gt;&#39;, &#39;datetime&#39;: &#39;2025-10-02T04:44:45.378987&#39;, &#39;gensim&#39;: &#39;4.3.3&#39;, &#39;python&#39;: &#39;3.12.1 (main, Jul 10 2025, 11:57:50) [GCC 13.3.0]&#39;, &#39;platform&#39;: &#39;Linux-6.8.0-1030-azure-x86_64-with-glibc2.39&#39;, &#39;event&#39;: &#39;created&#39;}
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Pelatihan model selesai!
+
+--- Melihat Hasil Pelatihan Model ---
+Model berhasil mempelajari 3544 kata unik.
+
+Contoh kata yang paling mirip dengan &#39;pengaruh&#39;:
+[(&#39;bersamasama&#39;, 0.9021701216697693), (&#39;kunci&#39;, 0.9010789394378662), (&#39;positif&#39;, 0.8992874622344971), (&#39;signifikan&#39;, 0.8964402675628662), (&#39;dependen&#39;, 0.8785672783851624)]
+
+Contoh kata yang paling mirip dengan &#39;kinerja&#39;:
+
+Kata &quot;Key &#39;kinerja&#39; not present in vocabulary&quot; tidak ditemukan di vocabulary (mungkin karena jarang muncul).
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- 3. Membedah Proses Agregasi Vektor Dokumen ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- TAHAP 3: MEMBEDAH PROSES AGREGRASI MENJADI VEKTOR DOKUMEN ---&quot;</span><span class="p">)</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">create_document_vector</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">model</span><span class="p">,</span> <span class="n">num_features</span><span class="p">):</span>
+    <span class="n">word_vectors</span> <span class="o">=</span> <span class="p">[</span><span class="n">model</span><span class="o">.</span><span class="n">wv</span><span class="p">[</span><span class="n">word</span><span class="p">]</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">doc</span> <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">wv</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">word_vectors</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">num_features</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">word_vectors</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1"># Mari kita ambil satu abstrak sebagai contoh</span>
+<span class="n">contoh_abstrak</span> <span class="o">=</span> <span class="n">corpus</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Kita akan menganalisis abstrak pertama:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Isi abstrak (token): </span><span class="si">{</span><span class="n">contoh_abstrak</span><span class="p">[:</span><span class="mi">20</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span> <span class="c1"># Tampilkan 20 token pertama</span>
+
+<span class="c1"># Melihat vektor dari beberapa kata pertama di abstrak tersebut</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Vektor untuk 3 kata pertama dalam abstrak:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">contoh_abstrak</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>
+    <span class="k">if</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">model_cbow</span><span class="o">.</span><span class="n">wv</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Vektor kata &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39;: </span><span class="si">{</span><span class="n">model_cbow</span><span class="o">.</span><span class="n">wv</span><span class="p">[</span><span class="n">word</span><span class="p">][:</span><span class="mi">5</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  - Kata &#39;</span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">&#39; tidak ada di vocabulary model.&quot;</span><span class="p">)</span>
+
+<span class="c1"># Menghitung dan menampilkan vektor akhir untuk abstrak tersebut</span>
+<span class="n">vektor_abstrak_contoh</span> <span class="o">=</span> <span class="n">create_document_vector</span><span class="p">(</span><span class="n">contoh_abstrak</span><span class="p">,</span> <span class="n">model_cbow</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Hasil vektor dokumen (setelah dirata-ratakan):&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">vektor_abstrak_contoh</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Panjang vektor: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">vektor_abstrak_contoh</span><span class="p">)</span><span class="si">}</span><span class="s2"> dimensi.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- TAHAP 3: MEMBEDAH PROSES AGREGRASI MENJADI VEKTOR DOKUMEN ---
+Kita akan menganalisis abstrak pertama:
+Isi abstrak (token): [&#39;abstrak&#39;, &#39;satiyah&#39;, &#39;pengaruh&#39;, &#39;faktorfaktor&#39;, &#39;latih&#39;, &#39;kembang&#39;, &#39;produktivitas&#39;, &#39;kerja&#39;, &#39;dinas&#39;, &#39;laut&#39;, &#39;ikan&#39;, &#39;bangkal&#39;, &#39;bawah&#39;, &#39;bimbing&#39;, &#39;drahjsanugrahini&#39;, &#39;irawatimm&#39;, &#39;helm&#39;, &#39;buyung&#39;, &#39;auliasstsemmt&#39;, &#39;upaya&#39;]...
+
+Vektor untuk 3 kata pertama dalam abstrak:
+  - Vektor kata &#39;abstrak&#39;: [ 0.24378578  0.1921568   0.02349923  0.2559696  -0.41694066]...
+  - Kata &#39;satiyah&#39; tidak ada di vocabulary model.
+  - Vektor kata &#39;pengaruh&#39;: [ 0.07209924  0.28467214  0.6240058   0.3332795  -0.8391003 ]...
+
+Hasil vektor dokumen (setelah dirata-ratakan):
+[ 0.08473365  0.01038385  0.06462073 -0.09251477 -0.42881197 -0.24918365
+  0.08331041  0.1708885  -0.33088568  0.02589645]...
+Panjang vektor: 150 dimensi.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># --- 4. Membuat DataFrame Akhir ---</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;--- TAHAP 4: MEMBUAT DATAFRAME AKHIR ---&quot;</span><span class="p">)</span>
+<span class="n">doc_vectors</span> <span class="o">=</span> <span class="p">[</span><span class="n">create_document_vector</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">model_cbow</span><span class="p">,</span> <span class="n">embedding_dim</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">]</span>
+<span class="n">cbow_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">doc_vectors</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">&#39;dim_</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">embedding_dim</span><span class="p">)])</span>
+<span class="c1"># Menambahkan kembali kolom abstrak_id agar sesuai dengan file TF-IDF</span>
+<span class="n">cbow_df</span><span class="p">[</span><span class="s1">&#39;abstrak_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;abstrak_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span> 
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Proses pembuatan DataFrame selesai.&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Berikut adalah contoh hasil akhirnya:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">cbow_df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+
+<span class="c1"># Menyimpan hasil ke file CSV</span>
+<span class="n">output_file_cbow</span> <span class="o">=</span> <span class="s2">&quot;hasil_cbow_manajemenpta.csv&quot;</span>
+<span class="n">cbow_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_file_cbow</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">🎉 Hasil CBOW berhasil disimpan ke file: </span><span class="si">{</span><span class="n">output_file_cbow</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- TAHAP 4: MEMBUAT DATAFRAME AKHIR ---
+Proses pembuatan DataFrame selesai.
+Berikut adalah contoh hasil akhirnya:
+      dim_1     dim_2     dim_3     dim_4     dim_5     dim_6     dim_7  \
+0  0.084734  0.010384  0.064621 -0.092515 -0.428812 -0.249184  0.083310   
+1  0.050388  0.333605 -0.215121 -0.459420 -0.229465 -0.401288  0.075701   
+2  0.097114  0.205868 -0.199108 -0.224239 -0.269188 -0.280481  0.112917   
+3 -0.094062  0.281509  0.202492 -0.072874 -0.606876 -0.148361 -0.051949   
+4 -0.018661  0.263892 -0.004944 -0.140617 -0.449656 -0.228802  0.011309   
+
+      dim_8     dim_9    dim_10  ...   dim_142   dim_143   dim_144   dim_145  \
+0  0.170888 -0.330886  0.025896  ... -0.155287  0.275560  0.137600  0.313025   
+1  0.272324 -0.302129 -0.131521  ... -0.154720  0.016456  0.434545  0.222429   
+2  0.281181 -0.259175 -0.074639  ... -0.206581  0.085657  0.278013  0.235147   
+3  0.120764 -0.373841 -0.134806  ... -0.169763  0.185999  0.148965  0.282205   
+4  0.278063 -0.298467 -0.036040  ... -0.170547  0.081863  0.264349  0.267093   
+
+    dim_146   dim_147   dim_148   dim_149   dim_150  \
+0 -0.052366 -0.320252 -0.173770  0.701006 -0.317578   
+1  0.086229 -0.225046 -0.264575  0.513403 -0.249262   
+2  0.033284 -0.131849 -0.120916  0.394423 -0.232107   
+3 -0.035191 -0.201227 -0.466456  0.800588 -0.602979   
+4 -0.077068 -0.207615 -0.260546  0.664708 -0.553317   
+
+                                          abstrak_id  
+0  ABSTRAK\r\nSatiyah, Pengaruh Faktor-faktor Pel...  
+1  Tujuan penelitian ini adalah untuk mengetahui ...  
+2  Aplikasi nyata pemanfaatan teknologi informasi...  
+3  Abstrak\r\nPenelitian ini menggunakan metode k...  
+4  Abstrak\r\n\r\nAththaariq, Pengaruh Kompetensi...  
+
+[5 rows x 151 columns]
+
+🎉 Hasil CBOW berhasil disimpan ke file: hasil_cbow_manajemenpta.csv
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -9413,12 +10208,20 @@ None
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PREPROCESING</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#hapus-missing-value-dan-data-duplicat">Hapus Missing Value dan Data Duplicat</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi">Tokenisasi</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">Stopword Removal</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">PTA Management</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#hapus-missing-value-dan-data-duplicat">Hapus Missing Value dan Data Duplicat</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tokenisasi">Tokenisasi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stopword-removal">Stopword Removal</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#stemming">Stemming</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-tfid-pta-manajemen">Ekstraksi fitur TFID PTA Manajemen</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekstraksi-fitur-tf-idf">Ekstraksi Fitur TF-IDF</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tf-idf-vectorization">TF-IDF Vectorization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cbo-pta-manajement">CBO PTA Manajement</a></li>
+</ul>
+</li>
 </ul>
 
   </nav></div>
