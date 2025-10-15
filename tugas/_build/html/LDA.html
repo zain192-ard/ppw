@@ -1,0 +1,952 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LDA &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'LDA';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="PTA Management" href="scraping_manengemet.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pp.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/pp.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profil
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Pengantar_web_mining.html">Pengantar Web Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_berita.html">Crawling Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linkscraping.html">Link Graph Scraping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scraping_manengemet.html">PTA Management</a></li>
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">LDA</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FLDA.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/LDA.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>LDA</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">IMPORT LIBRARY</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">LOAD DATASET</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-teks-preprocessing-ke-list-kata">KONVERSI TEKS PREPROCESSING KE LIST KATA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-dictionary-dan-corpus-untuk-lda">BUAT DICTIONARY DAN CORPUS UNTUK LDA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-lda-model-ekstraksi-fitur-topik">TRAIN LDA MODEL (EKSTRAKSI FITUR TOPIK)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-distribusi-topik-ke-fitur-numerik">KONVERSI DISTRIBUSI TOPIK KE FITUR NUMERIK</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-label-dan-split-data-versi-fixed-20">ENCODE LABEL DAN SPLIT DATA (VERSI FIXED 20%)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latih-model-klasifikasi-logistic-regression">LATIH MODEL KLASIFIKASI (LOGISTIC REGRESSION)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-hasil-klasifikasi">EVALUASI HASIL KLASIFIKASI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-topik-lda">VISUALISASI TOPIK LDA</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="lda">
+<h1>LDA<a class="headerlink" href="#lda" title="Link to this heading">#</a></h1>
+<section id="import-library">
+<h2>IMPORT LIBRARY<a class="headerlink" href="#import-library" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 1. IMPORT LIBRARY</span>
+<span class="c1"># ==============================================</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">gensim</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">gensim</span><span class="w"> </span><span class="kn">import</span> <span class="n">corpora</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.linear_model</span><span class="w"> </span><span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">LabelEncoder</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="load-dataset">
+<h2>LOAD DATASET<a class="headerlink" href="#load-dataset" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 2. LOAD DATASET</span>
+<span class="c1"># ==============================================</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;hasil_preprocessing_berita.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Kolom yang benar berdasarkan dataset kamu</span>
+<span class="n">text_col</span> <span class="o">=</span> <span class="s1">&#39;hasil_preprocessing&#39;</span>   <span class="c1"># kolom teks hasil preprocessing</span>
+<span class="n">label_col</span> <span class="o">=</span> <span class="s1">&#39;kategori&#39;</span>             <span class="c1"># kolom label kategori</span>
+
+<span class="c1"># Hapus baris kosong di dua kolom ini</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="n">text_col</span><span class="p">,</span> <span class="n">label_col</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Jumlah data:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                          isi_berita  \
+0  TUBAN,BANGSAONLINE.com- Komisi II DPRD Tuban b...   
+1  SURABAYA,BANGSAONLINE.com- Rumah Literasi Digi...   
+2  SURABAYA, BANGSAONLINE.com- Baznas RI menyalur...   
+3  SURABAYA,BANGSAONLINE.com- Bangunan musala lan...   
+4  KOTA KEDIRI, BANGSAONLINE.com- Wakil Wali Kota...   
+
+                                 hasil_preprocessing      kategori  
+0  [&#39;tubanbangsaonlinecom&#39;, &#39;komisi&#39;, &#39;ii&#39;, &#39;dprd...         Jatim  
+1  [&#39;surabayabangsaonlinecom&#39;, &#39;rumah&#39;, &#39;literasi...         Jatim  
+2  [&#39;surabaya&#39;, &#39;bangsaonlinecom&#39;, &#39;baznas&#39;, &#39;ri&#39;...   Jatim Metro  
+3  [&#39;surabayabangsaonlinecom&#39;, &#39;bangun&#39;, &#39;musala&#39;...   Jatim Metro  
+4  [&#39;kota&#39;, &#39;diri&#39;, &#39;bangsaonlinecom&#39;, &#39;wakil&#39;, &#39;...  Jatim Tengah  
+
+Jumlah data: 74
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="konversi-teks-preprocessing-ke-list-kata">
+<h2>KONVERSI TEKS PREPROCESSING KE LIST KATA<a class="headerlink" href="#konversi-teks-preprocessing-ke-list-kata" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 3. KONVERSI TEKS PREPROCESSING KE LIST KATA</span>
+<span class="c1"># ==============================================</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">ast</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">safely_eval_list</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>  <span class="c1"># ubah dari string list ke list asli</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">return</span> <span class="p">[]</span>  <span class="c1"># kalau gagal parsing, jadikan list kosong</span>
+
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">text_col</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">safely_eval_list</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Contoh token:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">head</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Contoh token:
+ 0    [tubanbangsaonlinecom, komisi, ii, dprd, tuban...
+1    [surabayabangsaonlinecom, rumah, literasi, dig...
+2    [surabaya, bangsaonlinecom, baznas, ri, salur,...
+3    [surabayabangsaonlinecom, bangun, musala, lant...
+4    [kota, diri, bangsaonlinecom, wakil, wali, kot...
+Name: tokens, dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="buat-dictionary-dan-corpus-untuk-lda">
+<h2>BUAT DICTIONARY DAN CORPUS UNTUK LDA<a class="headerlink" href="#buat-dictionary-dan-corpus-untuk-lda" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 4. BUAT DICTIONARY DAN CORPUS UNTUK LDA</span>
+<span class="c1"># ==============================================</span>
+<span class="n">dictionary</span> <span class="o">=</span> <span class="n">corpora</span><span class="o">.</span><span class="n">Dictionary</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">])</span>
+<span class="n">corpus</span> <span class="o">=</span> <span class="p">[</span><span class="n">dictionary</span><span class="o">.</span><span class="n">doc2bow</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="k">for</span> <span class="n">text</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;tokens&#39;</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah kata unik:&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">dictionary</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Jumlah kata unik: 4138
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="train-lda-model-ekstraksi-fitur-topik">
+<h2>TRAIN LDA MODEL (EKSTRAKSI FITUR TOPIK)<a class="headerlink" href="#train-lda-model-ekstraksi-fitur-topik" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 5. TRAIN LDA MODEL (EKSTRAKSI FITUR TOPIK)</span>
+<span class="c1"># ==============================================</span>
+<span class="n">num_topics</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># jumlah topik bisa diubah</span>
+<span class="n">lda_model</span> <span class="o">=</span> <span class="n">gensim</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">LdaModel</span><span class="p">(</span>
+    <span class="n">corpus</span><span class="o">=</span><span class="n">corpus</span><span class="p">,</span>
+    <span class="n">id2word</span><span class="o">=</span><span class="n">dictionary</span><span class="p">,</span>
+    <span class="n">num_topics</span><span class="o">=</span><span class="n">num_topics</span><span class="p">,</span>
+    <span class="n">passes</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+<span class="p">)</span>
+
+<span class="c1"># Lihat topik yang dihasilkan</span>
+<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">topic</span> <span class="ow">in</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">print_topics</span><span class="p">(</span><span class="n">num_topics</span><span class="o">=</span><span class="n">num_topics</span><span class="p">,</span> <span class="n">num_words</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Topik </span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">topic</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Topik 0: 0.019*&quot;tuban&quot; + 0.017*&quot;warga&quot; + 0.010*&quot;pwi&quot; + 0.008*&quot;pt&quot; + 0.007*&quot;rumah&quot; + 0.006*&quot;desa&quot; + 0.006*&quot;indonesia&quot; + 0.006*&quot;hadir&quot; + 0.006*&quot;usaha&quot; + 0.006*&quot;beras&quot;
+Topik 1: 0.011*&quot;pizza&quot; + 0.009*&quot;restoran&quot; + 0.008*&quot;pasta&quot; + 0.008*&quot;italia&quot; + 0.008*&quot;santri&quot; + 0.008*&quot;kota&quot; + 0.008*&quot;ubud&quot; + 0.007*&quot;mamdani&quot; + 0.007*&quot;makan&quot; + 0.007*&quot;asep&quot;
+Topik 2: 0.013*&quot;angin&quot; + 0.010*&quot;tanah&quot; + 0.008*&quot;cepat&quot; + 0.007*&quot;arah&quot; + 0.007*&quot;wib&quot; + 0.007*&quot;c&quot; + 0.007*&quot;cuaca&quot; + 0.007*&quot;ms&quot; + 0.007*&quot;suhu&quot; + 0.006*&quot;indonesia&quot;
+Topik 3: 0.010*&quot;dunia&quot; + 0.010*&quot;asep&quot; + 0.009*&quot;motor&quot; + 0.009*&quot;buku&quot; + 0.009*&quot;masud&quot; + 0.009*&quot;kiai&quot; + 0.008*&quot;laku&quot; + 0.008*&quot;adnan&quot; + 0.008*&quot;curi&quot; + 0.007*&quot;banten&quot;
+Topik 4: 0.015*&quot;nu&quot; + 0.015*&quot;gus&quot; + 0.013*&quot;yahya&quot; + 0.010*&quot;diri&quot; + 0.009*&quot;iphone&quot; + 0.008*&quot;pbnu&quot; + 0.008*&quot;ketua&quot; + 0.007*&quot;kiai&quot; + 0.007*&quot;malang&quot; + 0.007*&quot;digital&quot;
+Topik 5: 0.017*&quot;rp&quot; + 0.013*&quot;nomor&quot; + 0.013*&quot;nabi&quot; + 0.010*&quot;kg&quot; + 0.010*&quot;sedekah&quot; + 0.010*&quot;maulid&quot; + 0.008*&quot;ingat&quot; + 0.008*&quot;&quot; + 0.007*&quot;saw&quot; + 0.006*&quot;indonesia&quot;
+Topik 6: 0.016*&quot;klaim&quot; + 0.012*&quot;sakit&quot; + 0.012*&quot;rhoma&quot; + 0.012*&quot;sehat&quot; + 0.011*&quot;rumah&quot; + 0.010*&quot;layan&quot; + 0.007*&quot;proses&quot; + 0.007*&quot;bpjs&quot; + 0.006*&quot;bayar&quot; + 0.006*&quot;surya&quot;
+Topik 7: 0.014*&quot;tafsir&quot; + 0.012*&quot;hukum&quot; + 0.009*&quot;baterai&quot; + 0.008*&quot;kiai&quot; + 0.008*&quot;mustain&quot; + 0.007*&quot;neraka&quot; + 0.006*&quot;iphone&quot; + 0.006*&quot;alquran&quot; + 0.006*&quot;bangsa&quot; + 0.006*&quot;isi&quot;
+Topik 8: 0.020*&quot;indonesia&quot; + 0.007*&quot;stroller&quot; + 0.006*&quot;global&quot; + 0.006*&quot;saudi&quot; + 0.005*&quot;jalan&quot; + 0.005*&quot;diri&quot; + 0.005*&quot;dunia&quot; + 0.005*&quot;rp&quot; + 0.005*&quot;iran&quot; + 0.005*&quot;pancasila&quot;
+Topik 9: 0.010*&quot;korban&quot; + 0.010*&quot;iran&quot; + 0.008*&quot;didik&quot; + 0.008*&quot;bantu&quot; + 0.007*&quot;prpp&quot; + 0.007*&quot;program&quot; + 0.006*&quot;d&quot; + 0.006*&quot;kerja&quot; + 0.006*&quot;bangun&quot; + 0.006*&quot;ajar&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="konversi-distribusi-topik-ke-fitur-numerik">
+<h2>KONVERSI DISTRIBUSI TOPIK KE FITUR NUMERIK<a class="headerlink" href="#konversi-distribusi-topik-ke-fitur-numerik" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 6. KONVERSI DISTRIBUSI TOPIK KE FITUR NUMERIK</span>
+<span class="c1"># ==============================================</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_topic_vector</span><span class="p">(</span><span class="n">lda_model</span><span class="p">,</span> <span class="n">corpus_doc</span><span class="p">,</span> <span class="n">num_topics</span><span class="p">):</span>
+    <span class="n">topic_dist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="n">num_topics</span>
+    <span class="k">for</span> <span class="n">topic_num</span><span class="p">,</span> <span class="n">prob</span> <span class="ow">in</span> <span class="n">lda_model</span><span class="o">.</span><span class="n">get_document_topics</span><span class="p">(</span><span class="n">corpus_doc</span><span class="p">):</span>
+        <span class="n">topic_dist</span><span class="p">[</span><span class="n">topic_num</span><span class="p">]</span> <span class="o">=</span> <span class="n">prob</span>
+    <span class="k">return</span> <span class="n">topic_dist</span>
+
+<span class="n">lda_features</span> <span class="o">=</span> <span class="p">[</span><span class="n">get_topic_vector</span><span class="p">(</span><span class="n">lda_model</span><span class="p">,</span> <span class="n">doc</span><span class="p">,</span> <span class="n">num_topics</span><span class="p">)</span> <span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">corpus</span><span class="p">]</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">lda_features</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Shape fitur:&quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Shape fitur: (74, 10)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="encode-label-dan-split-data-versi-fixed-20">
+<h2>ENCODE LABEL DAN SPLIT DATA (VERSI FIXED 20%)<a class="headerlink" href="#encode-label-dan-split-data-versi-fixed-20" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 7. ENCODE LABEL DAN SPLIT DATA (VERSI FIXED 20%)</span>
+<span class="c1"># ==============================================</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.preprocessing</span><span class="w"> </span><span class="kn">import</span> <span class="n">LabelEncoder</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.model_selection</span><span class="w"> </span><span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">le</span> <span class="o">=</span> <span class="n">LabelEncoder</span><span class="p">()</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">le</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">label_col</span><span class="p">])</span>
+
+<span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span>  <span class="c1"># tetap 20%</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">stratify</span><span class="o">=</span><span class="n">y</span>
+    <span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ Split stratified berhasil.&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⚠️ Stratified split gagal, pakai split biasa.&quot;</span><span class="p">)</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="n">test_size</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+    <span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data latih:&quot;</span><span class="p">,</span> <span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Jumlah data uji:&quot;</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>⚠️ Stratified split gagal, pakai split biasa.
+Jumlah data latih: 59
+Jumlah data uji: 15
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="latih-model-klasifikasi-logistic-regression">
+<h2>LATIH MODEL KLASIFIKASI (LOGISTIC REGRESSION)<a class="headerlink" href="#latih-model-klasifikasi-logistic-regression" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 8. LATIH MODEL KLASIFIKASI (LOGISTIC REGRESSION)</span>
+<span class="c1"># ==============================================</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">max_iter</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="n">y_pred</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/codespace/.local/lib/python3.12/site-packages/sklearn/utils/multiclass.py:213: UserWarning: The number of unique classes is greater than 50% of the number of samples.
+  y_type = type_of_target(y, input_name=&quot;y&quot;)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="evaluasi-hasil-klasifikasi">
+<h2>EVALUASI HASIL KLASIFIKASI<a class="headerlink" href="#evaluasi-hasil-klasifikasi" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.metrics</span><span class="w"> </span><span class="kn">import</span> <span class="n">classification_report</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">,</span> <span class="n">accuracy_score</span>
+
+<span class="c1"># ==============================================</span>
+<span class="c1"># 9. EVALUASI HASIL KLASIFIKASI</span>
+<span class="c1"># ==============================================</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Akurasi:&quot;</span><span class="p">,</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Confusion Matrix:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">))</span>
+
+<span class="c1"># Ambil label yang benar-benar muncul di data uji</span>
+<span class="n">labels_in_test</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">y_test</span><span class="p">)))</span>
+
+<span class="c1"># Ambil nama kategori yang sesuai label di atas</span>
+<span class="n">target_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">le</span><span class="o">.</span><span class="n">classes_</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">labels_in_test</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Classification Report:</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">classification_report</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="n">labels_in_test</span><span class="p">,</span> <span class="n">target_names</span><span class="o">=</span><span class="n">target_names</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Akurasi: 0.0
+
+Confusion Matrix:
+ [[0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
+ [0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0]]
+
+Classification Report:
+
+                          precision    recall  f1-score   support
+
+                   Dunia       0.00      0.00      0.00       1.0
+        Hukum - Kriminal       0.00      0.00      0.00       1.0
+                   Jatim       0.00      0.00      0.00       1.0
+             Jatim Barat       0.00      0.00      0.00       1.0
+           Jatim Selatan       0.00      0.00      0.00       1.0
+            Jatim Tengah       0.00      0.00      0.00       2.0
+             Jatim Timur       0.00      0.00      0.00       1.0
+               Kesehatan       0.00      0.00      0.00       1.0
+Komunitas dan Lingkungan       0.00      0.00      0.00       1.0
+               Nusantara       0.00      0.00      0.00       1.0
+               Pesantren       0.00      0.00      0.00       1.0
+      Sejarah dan Budaya       0.00      0.00      0.00       1.0
+  Tafsir Al Quran Aktual       0.00      0.00      0.00       1.0
+                  Wisata       0.00      0.00      0.00       1.0
+
+               micro avg       0.00      0.00      0.00      15.0
+               macro avg       0.00      0.00      0.00      15.0
+            weighted avg       0.00      0.00      0.00      15.0
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/home/codespace/.local/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+/home/codespace/.local/lib/python3.12/site-packages/sklearn/metrics/_classification.py:1706: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f&quot;{metric.capitalize()} is&quot;, result.shape[0])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pyLDAvis</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: pyLDAvis in /usr/local/python/3.12.1/lib/python3.12/site-packages (3.4.1)
+Requirement already satisfied: numpy&gt;=1.24.2 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pyLDAvis) (1.26.4)
+Requirement already satisfied: scipy in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pyLDAvis) (1.13.1)
+Requirement already satisfied: pandas&gt;=2.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from pyLDAvis) (2.3.1)
+Requirement already satisfied: joblib&gt;=1.2.0 in /home/codespace/.local/lib/python3.12/site-packages (from pyLDAvis) (1.5.1)
+Requirement already satisfied: jinja2 in /home/codespace/.local/lib/python3.12/site-packages (from pyLDAvis) (3.1.6)
+Requirement already satisfied: numexpr in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pyLDAvis) (2.14.1)
+Requirement already satisfied: funcy in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pyLDAvis) (2.0)
+Requirement already satisfied: scikit-learn&gt;=1.0.0 in /home/codespace/.local/lib/python3.12/site-packages (from pyLDAvis) (1.7.0)
+Requirement already satisfied: gensim in /usr/local/python/3.12.1/lib/python3.12/site-packages (from pyLDAvis) (4.3.3)
+Requirement already satisfied: setuptools in /home/codespace/.local/lib/python3.12/site-packages (from pyLDAvis) (80.9.0)
+Requirement already satisfied: python-dateutil&gt;=2.8.2 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=2.0.0-&gt;pyLDAvis) (2.9.0.post0)
+Requirement already satisfied: pytz&gt;=2020.1 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=2.0.0-&gt;pyLDAvis) (2025.2)
+Requirement already satisfied: tzdata&gt;=2022.7 in /home/codespace/.local/lib/python3.12/site-packages (from pandas&gt;=2.0.0-&gt;pyLDAvis) (2025.2)
+Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3.12/site-packages (from python-dateutil&gt;=2.8.2-&gt;pandas&gt;=2.0.0-&gt;pyLDAvis) (1.17.0)
+Requirement already satisfied: threadpoolctl&gt;=3.1.0 in /home/codespace/.local/lib/python3.12/site-packages (from scikit-learn&gt;=1.0.0-&gt;pyLDAvis) (3.6.0)
+Requirement already satisfied: smart-open&gt;=1.8.1 in /usr/local/python/3.12.1/lib/python3.12/site-packages (from gensim-&gt;pyLDAvis) (7.3.1)
+Requirement already satisfied: wrapt in /usr/local/python/3.12.1/lib/python3.12/site-packages (from smart-open&gt;=1.8.1-&gt;gensim-&gt;pyLDAvis) (1.17.3)
+Requirement already satisfied: MarkupSafe&gt;=2.0 in /home/codespace/.local/lib/python3.12/site-packages (from jinja2-&gt;pyLDAvis) (3.0.2)
+
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.2</span>
+<span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python -m pip install --upgrade pip</span>
+Note: you may need to restart the kernel to use updated packages.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="visualisasi-topik-lda">
+<h2>VISUALISASI TOPIK LDA<a class="headerlink" href="#visualisasi-topik-lda" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ==============================================</span>
+<span class="c1"># 10. VISUALISASI TOPIK LDA</span>
+<span class="c1"># ==============================================</span>
+<span class="c1"># Jalankan hanya jika mau lihat visualisasi topik interaktif</span>
+<span class="c1"># pip install pyLDAvis</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyLDAvis</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pyLDAvis.gensim</span>
+
+<span class="n">pyLDAvis</span><span class="o">.</span><span class="n">enable_notebook</span><span class="p">()</span>
+<span class="n">vis</span> <span class="o">=</span> <span class="n">pyLDAvis</span><span class="o">.</span><span class="n">gensim</span><span class="o">.</span><span class="n">prepare</span><span class="p">(</span><span class="n">lda_model</span><span class="p">,</span> <span class="n">corpus</span><span class="p">,</span> <span class="n">dictionary</span><span class="p">)</span>
+<span class="n">pyLDAvis</span><span class="o">.</span><span class="n">display</span><span class="p">(</span><span class="n">vis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.4.0/pyLDAvis/js/ldavis.v1.0.0.css">
+
+
+<div id="ldavis_el22121263210257462562287919950" style="background-color:white;"></div>
+<script type="text/javascript">
+
+var ldavis_el22121263210257462562287919950_data = {"mdsDat": {"x": [-0.030467964860461504, -0.013878403911627053, 0.01210000487515313, -0.08709964895930335, 0.21392235814741473, -0.11679061356521721, 0.006647708168941473, -0.005516221299493106, 0.07676624386072876, -0.05568346245613613], "y": [0.14950394268105346, -0.12106667193068572, 0.040667035819805214, 0.03179326518288937, -0.00028020043831795965, -0.010125235344425268, 0.06719076306091315, -0.1532980932291966, 0.01882175810379273, -0.023206563905827787], "topics": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], "cluster": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1], "Freq": [18.085373225669247, 13.81249613357003, 13.274166111616559, 10.577720947014651, 9.886281664642512, 9.770132556109962, 9.251241796666122, 6.752334573313778, 4.6221215971558305, 3.9681313942413117]}, "tinfo": {"Term": ["klaim", "warga", "pizza", "rp", "tuban", "angin", "tafsir", "nu", "asep", "yahya", "indonesia", "gus", "rhoma", "kiai", "restoran", "iran", "sakit", "motor", "nomor", "iphone", "nabi", "pasta", "rumah", "italia", "tanah", "korban", "ubud", "hukum", "diri", "mamdani", "pizza", "restoran", "pasta", "italia", "ubud", "mamdani", "york", "zohran", "new", "classe", "lomba", "autentik", "cucina", "suasana", "demokrat", "klasik", "kuliner", "partai", "maha", "tebang", "cantina", "topping", "mec", "bistro", "mia", "sumenep", "menu", "seni", "city", "atic", "wisata", "pas", "amanatul", "pohon", "wali", "santri", "asep", "pilih", "trump", "makan", "budaya", "kota", "presiden", "harga", "kiai", "gelar", "warga", "langsung", "jalan", "hadir", "bangun", "didik", "stroller", "saudi", "nuna", "esport", "diplomasi", "geopolitik", "upacara", "ferry", "kursi", "pidana", "anthony", "dakwa", "supporter", "sadig", "aktor", "arab", "rizki", "revol", "piala", "slhs", "suspensi", "gak", "desk", "mediator", "netral", "power", "sakti", "multipolar", "mbatu", "sae", "global", "pancasila", "super", "indonesia", "posisi", "investasi", "moral", "praktis", "tulungagung", "jakarta", "batu", "satu", "modal", "strategis", "diri", "bukti", "proyek", "dunia", "politik", "penting", "jalan", "iran", "negara", "rp", "bangsaonline", "bangsa", "penuh", "hukum", "timur", "kota", "kuat", "mudah", "angin", "ms", "international", "prakira", "fktp", "falcons", "omo", "x", "c", "ulayat", "ti", "parivision", "listrik", "playoff", "kendara", "prb", "cerah", "menag", "ne", "mandalika", "manggarai", "cuaca", "adat", "nasaruddin", "omoway", "atrbpn", "tundra", "betboom", "spirit", "bmkg", "tanah", "suhu", "final", "tanding", "arah", "pertamina", "wib", "ghazali", "motor", "cepat", "imam", "menteri", "the", "wisatawan", "main", "yahya", "indonesia", "turnamen", "kalah", "kiai", "tim", "kali", "surabaya", "bangsaonlinecom", "prpp", "awas", "yuli", "transaksi", "d", "baznas", "akamigas", "pem", "bhs", "mullah", "rawan", "efisiensi", "lulus", "roni", "sumatera", "khofifah", "tinjau", "standar", "konstruksi", "rekrut", "teheran", "wafat", "geneng", "belasungkawa", "sbi", "laba", "basarnas", "atap", "beasiswa", "musibah", "korban", "nuklir", "khoziny", "evakuasi", "ambruk", "misi", "ajar", "iran", "didik", "lanjut", "bantu", "dagang", "program", "mbg", "kerja", "bangun", "selamat", "harap", "tenaga", "pesantren", "pt", "kuat", "tingkat", "usaha", "rp", "pimpin", "perintah", "tangan", "tuban", "santri", "langsung", "tafsir", "mustain", "neraka", "alquran", "smartphone", "min", "siksa", "koruptor", "tobat", "rusak", "korup", "f h", "ayat", "panas", "gowa", "serial", "pakar", "juz", "rubrik", "mufassir", "hafal", "hafidz", "madrasatul", "mudir", "syafii", "aji", "quran", "ahad", "masyayikh", "jinayah", "baterai", "pakai", "wa", "isi", "tebuireng", "mati", "tuhan", "hukum", "jahat", "daya", "iphone", "surat", "persen", "dr", "bangsa", "baca", "kiai", "negara", "ulama", "pesantren", "iran", "langsung", "kh", "kali", "rhoma", "bayar", "aka", "jahit", "bpjs", "osbourne", "alfamart", "verifikasi", "klaim", "irama", "muchit", "surya", "gresik", "icon", "intako", "sman", "tas", "apartment", "gitar", "muchlis", "konser", "fc", "parkinson", "janoe", "iconland", "property", "berkas", "derita", "fitri", "husnan", "sakit", "jamin", "dokumen", "sehat", "rumah", "wajah", "aju", "sppg", "layan", "proses", "mbg", "lengkap", "layak", "tinggal", "batu", "jalan", "makan", "cepat", "sesuai", "bantu", "serta", "terima", "kormi", "taylor", "fold", "mm", "hikam", "alumni", "pppk", "snouck", "upt", "ptkk", "dewi", "gurman", "tebal", "sk", "pegawai", "sahabat", "digital", "muktamar", "aam", "smkn", "holland", "fotografi", "konten", "etalase", "qowim", "belanda", "hurgronje", "lampung", "pbnu", "kukuh", "nu", "gus", "berkowitz", "yahya", "malang", "hidayat", "iphone", "layar", "diri", "ketua", "latih", "urus", "kh", "kiai", "haji", "hadir", "kota", "israel", "al", "temu", "kabupaten", "indonesia", "bangun", "masyarakat", "maulid", "", "nabi", "saw", "ustadz", "fosil", "cabai", "fitnah", "nganjuk", "shalawat", "formal", "tekstualis", "sedekah", "goreng", "wonokerto", "rawit", "dam", "bidah", "rasulullah", "tipe", "ladang", "anjuk", "russell", "nba", "jersey", "sembako", "museum", "masalah", "purba", "koleksi", "angka", "sebar", "kg", "nomor", "rp", "ingat", "hormat", "mojokerto", "muhammad", "ribu", "turun", "merah", "simbol", "baca", "orang", "kena", "indonesia", "harga", "temu", "main", "masyarakat", "buku", "banten", "abu", "karno", "yaman", "curi", "rs", "karcis", "honda", "hegy", "dur", "scoopy", "halaman", "wonokromo", "pw", "launching", "kushartono", "universal", "l", "cctv", "sifat", "ndalem", "gadai", "bernopol", "pojok", "da", "afrika", "tempel", "booth", "vario", "rekam", "masud", "soekarno", "adnan", "parkir", "mesir", "motor", "pergunu", "asep", "dunia", "laku", "m", "tulis", "islam", "ambil", "kiai", "kalah", "pancasila", "ketua", "kh", "milik", "dr", "guru", "acara", "korban", "didik", "jalan", "indonesia", "pwi", "vietnam", "sas", "famili", "nook", "pupuk", "lilur", "kavling", "saran", "pabrik", "veronica", "jun", "pakuwon", "graha", "singgah", "macet", "mergosari", "basement", "tanjungrejo", "mafia", "dringu", "zainal", "ecopark", "kambang", "budidaya", "sinergitas", "tuban", "suwandi", "semi", "semen", "polres", "warga", "beras", "pt", "desa", "probolinggo", "kunjung", "area", "rumah", "tolak", "dampak", "usaha", "lapor", "dukung", "sambut", "terima", "fasilitas", "manager", "hadir", "indonesia", "harga", "kualitas", "bawa", "bangun", "bangsaonlinecom", "pungkas"], "Freq": [29.0, 34.0, 35.0, 50.0, 20.0, 30.0, 23.0, 32.0, 28.0, 31.0, 91.0, 37.0, 20.0, 64.0, 28.0, 37.0, 28.0, 21.0, 23.0, 24.0, 16.0, 26.0, 33.0, 25.0, 27.0, 26.0, 24.0, 48.0, 34.0, 23.0, 35.043213989195635, 28.051762787784646, 25.4365484188283, 24.556320159853136, 23.681426938076314, 22.80837446848579, 10.578811389601896, 10.573743604467873, 10.570267183898636, 10.569119572093047, 9.73078843353216, 9.69628290497157, 8.826343135894838, 17.564252992454346, 7.9545676166757895, 7.948676638017458, 14.946237478866669, 7.07709762766923, 7.07734915902388, 12.574359687358031, 6.205709409570125, 6.203771474814983, 5.333217526194724, 5.329396321879412, 5.329342013973295, 5.325513663880863, 17.565614977573556, 4.460692414955711, 4.457925570054564, 4.459267904286693, 8.831786788905411, 7.947163877001, 7.079993811136263, 7.687952241101869, 13.21843001658097, 23.940964421412147, 20.226981062641865, 20.185321182027998, 14.08182425381511, 20.920341533288187, 11.475558541547054, 23.825191398812894, 15.833833034053304, 14.94321195683375, 20.212315069679274, 13.23958294601376, 12.357795478470853, 12.087253498369092, 12.111947874942917, 11.479766689693452, 10.791648361142899, 10.600178692348308, 16.158387179113895, 14.447246448783515, 8.542773184525416, 8.512379246433644, 7.688304143914366, 7.688522989873836, 7.688919204753076, 6.850192883710281, 6.0051549578762895, 6.00112349876755, 5.984927806265729, 5.979472484044129, 5.143566055950414, 5.136887161057663, 4.308247128294029, 4.3056750060821045, 4.303059496703652, 4.3022583349368135, 4.299135550447819, 4.274088057348434, 3.467568384757459, 3.4671986387785543, 3.468020539065242, 3.4644374140106287, 3.4638272649266204, 3.463689735794983, 3.464022643613628, 3.4635699435553233, 3.4644505120231655, 3.4642638653445155, 14.451734701079477, 11.071937735583049, 5.157347348141275, 46.69131483092027, 7.689834974129611, 8.511379977227188, 5.998432402941749, 6.006879529526975, 7.67008207972299, 9.38138598945956, 9.40676884625494, 11.06929084554956, 5.997265042574401, 5.995648529527144, 12.754477864038162, 6.825933727240459, 8.501967963718412, 11.94791971603536, 7.689578471384098, 7.688384369241155, 12.769002468440489, 11.07809816747955, 10.229279282026585, 11.909328605097606, 9.34400317017833, 9.369189556785658, 8.964316345508417, 10.254230995909294, 8.5294028424779, 9.364102070416134, 8.581956980530462, 7.702255710268206, 28.765635714048848, 14.837061914213644, 9.823045306809265, 8.278713904883423, 7.445428408426661, 8.191824815346651, 7.4413684058787535, 7.439336044443133, 14.841785384430212, 7.434267990623158, 7.387495880144243, 7.377361345945404, 6.623865048250189, 6.560125473305786, 11.540756282727083, 5.8171707065769045, 12.36754923667764, 5.806083716025269, 5.002133455650351, 4.998773634397038, 4.986895202966344, 14.839853198745352, 9.066263139592975, 4.171518088759717, 4.1700689494960725, 4.159400232039896, 4.139080551286467, 4.135917672412271, 4.134692486266823, 3.36287189338768, 22.12746389025263, 14.836815408439517, 9.810534352051768, 8.193290213501779, 15.66545243537269, 7.45765929066632, 14.86149220987073, 10.711230786046313, 13.200712529208078, 17.33934307633667, 10.712170654870217, 11.503989159795498, 10.660079264473866, 9.083388472649979, 11.401604297712812, 11.162058378102206, 14.107978604323291, 9.043012924769473, 9.012650756122223, 11.44380713520408, 9.564540470766445, 8.850026176607365, 8.916715953635734, 8.520652503944172, 13.208074853347064, 6.568536754290081, 5.825971619949477, 5.820311038532021, 11.566467791791139, 5.010289527793006, 5.008222395801664, 5.004696652680161, 4.988585895704374, 4.179638073215613, 4.160822825516823, 4.158601891549579, 3.364552381655917, 3.3642098797014275, 3.3589728806279324, 3.3577804973745358, 3.987995378019125, 6.552290166764924, 3.2431520519104646, 2.5408736316028966, 2.5394559786076214, 2.535950296613409, 2.5355714338657034, 2.532126144223442, 2.52564514628779, 2.5249306775981015, 2.5080945854886765, 4.174986399324866, 8.285695275046741, 7.731301842941021, 18.418303188351953, 4.178637942432095, 4.733973411640219, 5.2674827922952, 6.7578774351298545, 5.000303683743446, 10.677093656169777, 18.13820304206378, 14.84092439695989, 8.27124959163616, 14.549165392194064, 5.817021431596346, 13.188791930618288, 9.010169451971814, 11.392892231421524, 11.356080898721686, 6.907186136459179, 9.751853568472196, 6.635441867628123, 10.418764012394544, 7.4709669223169275, 10.008585009106529, 9.070429734834656, 8.259044067439811, 9.920423041702245, 7.4761669336869785, 7.244023748069753, 6.818696921915951, 6.657606905644464, 6.895926828766752, 6.661787143043857, 23.137566116853407, 12.800228072828515, 11.995774954025293, 10.420115203712175, 8.038458602598194, 7.232517219900484, 6.435469092868335, 5.651125114560701, 4.850598512468077, 4.0591518826136035, 4.057223780098331, 4.05636793070389, 8.031059470133792, 8.03764533083223, 3.2651679776602744, 3.262935777128766, 3.2620381313467366, 3.2617129398264844, 3.261417240149811, 3.2613787640360035, 3.260971542222354, 3.2613500534333144, 3.2610871658739993, 3.260961581401013, 3.2609272068018753, 3.2608520123662617, 3.2607772085510924, 3.260365103981884, 3.260261003633359, 3.2599174529522035, 14.405850754976418, 7.1438565350744145, 8.03342897375163, 9.627453353654094, 6.472408115225861, 8.84573825093961, 6.446673649705465, 20.095045347461745, 4.849645398582894, 8.835553994704158, 10.448535966031098, 6.445997095095163, 4.859117553747571, 7.287490016330658, 9.669312240513213, 6.441298712385743, 13.039596375165202, 8.944136322212339, 6.517046657169801, 8.111180410796795, 8.053587332423257, 8.057784158481622, 7.35152520707897, 6.471001491004326, 20.171645290999948, 10.527504143771308, 10.524099348275264, 8.104884059590423, 11.716296597870853, 7.289809988586312, 6.501602147439645, 6.495851054094967, 26.552655140819517, 5.7031613903055485, 5.702021054036239, 10.526812375797508, 4.881840947881769, 4.880307631814843, 4.090973737554575, 4.090459929980285, 4.089075621970216, 4.080895620092533, 3.293200814457684, 3.2892528730134623, 3.288011396560483, 3.2872142420594255, 3.2837341704724827, 3.2838519099992736, 3.2796715777513534, 3.2790049018078538, 5.697701364512347, 3.8794498522847816, 2.491281529861587, 2.4904872705947945, 20.448272186022717, 6.090682320221963, 8.790590570931823, 19.40939727837005, 17.99215925979787, 5.674810484316837, 6.802155258431211, 6.020629617968955, 15.82372916317705, 12.236592585164669, 9.505627735537326, 9.275936062236887, 5.576959672804182, 6.259511150858829, 6.4954850964838275, 8.104159864992852, 7.421409580851984, 7.3107344256688, 6.750111299339873, 6.774531635289954, 5.852292977157197, 5.706367765746607, 7.293206579287159, 6.48275021893987, 5.692399424245938, 5.691727581658656, 5.68114843684847, 5.68116525118961, 4.8863553663312285, 4.079310855118701, 3.300800646349596, 3.3005685353360352, 3.2882249812936344, 3.2875059854453297, 3.286252585972103, 3.2841752837830254, 3.2839457314735516, 3.2802195272653063, 10.512679912835019, 4.560531450073743, 4.558791165765772, 6.521437824727655, 6.424726120841298, 2.4930713162647757, 2.487823414183377, 2.4868935080125145, 2.4851574272898285, 2.4814436510728606, 2.4794376270690495, 2.4785150314812907, 12.929171226201392, 4.1803610245482865, 23.82760429134944, 23.193577888348997, 4.69443976632377, 19.70131233944032, 10.54276076913415, 4.079543697190572, 13.71682514678816, 6.491044806529972, 15.316578115745747, 12.266848480237568, 5.7375660343098795, 7.027355762583844, 9.072737752653344, 11.426949477496152, 4.083619712800356, 8.938854657915028, 9.119040792860845, 6.530367701989517, 6.009598680086164, 6.486490313256013, 5.7041343722449085, 6.5368426854449675, 5.743426563255416, 5.7201825642753965, 11.005280542710002, 9.608174645033952, 14.691304406423724, 8.053240928856443, 5.944394458403899, 5.941512550376722, 5.219666890723972, 5.21446921138816, 5.207879934915728, 4.473384774680446, 3.743713782279584, 3.743029989438105, 11.084482055816803, 3.0129766813361742, 3.0131356905181956, 3.0104917626761925, 3.0117304868911696, 3.008923814752131, 3.0086522185318323, 3.0078054145993884, 3.0073758763727865, 3.0074473771459105, 3.002427382567189, 2.9989353168230943, 2.9898285728312746, 5.946831887744417, 5.942758478027797, 2.2773070942229405, 2.2746511606541073, 2.2737549998446935, 6.648372928593586, 4.482917054989924, 11.818761913350926, 15.359391622856704, 19.594349332531895, 9.611858535613404, 5.1999348116932405, 5.210276277991094, 5.533398943494712, 6.1046495680765505, 5.955480813353101, 3.7482543481668746, 3.720074239356423, 5.2144862861996515, 6.22940934618397, 4.269017423105426, 7.441072119297005, 5.540333984899861, 5.223622911111582, 5.164787379412163, 5.223628780578033, 7.240871156373826, 5.283217864429909, 4.64076003656692, 3.3356612509621972, 3.3298610391833687, 5.948955799229117, 2.6807742413220206, 2.6795765779452716, 2.679010436367363, 2.67860117079443, 2.6760606561201454, 2.0269112174325965, 2.026525145401726, 2.026021096771072, 2.024938487973059, 2.0240003365905705, 1.374745979084793, 1.374348036343418, 1.3737196191919396, 1.3736987084788201, 1.373707474541962, 1.3736129654237144, 1.3732219624823268, 1.3731356715482745, 1.3733760077794124, 1.3728704068250772, 1.3732819552269535, 1.37279516478311, 1.372772153867363, 1.3725495323888242, 2.6793015427141973, 7.227075564504409, 2.6812096224580637, 6.574389567218088, 3.987761383028541, 3.9774718511632154, 7.261339183304682, 2.0224399773513286, 7.872515680098766, 7.898138152157003, 6.607759778083158, 3.3134403766556115, 3.9702712607974835, 5.254489649251055, 3.330442521371775, 7.142095887397216, 3.9887599837214456, 3.323195909174549, 3.9718294285209397, 3.9348749935887626, 3.990520501402425, 3.305286111670577, 3.3038985169257553, 3.3320602252740694, 3.3396764731337756, 3.326594950157784, 3.3373753815590512, 3.3570588458387154, 6.719205522468612, 3.12887200633655, 2.520907522181029, 1.9048756003794867, 1.9038782829007899, 1.9029676682307268, 1.9027132041106316, 1.8973227352794615, 1.8809500152121972, 3.0989230061564363, 1.2913982757071922, 1.291168113459318, 1.2909842031618002, 1.2909469664221067, 1.2910990491063286, 1.2906654566700237, 1.2909471232083791, 1.2902752156380355, 1.2898841122815492, 1.2889070202319912, 1.2851668053109018, 1.2826284355608466, 1.28182075107861, 1.2817031613743146, 1.2804870486524924, 1.2802622171378797, 12.901448164952857, 1.2792761882707953, 1.278064073598919, 3.105225814306666, 3.134002053169274, 11.752433069119117, 3.7506810319169857, 5.588073468864107, 4.372997104302343, 2.5157853146619242, 3.7071969864136625, 1.9059259116182525, 4.993995231281958, 2.520924298312175, 2.5219282008143122, 3.7520877183529024, 3.1154859079721144, 3.7456434889849737, 2.508366815397341, 3.7405206543207794, 2.5227842538615826, 1.8962366767705898, 3.760190746482757, 4.331397002648103, 3.1392214681772628, 2.5910123088740904, 2.5137604199539587, 2.5253154114431076, 2.5418960301075657, 2.0377028921299485], "Total": [29.0, 34.0, 35.0, 50.0, 20.0, 30.0, 23.0, 32.0, 28.0, 31.0, 91.0, 37.0, 20.0, 64.0, 28.0, 37.0, 28.0, 21.0, 23.0, 24.0, 16.0, 26.0, 33.0, 25.0, 27.0, 26.0, 24.0, 48.0, 34.0, 23.0, 35.91441508248922, 28.886957803488425, 26.253345993217163, 25.373210570741314, 24.495512699649524, 23.612978501053256, 11.319614764947985, 11.317409070314742, 11.318228387403243, 11.31900653814968, 10.444229262278597, 10.44100244482605, 9.563259874280277, 19.151122768684125, 8.6844832448993, 8.684450056181975, 16.33169896090067, 7.805360346235728, 7.807878529401017, 13.902900568805972, 6.928179856192043, 6.928328798022082, 6.051284206640367, 6.049587015144873, 6.049655483801042, 6.0498245303543, 19.9586491687763, 5.172955855227089, 5.171112308127444, 5.17290841049825, 10.388262573530854, 9.484309179004264, 8.469586322649985, 9.281417959399173, 17.23973882202725, 34.196202250320326, 28.908189083194156, 32.1929179836354, 20.596101893374247, 35.712946364639826, 16.715693895267353, 52.74162006021062, 28.499288900312855, 31.258131721913415, 64.64569378337927, 33.03760348201286, 34.32100955911402, 41.33903544118661, 51.485483563685555, 45.88666085405847, 35.77532553134347, 31.047362652984, 16.921432405418958, 15.226284792623552, 9.275243188577907, 9.27696583754217, 8.427489254236033, 8.428120471065398, 8.428560206348374, 7.576833345516725, 6.727217263376356, 6.727821912216701, 6.729175940741035, 6.729496586244428, 5.878157917585149, 5.877803308857406, 5.028689843410817, 5.02836958952005, 5.028462792445242, 5.028478411178474, 5.028454489404432, 5.0192324385499845, 4.178027963262176, 4.178082170025058, 4.180066754114152, 4.179022485152258, 4.178990355237787, 4.179050602132102, 4.179473710871601, 4.178951788882847, 4.1800293123780525, 4.17985386874912, 18.725666053389492, 15.131356997228462, 6.614568698703822, 91.46292104321684, 10.73096639606, 12.3307412139063, 8.289094852989525, 8.409753127277526, 11.674312929688346, 16.017799496084255, 16.57773527093889, 22.186445454829123, 8.847189771317328, 9.015038996011056, 34.793082136068016, 11.657107892478972, 17.512076007116757, 34.346553855526665, 14.991132634676864, 15.185964907985916, 51.485483563685555, 37.94327656385189, 33.03089345231261, 50.1511921528902, 28.905214631719744, 29.349363558820418, 27.70552563763372, 48.59639030228667, 28.748407219933526, 52.74162006021062, 35.10122592789212, 17.444812570281876, 30.182323532800684, 15.582984004061819, 10.647748304807735, 9.00396505489921, 8.181022504137603, 9.002417355003681, 8.18053603600891, 8.180477200485688, 16.321456217753035, 8.182272701733487, 8.181259978627013, 8.18116474213498, 7.358095739900856, 7.358378093967992, 12.952883801330033, 6.536946841022821, 13.914980365119478, 6.53732790328297, 5.7142161751307095, 5.715822349912725, 5.714887871893901, 17.169488633901345, 10.565014579315333, 4.892209927481848, 4.891036345098435, 4.8919636273564455, 4.890946019078633, 4.891017158067574, 4.891098347122927, 4.069568294372469, 27.3170031166649, 18.78488798968073, 12.275985673661767, 10.612977128058192, 24.012042082562136, 9.829859869153978, 22.869095208268227, 16.270264000857004, 21.99789814234694, 33.71025381324241, 17.944088396644176, 20.634155023397966, 19.053556880905873, 14.22054577908678, 26.5787778861391, 31.604875719666833, 91.46292104321684, 18.121329773542314, 18.756461902936707, 64.64569378337927, 30.52794981722114, 26.864938382956403, 41.25735382972109, 43.823105668886996, 13.947777383223249, 7.365214178863284, 6.541345274009884, 6.544182944713741, 13.124920842276248, 5.719906329670692, 5.718635580954214, 5.7181057034834195, 5.720062593469403, 4.896619950403985, 4.896543829290857, 4.8950210956076745, 4.072116919617129, 4.072035974362486, 4.073652696150999, 4.073804524376866, 4.898519262803379, 8.212230251465764, 4.072631789300174, 3.248906817081092, 3.2498149068098887, 3.24975673222435, 3.249620496458489, 3.249719538802511, 3.248811041943443, 3.2488813363462006, 3.249783576671097, 5.514749028901095, 10.989152075309713, 10.537245756234574, 26.742856221900304, 5.696646947161524, 6.597779296045141, 7.453299303934007, 9.985343542623658, 7.330725569717458, 18.921971393905267, 37.94327656385189, 31.047362652984, 14.727768973628534, 36.10562006385455, 9.386996031453265, 35.11986101080658, 19.516407621448927, 30.973905482199918, 35.77532553134347, 13.900502743339189, 28.01215039661465, 13.08138087342974, 37.05590626110035, 17.80287105422729, 35.10122592789212, 28.087747418961133, 23.340920262214983, 50.1511921528902, 21.944935793423536, 20.62491122363198, 20.48443674895985, 20.383062351451713, 34.196202250320326, 41.33903544118661, 23.98119880698844, 13.582024465983633, 12.781939630231152, 11.18203457084981, 8.784221355444673, 7.981045897017262, 7.181412311997572, 6.38140621567108, 5.580762778460461, 4.782100667871191, 4.780195815912647, 4.780243856526698, 9.519518509312434, 9.632709991519228, 3.9820011678321268, 3.98012822179477, 3.9802470762244306, 3.980481226300387, 3.9802867481181075, 3.9803578147818643, 3.9800372610103594, 3.9805604253019617, 3.9803033982047884, 3.980397531647503, 3.9803644166848766, 3.9803298782846936, 3.980457942891158, 3.9802099547881085, 3.980239321628379, 3.9799896741456307, 17.65432948593001, 8.786468025161932, 12.044988465442286, 15.133498959736317, 9.542989502527545, 14.3840165162806, 9.982258222923697, 48.59639030228667, 7.089293207820111, 18.389090889900775, 24.873180298532205, 11.854757922946584, 8.132153905735844, 17.34704358901558, 29.349363558820418, 14.046296562165258, 64.64569378337927, 33.03089345231261, 16.414958551420536, 37.05590626110035, 37.94327656385189, 41.33903544118661, 30.18484504631948, 26.864938382956403, 20.92138876975514, 11.254783912342065, 11.253288499596774, 8.83711657968656, 12.875275223854153, 8.032026882130644, 7.225392618959384, 7.226001858727976, 29.821253815188122, 6.419494816510825, 6.4191757478294456, 12.075276696212034, 5.613338991327502, 5.612684348042946, 4.808377455623509, 4.8096844335874716, 4.808127986773406, 4.807281482800102, 4.002473588106782, 4.0024056143981825, 4.0029007266219985, 4.002353687996869, 4.0029415098155345, 4.003402014021837, 4.00182455216449, 4.001770807582335, 7.0397494806649314, 4.812681162007732, 3.197063748496581, 3.1967708519921407, 28.04983160738057, 8.056046690909481, 13.1735518700117, 35.75359529019491, 33.87314744559425, 8.120220163595917, 10.49479954406939, 8.947343601468631, 33.68442926032604, 24.675991305996185, 19.516407621448927, 26.505532804715582, 9.601889962397872, 13.747690086746767, 16.57773527093889, 51.485483563685555, 35.712946364639826, 33.71025381324241, 24.14979767849788, 36.10562006385455, 27.993263077523707, 30.314641708588923, 8.028267801795158, 7.220462724351618, 6.416275991179639, 6.416235110488712, 6.4164882952543625, 6.416507703839189, 5.610324696657268, 4.804777735071176, 4.000934028468053, 4.000894609791049, 4.000509862413233, 4.000704837947626, 4.000513816275582, 4.000268503877349, 4.000092873969238, 4.000846772816189, 12.903891721813924, 5.6165090320873645, 5.616837027239902, 8.044609401080125, 8.042860570092124, 3.19570200675803, 3.1957191035477224, 3.1957949402246046, 3.195976318935781, 3.194930351154997, 3.194937656980775, 3.194714801382445, 16.947675387317567, 5.549863013023977, 32.155624081038816, 37.07364249125455, 6.436147990054076, 31.604875719666833, 16.51541098650965, 5.684153138006541, 24.873180298532205, 10.444384993676872, 34.793082136068016, 29.921078977024877, 9.732070727573795, 15.670243880674684, 30.18484504631948, 64.64569378337927, 6.454176583056863, 45.88666085405847, 52.74162006021062, 22.95831035837536, 18.406666433787574, 25.924196141175514, 25.167960031080646, 91.46292104321684, 35.77532553134347, 41.14459839876775, 11.85891884787792, 10.374874609647419, 16.208191329849424, 8.908830587808447, 6.684319559488645, 6.686022746362137, 5.944365768332614, 5.947159331751088, 5.947735141661447, 5.2084373866922204, 4.47013665364948, 4.46971927640939, 13.606808013028575, 3.7311627481040355, 3.73220878560441, 3.7307352977401735, 3.732348535857498, 3.7322303284301817, 3.7320793635595257, 3.73305433753029, 3.732798887598809, 3.7330269665256353, 3.733535589969873, 3.733764053733357, 3.734540875935246, 7.505820562437396, 7.5644916477362045, 2.9942550575270346, 2.9946288418697242, 2.994857586448968, 9.126185930689612, 6.086815755526548, 17.215694727929716, 23.320527427967857, 50.1511921528902, 19.10017850816331, 8.263774692479295, 8.367448369662021, 9.972391600949836, 14.440183313767195, 16.675504186229652, 6.11557879100092, 6.12784976602054, 14.046296562165258, 26.942492041076182, 10.096459490847737, 91.46292104321684, 31.258131721913415, 25.924196141175514, 26.5787778861391, 41.14459839876775, 8.035591905519984, 6.056979404963346, 5.396430765103202, 4.078063427539069, 4.0769177251356, 7.5361344372218815, 3.4173114110088685, 3.417522204240391, 3.4177328390365336, 3.417884693465538, 3.4181282339766876, 2.7579963223837995, 2.758103326279833, 2.758237780964008, 2.7580938884670725, 2.7583384193948177, 2.0987940333368487, 2.0989164823675717, 2.09844776148577, 2.098487021493228, 2.0991252654537753, 2.0991428065614968, 2.0986905881416775, 2.098628863118403, 2.0991533649380107, 2.098605757092357, 2.09930001271007, 2.0986296912439077, 2.0986627657816497, 2.098711805501824, 4.239494057550525, 12.122877205774302, 4.267981859385427, 11.46267565557414, 6.795349458194588, 8.087187772217236, 21.99789814234694, 3.6367133648513383, 28.908189083194156, 34.346553855526665, 26.925314973483864, 9.070594302992479, 13.880491743940894, 23.070044849973762, 10.56006876819404, 64.64569378337927, 18.756461902936707, 15.131356997228462, 29.921078977024877, 30.18484504631948, 37.2658320797523, 17.34704358901558, 18.98503081922667, 21.671617902321675, 26.742856221900304, 31.047362652984, 51.485483563685555, 91.46292104321684, 7.622483822503895, 3.875049190961616, 3.2532324714293557, 2.635211466984825, 2.6355088394267483, 2.6366351593027617, 2.636775070173588, 2.639257765006101, 2.641940563622744, 4.70905750524579, 2.0165575761192827, 2.0166528950792526, 2.0166304494802865, 2.016622158089823, 2.017298575058118, 2.0166877132784733, 2.017321970028958, 2.016852760426001, 2.017709085164018, 2.0178489047284867, 2.01960233829015, 2.020602263458142, 2.020418984096259, 2.0204717361434144, 2.020932949069995, 2.020958518963217, 20.383062351451713, 2.0213719919644526, 2.021839282635022, 6.353292617442193, 6.424160547744458, 34.32100955911402, 9.005223395766556, 17.80287105422729, 16.002665170581146, 6.546511159131816, 13.395374636675118, 4.117333334157595, 33.87314744559425, 8.409804757442693, 9.051751342026513, 23.340920262214983, 15.334349936515553, 23.713971236385202, 9.93162449154819, 30.314641708588923, 13.007057458497174, 5.984060556725254, 45.88666085405847, 91.46292104321684, 31.258131721913415, 16.191241359321918, 19.80998174367275, 35.77532553134347, 43.823105668886996, 10.66996078775954], "Category": ["Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Default", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic1", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic2", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic3", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic4", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic5", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic6", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic7", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic8", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic9", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10", "Topic10"], "logprob": [30.0, 29.0, 28.0, 27.0, 26.0, 25.0, 24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, -4.4726, -4.6951, -4.7929, -4.8282, -4.8644, -4.902, -5.6703, -5.6708, -5.6711, -5.6712, -5.7538, -5.7574, -5.8514, -5.1633, -5.9554, -5.9561, -5.3247, -6.0723, -6.0722, -5.4975, -6.2037, -6.204, -6.3552, -6.3559, -6.3559, -6.3566, -5.1632, -6.5338, -6.5345, -6.5342, -5.8508, -5.9563, -6.0719, -5.9895, -5.4475, -4.8535, -5.0221, -5.0242, -5.3843, -4.9884, -5.5889, -4.8584, -5.267, -5.3249, -5.0228, -5.4459, -5.5148, -5.537, -5.5349, -5.5885, -5.6504, -5.6683, -4.9772, -5.0891, -5.6145, -5.6181, -5.7199, -5.7199, -5.7198, -5.8353, -5.967, -5.9677, -5.9704, -5.9713, -6.1219, -6.1232, -6.2991, -6.2997, -6.3003, -6.3005, -6.3012, -6.307, -6.5162, -6.5163, -6.516, -6.5171, -6.5172, -6.5173, -6.5172, -6.5173, -6.5171, -6.5171, -5.0888, -5.3552, -6.1192, -3.916, -5.7197, -5.6182, -5.9681, -5.9667, -5.7223, -5.5209, -5.5182, -5.3554, -5.9683, -5.9686, -5.2137, -5.8389, -5.6193, -5.279, -5.7197, -5.7199, -5.2126, -5.3546, -5.4344, -5.2823, -5.5249, -5.5222, -5.5664, -5.4319, -5.6161, -5.5227, -5.6099, -5.7181, -4.3607, -5.0227, -5.4351, -5.6062, -5.7123, -5.6167, -5.7128, -5.7131, -5.0224, -5.7138, -5.7201, -5.7214, -5.8292, -5.8388, -5.274, -5.959, -5.2048, -5.9609, -6.11, -6.1107, -6.113, -5.0225, -5.5153, -6.2916, -6.2919, -6.2945, -6.2994, -6.3001, -6.3004, -6.5071, -4.623, -5.0227, -5.4364, -5.6165, -4.9684, -5.7106, -5.0211, -5.3486, -5.1396, -4.8669, -5.3485, -5.2772, -5.3533, -5.5134, -5.2861, -5.3073, -5.0731, -5.5179, -5.5212, -5.2824, -5.4618, -5.5394, -5.5319, -5.5774, -4.912, -5.6105, -5.7305, -5.7314, -5.0447, -5.8813, -5.8817, -5.8824, -5.8856, -6.0626, -6.0671, -6.0676, -6.2795, -6.2796, -6.2811, -6.2815, -6.1095, -5.613, -6.3162, -6.5603, -6.5608, -6.5622, -6.5624, -6.5637, -6.5663, -6.5666, -6.5733, -6.0637, -5.3783, -5.4475, -4.5794, -6.0628, -5.938, -5.8312, -5.5821, -5.8833, -5.1247, -4.5948, -4.7954, -5.38, -4.8152, -5.732, -4.9134, -5.2944, -5.0598, -5.063, -5.5602, -5.2153, -5.6004, -5.1492, -5.4818, -5.1893, -5.2878, -5.3815, -5.1982, -5.4811, -5.5126, -5.5731, -5.597, -5.5619, -5.5964, -4.2837, -4.8757, -4.9406, -5.0814, -5.3409, -5.4466, -5.5634, -5.6933, -5.8461, -6.0242, -6.0247, -6.0249, -5.3419, -5.341, -6.2419, -6.2426, -6.2428, -6.2429, -6.243, -6.243, -6.2432, -6.243, -6.2431, -6.2432, -6.2432, -6.2432, -6.2432, -6.2433, -6.2434, -6.2435, -4.7575, -5.4589, -5.3416, -5.1606, -5.5576, -5.2452, -5.5616, -4.4247, -5.8463, -5.2464, -5.0787, -5.5617, -5.8443, -5.439, -5.1562, -5.5625, -4.8572, -5.2342, -5.5508, -5.3319, -5.3391, -5.3385, -5.4303, -5.5578, -4.4091, -5.0594, -5.0597, -5.3209, -4.9524, -5.4269, -5.5413, -5.5422, -4.1342, -5.6723, -5.6725, -5.0594, -5.8278, -5.8282, -6.0046, -6.0047, -6.005, -6.007, -6.2215, -6.2227, -6.2231, -6.2233, -6.2244, -6.2243, -6.2256, -6.2258, -5.6733, -6.0577, -6.5006, -6.5009, -4.3955, -5.6066, -5.2397, -4.4476, -4.5234, -5.6773, -5.4961, -5.6182, -4.6519, -4.9089, -5.1615, -5.1859, -5.6947, -5.5793, -5.5423, -5.321, -5.409, -5.424, -5.5038, -5.5002, -5.6465, -5.6718, -5.3718, -5.4896, -5.6197, -5.6198, -5.6216, -5.6216, -5.7723, -5.9529, -6.1646, -6.1647, -6.1684, -6.1687, -6.169, -6.1697, -6.1697, -6.1709, -5.0062, -5.8414, -5.8417, -5.4837, -5.4986, -6.4453, -6.4474, -6.4478, -6.4485, -6.4499, -6.4508, -6.4511, -4.7993, -5.9284, -4.1879, -4.2149, -5.8124, -4.3781, -5.0034, -5.9528, -4.7402, -5.4884, -4.6299, -4.8519, -5.6118, -5.409, -5.1535, -4.9228, -5.9518, -5.1684, -5.1484, -5.4823, -5.5654, -5.4891, -5.6176, -5.4813, -5.6107, -5.6148, -4.6455, -4.7813, -4.3567, -4.9578, -5.2615, -5.262, -5.3915, -5.3925, -5.3937, -5.5458, -5.7238, -5.724, -4.6384, -5.941, -5.9409, -5.9418, -5.9414, -5.9423, -5.9424, -5.9427, -5.9429, -5.9428, -5.9445, -5.9457, -5.9487, -5.2611, -5.2617, -6.2209, -6.2221, -6.2225, -5.1495, -5.5436, -4.5742, -4.3122, -4.0687, -4.7809, -5.3953, -5.3933, -5.3331, -5.2349, -5.2596, -5.7226, -5.7302, -5.3925, -5.2146, -5.5925, -5.0369, -5.3319, -5.3907, -5.4021, -5.3907, -4.6851, -5.0004, -5.13, -5.4602, -5.462, -4.8817, -5.6788, -5.6792, -5.6794, -5.6796, -5.6805, -5.9584, -5.9586, -5.9588, -5.9593, -5.9598, -6.3466, -6.3469, -6.3474, -6.3474, -6.3474, -6.3474, -6.3477, -6.3478, -6.3476, -6.348, -6.3477, -6.348, -6.3481, -6.3482, -5.6793, -4.6871, -5.6786, -4.7817, -5.2817, -5.2842, -4.6823, -5.9606, -4.6015, -4.5983, -4.7766, -5.4669, -5.2861, -5.0058, -5.4618, -4.6989, -5.2814, -5.464, -5.2857, -5.295, -5.281, -5.4694, -5.4698, -5.4613, -5.459, -5.4629, -5.4597, -5.4538, -4.6074, -5.3717, -5.5877, -5.8679, -5.8684, -5.8689, -5.869, -5.8719, -5.8806, -5.3813, -6.2566, -6.2568, -6.2569, -6.257, -6.2568, -6.2572, -6.257, -6.2575, -6.2578, -6.2585, -6.2614, -6.2634, -6.264, -6.2641, -6.2651, -6.2653, -3.955, -6.266, -6.267, -5.3792, -5.37, -4.0483, -5.1904, -4.7917, -5.0369, -5.5897, -5.2021, -5.8674, -4.9041, -5.5877, -5.5873, -5.19, -5.3759, -5.1917, -5.5927, -5.1931, -5.587, -5.8725, -5.1879, -5.0464, -5.3684, -5.5603, -5.5905, -5.586, -5.5794, -5.8005], "loglift": [30.0, 29.0, 28.0, 27.0, 26.0, 25.0, 24.0, 23.0, 22.0, 21.0, 20.0, 19.0, 18.0, 17.0, 16.0, 15.0, 14.0, 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 5.0, 4.0, 3.0, 2.0, 1.0, 1.6855, 1.6807, 1.6785, 1.6773, 1.6763, 1.6754, 1.6424, 1.6421, 1.6417, 1.6415, 1.6393, 1.6361, 1.6299, 1.6236, 1.6223, 1.6215, 1.6214, 1.6121, 1.6118, 1.6096, 1.5999, 1.5996, 1.5838, 1.5833, 1.5833, 1.5825, 1.5823, 1.5619, 1.5617, 1.5616, 1.5477, 1.5332, 1.5309, 1.5217, 1.4445, 1.3535, 1.353, 1.2433, 1.3298, 1.1753, 1.3339, 0.9154, 1.1223, 0.972, 0.5474, 0.7956, 0.6886, 0.4804, 0.263, 0.3245, 0.5116, 0.6354, 1.9335, 1.9271, 1.8973, 1.8936, 1.8878, 1.8878, 1.8878, 1.8788, 1.8661, 1.8653, 1.8624, 1.8614, 1.8461, 1.8449, 1.825, 1.8244, 1.8238, 1.8236, 1.8229, 1.8189, 1.7932, 1.7931, 1.7929, 1.7921, 1.7919, 1.7918, 1.7918, 1.7918, 1.7918, 1.7918, 1.7205, 1.6672, 1.7307, 1.3072, 1.6464, 1.6089, 1.6562, 1.6431, 1.5595, 1.4446, 1.413, 1.2843, 1.5908, 1.5717, 0.9761, 1.4444, 1.257, 0.9237, 1.312, 1.2989, 0.5853, 0.7485, 0.8074, 0.5419, 0.8503, 0.8378, 0.8512, 0.4237, 0.7645, 0.2511, 0.571, 1.1621, 1.9713, 1.9703, 1.9387, 1.9354, 1.9251, 1.925, 1.9246, 1.9244, 1.9243, 1.9235, 1.9173, 1.9159, 1.9142, 1.9045, 1.9039, 1.9027, 1.9015, 1.9007, 1.8863, 1.8853, 1.8831, 1.8735, 1.8664, 1.86, 1.8599, 1.8571, 1.8524, 1.8517, 1.8513, 1.8286, 1.8087, 1.7834, 1.7952, 1.7606, 1.5923, 1.7432, 1.5883, 1.6013, 1.5087, 1.3545, 1.5035, 1.4351, 1.4386, 1.5711, 1.173, 0.9786, 0.1502, 1.3243, 1.2864, 0.2879, 0.8588, 0.9089, 0.4874, 0.3817, 2.1919, 2.1319, 2.1306, 2.1292, 2.12, 2.114, 2.1138, 2.1132, 2.1096, 2.0881, 2.0836, 2.0834, 2.0556, 2.0555, 2.0535, 2.0531, 2.0408, 2.0206, 2.0187, 2.0006, 1.9998, 1.9984, 1.9983, 1.9969, 1.9946, 1.9943, 1.9874, 1.9681, 1.964, 1.9368, 1.8735, 1.9365, 1.9145, 1.8993, 1.856, 1.8638, 1.6742, 1.5083, 1.5083, 1.6695, 1.3375, 1.7679, 1.267, 1.4735, 1.2463, 1.0989, 1.5471, 1.1912, 1.5677, 0.9776, 1.3781, 0.9916, 1.1161, 1.2075, 0.626, 1.1696, 1.2001, 1.1464, 1.1275, 0.6452, 0.421, 2.2782, 2.2547, 2.2505, 2.2435, 2.2253, 2.2155, 2.2044, 2.1925, 2.1738, 2.1501, 2.15, 2.1498, 2.144, 2.133, 2.1155, 2.1153, 2.115, 2.1149, 2.1148, 2.1148, 2.1148, 2.1147, 2.1147, 2.1147, 2.1147, 2.1146, 2.1146, 2.1145, 2.1145, 2.1144, 2.1107, 2.1071, 1.909, 1.8617, 1.9258, 1.8278, 1.8768, 1.4309, 1.9343, 1.581, 1.4467, 1.7048, 1.7991, 1.4468, 1.2037, 1.5344, 0.7131, 1.0076, 1.3903, 0.7948, 0.764, 0.6789, 0.9016, 0.8905, 2.2893, 2.259, 2.2588, 2.2393, 2.2315, 2.2289, 2.2203, 2.2193, 2.2097, 2.2075, 2.2074, 2.1886, 2.1862, 2.186, 2.1643, 2.1639, 2.1639, 2.162, 2.1308, 2.1296, 2.1291, 2.129, 2.1278, 2.1277, 2.1268, 2.1266, 2.1143, 2.1103, 2.0764, 2.0762, 2.0098, 2.0462, 1.9213, 1.7149, 1.6932, 1.9675, 1.8922, 1.9297, 1.5703, 1.6244, 1.6065, 1.2759, 1.7825, 1.5391, 1.3889, 0.4769, 0.7547, 0.7974, 1.0511, 0.6526, 0.7607, 0.6558, 2.2844, 2.2726, 2.2607, 2.2606, 2.2587, 2.2587, 2.2423, 2.2167, 2.188, 2.188, 2.1843, 2.1841, 2.1837, 2.1832, 2.1831, 2.1818, 2.1755, 2.1721, 2.1717, 2.1705, 2.1558, 2.1321, 2.13, 2.1296, 2.1289, 2.1277, 2.1269, 2.1266, 2.1098, 2.097, 2.0807, 1.9114, 2.0649, 1.9078, 1.9316, 2.0487, 1.7852, 1.9048, 1.5599, 1.4887, 1.852, 1.5785, 1.1783, 0.6475, 1.9227, 0.7446, 0.6254, 1.1232, 1.2611, 0.995, 0.896, -0.2581, 0.5512, 0.4073, 2.6206, 2.6185, 2.597, 2.5943, 2.578, 2.5772, 2.5653, 2.5638, 2.5624, 2.5431, 2.5179, 2.5179, 2.4903, 2.4815, 2.4813, 2.4808, 2.4808, 2.4799, 2.4798, 2.4793, 2.4792, 2.4792, 2.4773, 2.4761, 2.4729, 2.4625, 2.454, 2.4216, 2.4203, 2.4198, 2.3785, 2.3894, 2.3191, 2.2777, 1.7555, 2.0086, 2.232, 2.2216, 2.1063, 1.8343, 1.6657, 2.2057, 2.1962, 1.7044, 1.2309, 1.8345, 0.1864, 0.9651, 1.0933, 1.057, 0.6314, 2.9702, 2.9376, 2.9235, 2.8734, 2.8719, 2.8378, 2.8316, 2.8311, 2.8308, 2.8306, 2.8296, 2.7663, 2.7661, 2.7658, 2.7653, 2.7648, 2.6512, 2.6509, 2.6506, 2.6506, 2.6503, 2.6502, 2.6502, 2.6501, 2.6501, 2.6499, 2.6499, 2.6499, 2.6498, 2.6497, 2.6154, 2.5571, 2.6094, 2.5184, 2.5413, 2.3647, 1.9659, 2.4875, 1.7736, 1.6044, 1.6695, 2.0673, 1.8227, 1.5949, 1.9203, 0.8714, 1.5263, 1.5585, 1.055, 1.0369, 0.8402, 1.4164, 1.3258, 1.2019, 0.9939, 0.8408, 0.3382, -0.2306, 3.1007, 3.013, 2.9718, 2.9023, 2.9017, 2.9008, 2.9006, 2.8968, 2.8871, 2.8084, 2.7812, 2.781, 2.7809, 2.7808, 2.7806, 2.7806, 2.7805, 2.7802, 2.7795, 2.7786, 2.7749, 2.7724, 2.7719, 2.7717, 2.7706, 2.7704, 2.7695, 2.7694, 2.7682, 2.511, 2.5091, 2.1552, 2.351, 2.0681, 1.9296, 2.2705, 1.9422, 2.4566, 1.3125, 2.0221, 1.9489, 1.399, 1.6332, 1.3814, 1.8508, 1.1345, 1.5867, 2.0776, 0.7252, 0.1768, 0.9286, 1.3945, 1.1625, 0.576, 0.3796, 1.5713]}, "token.table": {"Topic": [8, 7, 9, 1, 2, 3, 6, 7, 8, 9, 10, 3, 8, 1, 5, 6, 9, 9, 5, 1, 2, 4, 5, 8, 5, 2, 6, 8, 6, 4, 2, 1, 3, 4, 5, 7, 8, 9, 6, 5, 7, 1, 9, 2, 3, 6, 8, 9, 1, 4, 3, 10, 2, 8, 8, 2, 6, 2, 1, 2, 3, 5, 4, 9, 10, 1, 9, 4, 10, 1, 3, 1, 4, 5, 8, 2, 5, 8, 1, 2, 3, 5, 6, 8, 9, 1, 2, 3, 5, 6, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 6, 7, 9, 10, 9, 1, 2, 3, 4, 6, 7, 10, 4, 10, 3, 5, 2, 6, 1, 2, 3, 5, 7, 9, 10, 6, 4, 4, 9, 7, 4, 4, 8, 10, 6, 10, 3, 7, 9, 3, 4, 8, 1, 3, 9, 3, 6, 1, 3, 8, 10, 2, 3, 4, 6, 7, 9, 3, 8, 8, 1, 9, 1, 3, 4, 5, 6, 7, 3, 5, 1, 1, 2, 3, 8, 1, 3, 9, 3, 4, 9, 4, 5, 7, 10, 2, 8, 1, 2, 4, 5, 6, 10, 1, 2, 3, 4, 5, 6, 10, 1, 6, 1, 3, 4, 5, 8, 10, 2, 7, 1, 4, 6, 7, 9, 2, 6, 7, 2, 1, 2, 6, 7, 9, 10, 2, 3, 6, 10, 1, 2, 3, 5, 9, 10, 1, 2, 3, 4, 6, 7, 8, 10, 1, 2, 3, 4, 5, 6, 8, 9, 10, 9, 10, 4, 2, 7, 1, 4, 5, 3, 10, 3, 4, 6, 8, 10, 6, 2, 3, 4, 6, 8, 6, 3, 7, 8, 8, 7, 9, 2, 1, 2, 3, 4, 6, 7, 8, 9, 4, 2, 3, 5, 6, 2, 3, 8, 9, 10, 8, 5, 10, 6, 7, 1, 3, 4, 5, 6, 7, 9, 1, 3, 7, 9, 10, 1, 2, 3, 4, 6, 7, 8, 9, 10, 5, 5, 2, 5, 7, 9, 1, 2, 3, 4, 6, 7, 8, 10, 1, 2, 3, 5, 6, 7, 8, 10, 9, 1, 7, 7, 3, 7, 9, 2, 6, 8, 9, 1, 2, 3, 4, 5, 8, 7, 6, 6, 6, 1, 3, 5, 1, 2, 3, 4, 5, 7, 8, 9, 10, 2, 4, 8, 9, 6, 3, 2, 4, 6, 10, 5, 7, 6, 2, 4, 5, 3, 5, 7, 8, 2, 3, 4, 5, 7, 8, 9, 1, 2, 3, 4, 5, 7, 1, 2, 5, 9, 6, 1, 2, 3, 7, 1, 2, 3, 4, 5, 6, 7, 9, 10, 3, 6, 6, 8, 5, 10, 5, 1, 3, 4, 6, 7, 8, 9, 1, 3, 5, 8, 9, 1, 2, 3, 4, 5, 6, 7, 9, 10, 9, 9, 10, 1, 5, 6, 8, 3, 9, 1, 2, 3, 4, 5, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 9, 10, 2, 8, 10, 1, 3, 4, 5, 7, 9, 4, 1, 4, 1, 3, 5, 6, 7, 9, 3, 6, 7, 1, 8, 6, 4, 7, 1, 4, 5, 9, 10, 7, 5, 5, 1, 2, 3, 6, 7, 10, 1, 2, 4, 6, 8, 10, 1, 2, 3, 4, 5, 6, 7, 8, 10, 7, 8, 1, 10, 1, 3, 4, 7, 8, 10, 2, 9, 9, 4, 8, 1, 2, 4, 5, 6, 7, 8, 9, 10, 7, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 3, 4, 5, 7, 1, 2, 3, 4, 7, 8, 10, 2, 3, 4, 7, 9, 1, 4, 6, 8, 1, 2, 3, 4, 6, 7, 3, 5, 7, 1, 2, 3, 6, 7, 8, 10, 10, 3, 1, 4, 1, 3, 5, 6, 7, 9, 10, 5, 10, 1, 2, 3, 4, 6, 7, 8, 1, 2, 4, 5, 6, 1, 7, 1, 1, 3, 10, 3, 3, 8, 1, 5, 6, 9, 1, 2, 3, 4, 6, 7, 8, 10, 5, 4, 5, 6, 8, 8, 2, 4, 6, 1, 2, 3, 1, 3, 5, 7, 8, 1, 6, 4, 8, 10, 1, 2, 3, 5, 9, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 5, 4, 7, 7, 2, 5, 9, 1, 8, 9, 2, 4, 8, 3, 7, 9, 3, 6, 6, 1, 2, 3, 5, 6, 7, 5, 5, 1, 3, 8, 9, 7, 4, 2, 1, 8, 1, 4, 10, 5, 8, 9, 3, 8, 9, 3, 1, 2, 3, 4, 5, 6, 9, 10, 5, 2, 1, 8, 2, 5, 6, 8, 9, 10, 3, 5, 7, 9, 4, 5, 2, 3, 3, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 6, 4, 10, 5, 6, 5, 10, 2, 5, 2, 9, 3, 6, 3, 9, 10, 1, 1, 5, 1, 3, 7, 7, 4, 1, 2, 4, 5, 1, 2, 3, 4, 6, 7, 8, 10, 1, 9, 1, 2, 3, 4, 5, 7, 8, 10, 1, 2, 4, 5, 3, 4, 1, 2, 3, 4, 5, 7, 9, 2, 2, 1, 2, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 7, 8, 9, 1, 3, 1, 10, 9, 1, 2, 3, 4, 7, 9, 2, 10, 2, 3, 9, 2, 7, 3, 1, 2, 7, 3, 1, 2, 3, 4, 5, 9, 3, 10, 1, 2, 3, 4, 6, 7, 10, 6, 1, 2, 4, 6, 1, 2, 4, 6, 8, 10, 4, 3, 4, 6, 10, 7, 1, 2, 3, 4, 5, 8, 9, 10, 10, 8, 9, 10, 7, 5, 8, 4, 8, 3, 9, 4, 1, 2, 6, 2, 3, 5, 8, 10, 2, 4, 2, 3, 4, 7, 8, 9, 10, 9, 5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 5, 8, 2, 2, 7, 2, 3, 6, 9, 2, 1, 2, 3, 4, 7, 10, 1, 4, 6, 7, 9, 10, 10, 1, 2, 5, 6, 7, 9, 2, 8, 4, 9, 1, 8, 1, 8, 1, 2, 3, 4, 5, 6, 7, 1, 4, 5, 7, 4, 8, 4, 10, 10, 1, 5, 1, 2, 3, 4, 6, 7, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 8, 9, 5, 2, 7, 8, 10, 10, 7, 2, 6, 5, 4, 7, 7, 2, 9, 3, 2, 6, 2, 4, 2, 4, 7, 9, 2, 1, 7, 3, 5, 4, 1, 2, 8, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 2, 3, 5, 6, 7, 8, 9, 4, 6, 2, 10, 5, 5, 1, 3, 4, 6, 10, 3, 6, 1, 2, 3, 4, 5, 6, 10, 10, 6, 7, 7, 1, 6, 2, 5, 9, 4, 8, 9, 1, 2, 4, 6, 7, 8, 9, 1, 4, 6, 7, 1, 2, 3, 4, 6, 7, 8, 10, 1, 3, 4, 6, 9, 10, 3, 1, 2, 3, 4, 6, 8, 1, 2, 3, 4, 5, 6, 7, 9, 1, 3, 4, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8, 10, 4, 8, 5, 1, 2, 3, 10, 1, 4, 1, 4, 4, 10, 4, 5, 9, 1, 2, 5, 6, 9, 2, 3, 6, 3, 2, 3, 6, 8, 1, 2, 3, 4, 5, 8, 1, 1, 3, 4, 5, 7, 8, 9, 3, 9, 2, 7, 2, 4, 5, 6, 7, 9, 10, 1, 2, 3, 4, 5, 6, 7, 9, 10, 8, 9, 6, 10, 10, 2, 5, 7, 4, 2, 6, 1, 2, 4, 7, 1, 2, 3, 7, 9, 10, 1, 3, 4, 6, 8, 9, 1, 3, 1, 3, 8, 9, 3, 3, 7, 9, 1, 4, 10, 1], "Freq": [0.9638670708078891, 0.8901807148314193, 0.9265383394396944, 0.18457320621048237, 0.09228660310524119, 0.04614330155262059, 0.13842990465786179, 0.13842990465786179, 0.18457320621048237, 0.13842990465786179, 0.04614330155262059, 0.8518682044812896, 0.0946520227201433, 0.08723966637874063, 0.2617189991362219, 0.08723966637874063, 0.6106776646511844, 0.47634925639287745, 0.7537290831583051, 0.21139446396628592, 0.05284861599157148, 0.5813347759072863, 0.10569723198314296, 0.10569723198314296, 0.7537063740286866, 0.1905705765604832, 0.6669970179616912, 0.0952852882802416, 0.977492046026737, 0.8743344333134964, 0.7954358142093954, 0.10865628532979593, 0.054328142664897966, 0.21731257065959186, 0.10865628532979593, 0.3259688559893878, 0.10865628532979593, 0.054328142664897966, 0.9688054849271506, 0.8942916368787458, 0.935088100402345, 0.8264866468483933, 0.1180695209783419, 0.09469635302110044, 0.28408905906330134, 0.18939270604220088, 0.09469635302110044, 0.28408905906330134, 0.20029355940161256, 0.7010274579056439, 0.9608272858278856, 0.033131975373375366, 0.21914960041241147, 0.7670236014434402, 0.8036373770940448, 0.8916396380236811, 0.8320711017883056, 0.7954864750468339, 0.08329154151584744, 0.1665830830316949, 0.6663323321267796, 0.08329154151584744, 0.24287564761977173, 0.24287564761977173, 0.48575129523954347, 0.6918454816537453, 0.2767381926614981, 0.7253276584369001, 0.18133191460922501, 0.7732593896080066, 0.8176675676064968, 0.9577624421451423, 0.9504136376765014, 0.8403786380764983, 0.10504732975956228, 0.14238628603265777, 0.4271588580979733, 0.35596571508164443, 0.17036144548685933, 0.3066506018763468, 0.034072289097371866, 0.34072289097371866, 0.034072289097371866, 0.034072289097371866, 0.06814457819474373, 0.2767666700257272, 0.3113625037789431, 0.1037875012596477, 0.1037875012596477, 0.1037875012596477, 0.0691916675064318, 0.13691407554120036, 0.09127605036080025, 0.20537111331180055, 0.13691407554120036, 0.06845703777060018, 0.1140950629510003, 0.06845703777060018, 0.06845703777060018, 0.045638025180400124, 0.06845703777060018, 0.30747449077333155, 0.055904452867878464, 0.055904452867878464, 0.30747449077333155, 0.027952226433939232, 0.1677133586036354, 0.027952226433939232, 0.0838566793018177, 0.8254939740925631, 0.19387563453058437, 0.08308955765596474, 0.027696519218654913, 0.4154477882798237, 0.19387563453058437, 0.055393038437309826, 0.027696519218654913, 0.9231383965184039, 0.49582201518209956, 0.1699299881307253, 0.793006611276718, 0.5428968343931263, 0.36193122292875085, 0.20191840920184534, 0.2523980115023067, 0.151438806901384, 0.151438806901384, 0.10095920460092267, 0.050479602300461335, 0.151438806901384, 0.9773621675612388, 0.8741401889859028, 0.7279906534348813, 0.18199766335872034, 0.6259917369644635, 0.9231565875698523, 0.11104666214833823, 0.44418664859335294, 0.44418664859335294, 0.8523030565902008, 0.14205050943170014, 0.15537243729406508, 0.7768621864703255, 0.47650159471936165, 0.8178257958883113, 0.8741163087460794, 0.80380891209944, 0.8265026996855689, 0.7371789298015953, 0.47649389711621853, 0.07766824262888686, 0.9320189115466424, 0.6580642161145572, 0.05982401964677793, 0.23929607858711172, 0.4948209689293184, 0.600491997205955, 0.1715691420588443, 0.08578457102942215, 0.08578457102942215, 0.08578457102942215, 0.8711243779305675, 0.9190356424008496, 0.061269042826723304, 0.8411326279140614, 0.8660283255547293, 0.47653380257192457, 0.1186582581715442, 0.5042975972290629, 0.0593291290857721, 0.02966456454288605, 0.20765195180020235, 0.0593291290857721, 0.8623799448600202, 0.07186499540500169, 0.7735279687724427, 0.9718167370012115, 0.0582428528491809, 0.8736427927377135, 0.0582428528491809, 0.9411016869054113, 0.13269402348515424, 0.7961641409109255, 0.07619093570293643, 0.9142912284352372, 0.4765068410874427, 0.6391821174628854, 0.10653035291048091, 0.10653035291048091, 0.10653035291048091, 0.8915971533835724, 0.8037834546206862, 0.11047585845151146, 0.11047585845151146, 0.11047585845151146, 0.22095171690302293, 0.11047585845151146, 0.3314275753545344, 0.16314020187085973, 0.05438006729028658, 0.10876013458057315, 0.05438006729028658, 0.4894206056125792, 0.10876013458057315, 0.05438006729028658, 0.9211831924137432, 0.8311375437826217, 0.37493754546775326, 0.12497918182258443, 0.06248959091129221, 0.06248959091129221, 0.12497918182258443, 0.24995836364516885, 0.7176918878262666, 0.7499044129815757, 0.3542974043543366, 0.4831328241195499, 0.03220885494130332, 0.03220885494130332, 0.09662656482390998, 0.07749600055226039, 0.07749600055226039, 0.8524560060748642, 0.949274423100432, 0.05748269130565795, 0.3736374934867767, 0.05748269130565795, 0.43112018479243464, 0.05748269130565795, 0.028741345652828976, 0.0759096718840423, 0.0759096718840423, 0.6831870469563807, 0.1518193437680846, 0.23058684204453506, 0.057646710511133764, 0.057646710511133764, 0.4035269735779363, 0.1729401315334013, 0.49514698069057844, 0.29518463736936845, 0.08433846781981956, 0.04216923390990978, 0.12650770172972933, 0.16867693563963912, 0.08433846781981956, 0.04216923390990978, 0.16867693563963912, 0.08734500738033354, 0.3493800295213342, 0.11646000984044472, 0.02911500246011118, 0.05823000492022236, 0.08734500738033354, 0.02911500246011118, 0.23292001968088943, 0.02911500246011118, 0.8776733330773162, 0.49494684413060186, 0.8171568460837112, 0.9701447819909673, 0.6258223814133198, 0.13416876999320007, 0.6708438499660003, 0.8367773946382686, 0.8886502018875494, 0.7589523744325438, 0.1537626789442259, 0.4612880368326777, 0.1537626789442259, 0.07688133947211295, 0.23064401841633886, 0.7495589430282122, 0.9238688091433287, 0.814598539443972, 0.0814598539443972, 0.0814598539443972, 0.840737522081453, 0.6255740133241008, 0.8556387659928458, 0.9351218694844349, 0.8948272301103694, 0.8973944940980941, 0.6258405808083953, 0.4764875802323331, 0.7180327906241268, 0.3934910111466704, 0.15134269659487323, 0.09080561795692393, 0.09080561795692393, 0.06053707863794929, 0.09080561795692393, 0.06053707863794929, 0.06053707863794929, 0.9231847236529523, 0.9492033280094678, 0.6760799947327589, 0.3073090885148904, 0.7495364888638868, 0.7476369577500764, 0.05340263983929117, 0.05340263983929117, 0.05340263983929117, 0.05340263983929117, 0.8040389022227533, 0.7533900352001288, 0.4958787128210553, 0.8907354442204367, 0.7498678661680549, 0.21069231006720773, 0.10534615503360387, 0.05267307751680193, 0.15801923255040579, 0.10534615503360387, 0.21069231006720773, 0.15801923255040579, 0.02697334097225256, 0.2157867277780205, 0.620386842361809, 0.05394668194450512, 0.05394668194450512, 0.23972108223314095, 0.1307569539453496, 0.17434260526046613, 0.0653784769726748, 0.04358565131511653, 0.1961354309180244, 0.021792825657558267, 0.021792825657558267, 0.08717130263023307, 0.7537617874558364, 0.7536627206889901, 0.15493843205733526, 0.15493843205733526, 0.619753728229341, 0.7251359950671706, 0.07139758896345587, 0.1070963834451838, 0.14279517792691174, 0.3569879448172793, 0.07139758896345587, 0.1070963834451838, 0.07139758896345587, 0.07139758896345587, 0.4798751292446662, 0.03199167528297774, 0.03199167528297774, 0.03199167528297774, 0.06398335056595549, 0.06398335056595549, 0.19195005169786647, 0.09597502584893323, 0.8777358714691376, 0.17592770210809358, 0.7037108084323743, 0.935090928855524, 0.1243338724182988, 0.7460032345097928, 0.8777748704447322, 0.12101007556632457, 0.12101007556632457, 0.6050503778316229, 0.12101007556632457, 0.1440436204511803, 0.20577660064454328, 0.16462128051563463, 0.04115532012890866, 0.41155320128908657, 0.02057766006445433, 0.6259903055166358, 0.6256313300509652, 0.8908393363940769, 0.7496580524444463, 0.05572865992941807, 0.6130152592235988, 0.3343719595765084, 0.05466696168207297, 0.5138694398114859, 0.1530674927098043, 0.03280017700924378, 0.010933392336414592, 0.07653374635490215, 0.07653374635490215, 0.03280017700924378, 0.04373356934565837, 0.261777658144034, 0.10471106325761359, 0.523555316288068, 0.10471106325761359, 0.8318814479345642, 0.9391657009289692, 0.7298831306142429, 0.08109812562380476, 0.16219625124760953, 0.08109812562380476, 0.4020394609767739, 0.5628552453674834, 0.9346529861770598, 0.28990643392351545, 0.47439234642029804, 0.21084104285346578, 0.19823571587652664, 0.6607857195884221, 0.06607857195884222, 0.13215714391768443, 0.17338501186331892, 0.13003875889748917, 0.08669250593165946, 0.13003875889748917, 0.13003875889748917, 0.08669250593165946, 0.21673126482914865, 0.08711442474556431, 0.13067163711834648, 0.08711442474556431, 0.21778606186391078, 0.17422884949112863, 0.3049004866094751, 0.9852911569980161, 0.1410577854075654, 0.7052889270378269, 0.1410577854075654, 0.9052726562857847, 0.18729164394481193, 0.5618749318344357, 0.12486109596320795, 0.12486109596320795, 0.23307540629693152, 0.2524983568216758, 0.09711475262372146, 0.09711475262372146, 0.03884590104948858, 0.15538360419795433, 0.03884590104948858, 0.05826885157423288, 0.01942295052474429, 0.1241303629891333, 0.7447821779347997, 0.7493626644270445, 0.8033115983095797, 0.7537707998310319, 0.4958711548427876, 0.7536777161962188, 0.11919917213374516, 0.27813140164540534, 0.19866528688957524, 0.0794661147558301, 0.23839834426749032, 0.0794661147558301, 0.03973305737791505, 0.15994487742543217, 0.4798346322762965, 0.10662991828362145, 0.053314959141810725, 0.2132598365672429, 0.07444647635108055, 0.11166971452662082, 0.3350091435798625, 0.07444647635108055, 0.22333942905324164, 0.11166971452662082, 0.07444647635108055, 0.037223238175540276, 0.494933921673537, 0.8778289710239956, 0.7356432908181536, 0.7577888096107872, 0.0990446206322605, 0.198089241264521, 0.2971338618967815, 0.396178482529042, 0.9264346213595934, 0.07720288511329945, 0.16142620448278308, 0.09685572268966985, 0.09685572268966985, 0.3551376498621228, 0.06457048179311324, 0.09685572268966985, 0.06457048179311324, 0.03228524089655662, 0.03228524089655662, 0.13368501861418267, 0.033421254653545666, 0.033421254653545666, 0.10026376396063699, 0.10026376396063699, 0.033421254653545666, 0.40105505584254797, 0.13368501861418267, 0.033421254653545666, 0.1742595955266899, 0.6970383821067596, 0.05808653184222997, 0.16564603834564537, 0.09938762300738721, 0.03312920766912907, 0.2319044536839035, 0.29816286902216166, 0.1325168306765163, 0.7364123590242424, 0.1515661490222055, 0.7578307451110275, 0.309378689120699, 0.17015827901638444, 0.20109614792845434, 0.01546893445603495, 0.17015827901638444, 0.10828254119224465, 0.06706626127776658, 0.9053945272498488, 0.03353313063888329, 0.9211867128310844, 0.667811387442773, 0.7494565078888842, 0.7366244127155696, 0.6258372326215103, 0.03739316368088904, 0.6730769462560028, 0.07478632736177808, 0.11217949104266713, 0.03739316368088904, 0.8719190954784503, 0.8367858041891345, 0.9402316350376747, 0.4550485929821883, 0.1706432223683206, 0.11376214824554708, 0.03792071608184902, 0.1706432223683206, 0.03792071608184902, 0.18528536098146578, 0.12352357398764384, 0.12352357398764384, 0.24704714797528768, 0.18528536098146578, 0.18528536098146578, 0.14244516730758688, 0.2564013011536564, 0.08546710038455213, 0.28489033461517377, 0.028489033461517377, 0.056978066923034754, 0.08546710038455213, 0.028489033461517377, 0.056978066923034754, 0.7207385102322559, 0.18018462755806397, 0.9184592512947454, 0.061230616752983025, 0.0746526339966712, 0.22395790199001359, 0.1493052679933424, 0.1493052679933424, 0.1493052679933424, 0.2986105359866848, 0.8918992452740602, 0.4764640951499712, 0.4765427180765115, 0.9233947594324572, 0.8036864803958953, 0.2228386188205716, 0.07427953960685721, 0.1114193094102858, 0.07427953960685721, 0.07427953960685721, 0.1114193094102858, 0.037139769803428604, 0.2599783886240002, 0.037139769803428604, 0.6260339730903498, 0.2902825349438184, 0.0725706337359546, 0.024190211245318203, 0.1693314787172274, 0.19352168996254562, 0.09676084498127281, 0.024190211245318203, 0.048380422490636406, 0.024190211245318203, 0.048380422490636406, 0.2715957866505361, 0.5431915733010722, 0.06789894666263402, 0.06789894666263402, 0.13042613532885522, 0.19563920299328283, 0.06521306766442761, 0.06521306766442761, 0.26085227065771044, 0.13042613532885522, 0.19563920299328283, 0.10275305513005657, 0.20550611026011315, 0.10275305513005657, 0.6165183307803395, 0.7250741917443191, 0.10414616329869614, 0.10414616329869614, 0.6248769797921768, 0.20829232659739227, 0.11874922888217827, 0.11874922888217827, 0.05937461444108914, 0.08906192166163371, 0.4749969155287131, 0.08906192166163371, 0.09574522584196286, 0.19149045168392573, 0.5744713550517772, 0.11318391605643452, 0.26409580413168054, 0.11318391605643452, 0.33955174816930356, 0.037727972018811506, 0.07545594403762301, 0.07545594403762301, 0.7585023169489892, 0.9513330958771025, 0.9574665347606818, 0.7367175499180086, 0.2204927189104004, 0.1102463594552002, 0.1102463594552002, 0.1102463594552002, 0.1102463594552002, 0.3307390783656006, 0.4958625936061899, 0.7537113882708216, 0.4955772444887571, 0.8965303409423054, 0.15049600915194863, 0.41386402516785875, 0.07524800457597432, 0.07524800457597432, 0.07524800457597432, 0.18812001143993579, 0.5880220518795548, 0.056002100179005226, 0.11200420035801045, 0.028001050089502613, 0.19600735062651828, 0.30274753707819746, 0.6660445815720344, 0.9740406107164366, 0.16711060834371716, 0.5013318250311515, 0.3342212166874343, 0.8747647659266992, 0.874907804331603, 0.6679457700079187, 0.0824886685747906, 0.24746600572437183, 0.0824886685747906, 0.5774206800235343, 0.19443621547754844, 0.09721810773877422, 0.17013168854285488, 0.12152263467346777, 0.09721810773877422, 0.1458271616081613, 0.12152263467346777, 0.04860905386938711, 0.7537235220249652, 0.13904322188008425, 0.6256944984603792, 0.13904322188008425, 0.06952161094004213, 0.9275719094720327, 0.7176983164008665, 0.46115044195473853, 0.5123893799497095, 0.8262708921377809, 0.7178712272209032, 0.9178061875995038, 0.19385334633108195, 0.5815600389932458, 0.09692667316554097, 0.09692667316554097, 0.04846333658277049, 0.9018646426312033, 0.10020718251457814, 0.3270336411891221, 0.6540672823782442, 0.49570669177099447, 0.12365237807824926, 0.12365237807824926, 0.12365237807824926, 0.12365237807824926, 0.49460951231299705, 0.8264933455117123, 0.13417116218684025, 0.10733692974947219, 0.18783962706157634, 0.08050269731210415, 0.13417116218684025, 0.1610053946242083, 0.026834232437368048, 0.053668464874736095, 0.10733692974947219, 0.026834232437368048, 0.8770780284092958, 0.6820607254286714, 0.2728242901714686, 0.935127827562259, 0.6781814514086785, 0.11303024190144641, 0.11303024190144641, 0.23902149277089405, 0.5975537319272352, 0.11951074638544702, 0.7238426036150443, 0.1206404339358407, 0.1206404339358407, 0.5909655511575634, 0.0454588885505818, 0.3182122198540726, 0.9625884231216653, 0.9346994436207509, 0.7495492184020164, 0.11464726215557636, 0.45858904862230543, 0.11464726215557636, 0.11464726215557636, 0.11464726215557636, 0.11464726215557636, 0.7536935635567756, 0.7537010840731184, 0.2005536966488066, 0.1002768483244033, 0.6016610899464198, 0.1002768483244033, 0.8902326999626955, 0.8168900262863955, 0.717883371610273, 0.1321965898791449, 0.7931795392748694, 0.09490145936933565, 0.7592116749546852, 0.09490145936933565, 0.9571474438555665, 0.9254579795325845, 0.06169719863550563, 0.8176264018291847, 0.80347872999643, 0.476384930493629, 0.8750106483126932, 0.15137344096424774, 0.30274688192849547, 0.06054937638569909, 0.06054937638569909, 0.2724721937356459, 0.030274688192849546, 0.09082406457854864, 0.030274688192849546, 0.9388246500255916, 0.7178767465303945, 0.971883551337644, 0.840656128914862, 0.08576135364766402, 0.12864203047149603, 0.04288067682383201, 0.6432101523574801, 0.04288067682383201, 0.7588667395382448, 0.18659255329266072, 0.03109875888211012, 0.7463702131706429, 0.03109875888211012, 0.7021674393904797, 0.1755418598476199, 0.9703249625932334, 0.8556896478650725, 0.8178225876421079, 0.2226965490368328, 0.0371160915061388, 0.18558045753069402, 0.0371160915061388, 0.0742321830122776, 0.0742321830122776, 0.0371160915061388, 0.2226965490368328, 0.0371160915061388, 0.0371160915061388, 0.8715110273813128, 0.2123567187034818, 0.6370701561104455, 0.7966796191545911, 0.11381137416494158, 0.7537220535680237, 0.4958766740121939, 0.10381294577335079, 0.8305035661868063, 0.7269671849005226, 0.19826377770014253, 0.8556238898293179, 0.7494488721965481, 0.14715946636034866, 0.5886378654413946, 0.14715946636034866, 0.8968195816066163, 0.8434984403197094, 0.10543730503996368, 0.9522595712736587, 0.1770154272747628, 0.767066851523972, 0.7499825865350823, 0.8744154549213814, 0.2634011091317945, 0.526802218263589, 0.13170055456589724, 0.13170055456589724, 0.14437553188186444, 0.324844946734195, 0.07218776594093222, 0.21656329782279668, 0.07218776594093222, 0.03609388297046611, 0.07218776594093222, 0.03609388297046611, 0.274973554326539, 0.549947108653078, 0.2909103430770268, 0.09697011435900893, 0.048485057179504465, 0.33939540025653125, 0.048485057179504465, 0.09697011435900893, 0.048485057179504465, 0.048485057179504465, 0.12296865155179502, 0.12296865155179502, 0.12296865155179502, 0.6148432577589751, 0.71211595009263, 0.20346170002646569, 0.26986251340174505, 0.053972502680349005, 0.026986251340174502, 0.26986251340174505, 0.21589001072139602, 0.10794500536069801, 0.026986251340174502, 0.7954730441388083, 0.8918190877057719, 0.6212546501738856, 0.09318819752608284, 0.06212546501738856, 0.03106273250869428, 0.06212546501738856, 0.03106273250869428, 0.09318819752608284, 0.13670579983647255, 0.09113719989098171, 0.09113719989098171, 0.318980199618436, 0.09113719989098171, 0.13670579983647255, 0.09113719989098171, 0.045568599945490854, 0.9745390512308507, 0.9512965915326136, 0.8619372637882882, 0.10774215797353602, 0.47638253436024225, 0.2001183014724668, 0.5336488039265781, 0.06670610049082226, 0.13341220098164452, 0.06670610049082226, 0.06670610049082226, 0.46698708379156384, 0.46698708379156384, 0.7455060154635554, 0.18637650386588886, 0.09318825193294443, 0.7178663973270474, 0.8912140152920364, 0.8884974509810059, 0.11890955475927606, 0.7134573285556564, 0.11890955475927606, 0.9178596898397287, 0.5614175166252783, 0.03508859478907989, 0.10526578436723967, 0.10526578436723967, 0.17544297394539946, 0.03508859478907989, 0.45825935785892, 0.45825935785892, 0.05694783357441502, 0.05694783357441502, 0.22779133429766008, 0.3701609182336976, 0.17084350072324506, 0.08542175036162253, 0.02847391678720751, 0.749668120501995, 0.1621008838266211, 0.040525220956655277, 0.24315132573993167, 0.48630265147986335, 0.05710345247437303, 0.5139310722693573, 0.11420690494874607, 0.05710345247437303, 0.22841380989749213, 0.05710345247437303, 0.9320481423539738, 0.05617071521520402, 0.39319500650642814, 0.16851214564561207, 0.33702429129122413, 0.7498322981711028, 0.18744211340442576, 0.09372105670221288, 0.09372105670221288, 0.28116317010663866, 0.09372105670221288, 0.09372105670221288, 0.09372105670221288, 0.18744211340442576, 0.7585425662490539, 0.6678623981833026, 0.7251384763814493, 0.9183358289766214, 0.6257868646116798, 0.7536821247810964, 0.8038414266567755, 0.8169027255657796, 0.8041310252746146, 0.23587720289854006, 0.7076316086956201, 0.9233875173727769, 0.9692955620483749, 0.7954692598675311, 0.9559594833834769, 0.06925119842811173, 0.34625599214055863, 0.06925119842811173, 0.41550719056867036, 0.06925119842811173, 0.7954717306469079, 0.7367321946289231, 0.23927646552083895, 0.09969852730034956, 0.19939705460069912, 0.01993970546006991, 0.39879410920139824, 0.01993970546006991, 0.01993970546006991, 0.8778831189734422, 0.7537145411491797, 0.05904381939152018, 0.05904381939152018, 0.08856572908728028, 0.02952190969576009, 0.5313943745236817, 0.02952190969576009, 0.02952190969576009, 0.02952190969576009, 0.14760954847880045, 0.8364524876847997, 0.8035278967366716, 0.8506579307384065, 0.7177284408025949, 0.7498412637003604, 0.0713016758173248, 0.1426033516346496, 0.713016758173248, 0.0356508379086624, 0.7177937241706851, 0.10068846248174201, 0.20137692496348403, 0.30206538744522604, 0.10068846248174201, 0.10068846248174201, 0.30206538744522604, 0.7018323211541768, 0.20470109366996825, 0.029243013381424036, 0.029243013381424036, 0.029243013381424036, 0.7570193014703983, 0.9221597369221837, 0.0901451295599349, 0.49579821257964196, 0.13521769433990236, 0.13521769433990236, 0.04507256477996745, 0.04507256477996745, 0.9194626391581988, 0.897985422570257, 0.9234147388902607, 0.7251641286712646, 0.16428951362492716, 0.6571580544997087, 0.14698524430454166, 0.8084188436749791, 0.05593843035272264, 0.05593843035272264, 0.05593843035272264, 0.08390764552908396, 0.16781529105816792, 0.531415088350865, 0.02796921517636132, 0.07193984408076015, 0.5035789085653211, 0.21581953224228045, 0.1438796881615203, 0.13322993691115712, 0.7993796214669426, 0.47219610061149464, 0.47219610061149464, 0.49459915463543686, 0.773252297515383, 0.7537445611858207, 0.28578304636530005, 0.17861440397831255, 0.10716864238698752, 0.03572288079566251, 0.21433728477397504, 0.10716864238698752, 0.03572288079566251, 0.08281642880100519, 0.12422464320150778, 0.16563285760201038, 0.12422464320150778, 0.08281642880100519, 0.28985750080351813, 0.041408214400502595, 0.041408214400502595, 0.041408214400502595, 0.041408214400502595, 0.7679846570144379, 0.4763889113515226, 0.8354902544693257, 0.16318937933907698, 0.16318937933907698, 0.6527575173563079, 0.4948147082766525, 0.4957124405697804, 0.7499496589021921, 0.796934600852151, 0.8316553934530088, 0.9107238622853472, 0.12430684327143753, 0.8701479029000627, 0.8325046902384436, 0.23430277656896983, 0.7029083297069094, 0.817812220511351, 0.22353003182662134, 0.670590095479864, 0.12176960087322375, 0.8523872061125662, 0.6655545253497916, 0.11092575422496527, 0.11092575422496527, 0.11092575422496527, 0.9455464299154794, 0.9398926745659821, 0.05221625969811012, 0.7985142103716607, 0.15970284207433214, 0.7364398056895124, 0.8264702513127569, 0.7559071842401138, 0.15118143684802277, 0.850606613517809, 0.2666191352310091, 0.07271430960845704, 0.21814292882537112, 0.048476206405638024, 0.14542861921691408, 0.07271430960845704, 0.09695241281127605, 0.024238103202819012, 0.07271430960845704, 0.024238103202819012, 0.0843543163428379, 0.0843543163428379, 0.5061258980570273, 0.0843543163428379, 0.0843543163428379, 0.0843543163428379, 0.0843543163428379, 0.0828138373271145, 0.9109522105982595, 0.7180421065582386, 0.49471349359508976, 0.7536998339711337, 0.9590846639950915, 0.03660723673564118, 0.805359208184106, 0.03660723673564118, 0.03660723673564118, 0.07321447347128236, 0.7537941431014582, 0.18844853577536455, 0.14645264777184233, 0.1952701970291231, 0.048817549257280775, 0.34172284480096543, 0.1952701970291231, 0.048817549257280775, 0.048817549257280775, 0.4956115861066814, 0.8319246099528816, 0.8309716744003809, 0.7499036718220747, 0.9350566765303769, 0.07192743665618284, 0.20957793147213274, 0.6287337944163982, 0.10478896573606637, 0.9231294969179908, 0.8949107880469119, 0.4765014066904182, 0.3085920179138579, 0.07714800447846447, 0.11572200671769671, 0.038574002239232234, 0.23144401343539342, 0.19287001119616118, 0.038574002239232234, 0.07644452903524512, 0.5351117032467159, 0.15288905807049025, 0.22933358710573537, 0.26389888018149965, 0.09896208006806237, 0.032987360022687456, 0.19792416013612474, 0.19792416013612474, 0.09896208006806237, 0.032987360022687456, 0.13194944009074983, 0.15745091684200904, 0.5773200284206998, 0.05248363894733635, 0.1049672778946727, 0.05248363894733635, 0.1049672778946727, 0.8556139296742831, 0.19654120358306332, 0.19654120358306332, 0.32756867263843886, 0.13102746905537555, 0.032756867263843886, 0.13102746905537555, 0.2087072147718754, 0.3130608221578131, 0.03478453579531257, 0.1043536073859377, 0.1043536073859377, 0.03478453579531257, 0.1043536073859377, 0.06956907159062514, 0.07273949250311028, 0.07273949250311028, 0.14547898500622056, 0.4364369550186617, 0.14547898500622056, 0.07273949250311028, 0.0712054252755728, 0.0712054252755728, 0.10680813791335922, 0.32042441374007763, 0.0356027126377864, 0.1424108505511456, 0.10680813791335922, 0.0712054252755728, 0.0356027126377864, 0.8165732919279847, 0.8036314847709226, 0.8959348745834572, 0.35672647421986753, 0.23781764947991169, 0.11890882473995584, 0.35672647421986753, 0.8660097081005879, 0.9168447842441017, 0.6797402767027382, 0.29131726144403064, 0.34342239057623497, 0.6377844396415792, 0.1001777331008685, 0.6010663986052109, 0.200355466201737, 0.2161306714014335, 0.14408711426762233, 0.28817422853524466, 0.07204355713381116, 0.28817422853524466, 0.6852651670536953, 0.08565814588171192, 0.17131629176342383, 0.817837691194459, 0.33110152924650044, 0.4966522938697507, 0.11036717641550016, 0.05518358820775008, 0.0599682017906111, 0.1799046053718333, 0.0599682017906111, 0.2398728071624444, 0.0599682017906111, 0.3598092107436666, 0.9797712868587309, 0.12184008833984669, 0.12184008833984669, 0.12184008833984669, 0.4264403091894634, 0.060920044169923346, 0.060920044169923346, 0.18276013250977002, 0.855508030002103, 0.47643629863347536, 0.9491538061238997, 0.7498249105468735, 0.06381521612648602, 0.06381521612648602, 0.06381521612648602, 0.19144564837945807, 0.44670651288540214, 0.06381521612648602, 0.06381521612648602, 0.12852963663375752, 0.04284321221125251, 0.08568642442250501, 0.34274569769002006, 0.04284321221125251, 0.08568642442250501, 0.08568642442250501, 0.04284321221125251, 0.17137284884501003, 0.897623153202299, 0.47648276308279947, 0.8303346881585505, 0.49589459375835265, 0.7741837205569854, 0.08302208033399562, 0.664176642671965, 0.16604416066799124, 0.9231460220551955, 0.24629874063837331, 0.7388962219151199, 0.7540717486618692, 0.05800551912783609, 0.05800551912783609, 0.11601103825567217, 0.3496400646178945, 0.02913667205149121, 0.11654668820596484, 0.11654668820596484, 0.02913667205149121, 0.3496400646178945, 0.08745426881938505, 0.6559070161453878, 0.13118140322907756, 0.043727134409692524, 0.043727134409692524, 0.043727134409692524, 0.8663623908517554, 0.09626248787241727, 0.2812831562261511, 0.6328871015088399, 0.8038135517957544, 0.7251006471606655, 0.8556958021451851, 0.34804756384961855, 0.6328137524538519, 0.735850022556003, 0.9717645192363175, 0.9172425164345382, 0.4949019498219104, 0.9719539102684467], "Term": ["", "aam", "abu", "acara", "acara", "acara", "acara", "acara", "acara", "acara", "acara", "adat", "adat", "adnan", "adnan", "adnan", "adnan", "afrika", "ahad", "ajar", "ajar", "ajar", "ajar", "ajar", "aji", "aju", "aju", "aju", "aka", "akamigas", "aktor", "al", "al", "al", "al", "al", "al", "al", "alfamart", "alquran", "alumni", "amanatul", "amanatul", "ambil", "ambil", "ambil", "ambil", "ambil", "ambruk", "ambruk", "angin", "angin", "angka", "angka", "anjuk", "anthony", "apartment", "arab", "arah", "arah", "arah", "arah", "area", "area", "area", "asep", "asep", "atap", "atap", "atic", "atrbpn", "autentik", "awas", "ayat", "ayat", "baca", "baca", "baca", "bangsa", "bangsa", "bangsa", "bangsa", "bangsa", "bangsa", "bangsa", "bangsaonline", "bangsaonline", "bangsaonline", "bangsaonline", "bangsaonline", "bangsaonline", "bangsaonlinecom", "bangsaonlinecom", "bangsaonlinecom", "bangsaonlinecom", "bangsaonlinecom", "bangsaonlinecom", "bangsaonlinecom", "bangsaonlinecom", "bangsaonlinecom", "bangsaonlinecom", "bangun", "bangun", "bangun", "bangun", "bangun", "bangun", "bangun", "bangun", "banten", "bantu", "bantu", "bantu", "bantu", "bantu", "bantu", "bantu", "basarnas", "basement", "baterai", "baterai", "batu", "batu", "bawa", "bawa", "bawa", "bawa", "bawa", "bawa", "bawa", "bayar", "baznas", "beasiswa", "beasiswa", "belanda", "belasungkawa", "beras", "beras", "beras", "berkas", "berkas", "berkowitz", "berkowitz", "bernopol", "betboom", "bhs", "bidah", "bistro", "bmkg", "booth", "bpjs", "bpjs", "budaya", "budaya", "budaya", "budidaya", "bukti", "bukti", "bukti", "bukti", "bukti", "buku", "c", "c", "cabai", "cantina", "cctv", "cepat", "cepat", "cepat", "cepat", "cepat", "cepat", "cerah", "cerah", "city", "classe", "cuaca", "cuaca", "cuaca", "cucina", "curi", "curi", "d", "d", "da", "dagang", "dagang", "dagang", "dagang", "dakwa", "dam", "dampak", "dampak", "dampak", "dampak", "dampak", "dampak", "daya", "daya", "daya", "daya", "daya", "daya", "daya", "demokrat", "derita", "desa", "desa", "desa", "desa", "desa", "desa", "desk", "dewi", "didik", "didik", "didik", "didik", "didik", "digital", "digital", "digital", "diplomasi", "diri", "diri", "diri", "diri", "diri", "diri", "dokumen", "dokumen", "dokumen", "dokumen", "dr", "dr", "dr", "dr", "dr", "dringu", "dukung", "dukung", "dukung", "dukung", "dukung", "dukung", "dukung", "dukung", "dunia", "dunia", "dunia", "dunia", "dunia", "dunia", "dunia", "dunia", "dunia", "dur", "ecopark", "efisiensi", "esport", "etalase", "evakuasi", "evakuasi", "f h", "falcons", "famili", "fasilitas", "fasilitas", "fasilitas", "fasilitas", "fasilitas", "fc", "ferry", "final", "final", "final", "fitnah", "fitri", "fktp", "fold", "formal", "fosil", "fotografi", "gadai", "gak", "gelar", "gelar", "gelar", "gelar", "gelar", "gelar", "gelar", "gelar", "geneng", "geopolitik", "ghazali", "ghazali", "gitar", "global", "global", "global", "global", "global", "goreng", "gowa", "graha", "gresik", "gurman", "guru", "guru", "guru", "guru", "guru", "guru", "guru", "gus", "gus", "gus", "gus", "gus", "hadir", "hadir", "hadir", "hadir", "hadir", "hadir", "hadir", "hadir", "hadir", "hafal", "hafidz", "haji", "haji", "haji", "halaman", "harap", "harap", "harap", "harap", "harap", "harap", "harap", "harap", "harga", "harga", "harga", "harga", "harga", "harga", "harga", "harga", "hegy", "hidayat", "hidayat", "hikam", "holland", "holland", "honda", "hormat", "hormat", "hormat", "hormat", "hukum", "hukum", "hukum", "hukum", "hukum", "hukum", "hurgronje", "husnan", "icon", "iconland", "imam", "imam", "imam", "indonesia", "indonesia", "indonesia", "indonesia", "indonesia", "indonesia", "indonesia", "indonesia", "indonesia", "ingat", "ingat", "ingat", "ingat", "intako", "international", "investasi", "investasi", "investasi", "investasi", "iphone", "iphone", "irama", "iran", "iran", "iran", "isi", "isi", "isi", "isi", "islam", "islam", "islam", "islam", "islam", "islam", "islam", "israel", "israel", "israel", "israel", "israel", "israel", "italia", "jahat", "jahat", "jahat", "jahit", "jakarta", "jakarta", "jakarta", "jakarta", "jalan", "jalan", "jalan", "jalan", "jalan", "jalan", "jalan", "jalan", "jalan", "jamin", "jamin", "janoe", "jersey", "jinayah", "jun", "juz", "kabupaten", "kabupaten", "kabupaten", "kabupaten", "kabupaten", "kabupaten", "kabupaten", "kalah", "kalah", "kalah", "kalah", "kalah", "kali", "kali", "kali", "kali", "kali", "kali", "kali", "kali", "kambang", "karcis", "karno", "kavling", "kena", "kena", "kena", "kena", "kendara", "kendara", "kerja", "kerja", "kerja", "kerja", "kerja", "kerja", "kerja", "kerja", "kerja", "ketua", "ketua", "ketua", "ketua", "ketua", "ketua", "ketua", "ketua", "ketua", "kg", "kg", "kg", "kh", "kh", "kh", "kh", "kh", "kh", "khofifah", "khoziny", "khoziny", "kiai", "kiai", "kiai", "kiai", "kiai", "kiai", "klaim", "klaim", "klaim", "klasik", "koleksi", "konser", "konstruksi", "konten", "korban", "korban", "korban", "korban", "korban", "kormi", "korup", "koruptor", "kota", "kota", "kota", "kota", "kota", "kota", "kualitas", "kualitas", "kualitas", "kualitas", "kualitas", "kualitas", "kuat", "kuat", "kuat", "kuat", "kuat", "kuat", "kuat", "kuat", "kuat", "kukuh", "kukuh", "kuliner", "kuliner", "kunjung", "kunjung", "kunjung", "kunjung", "kunjung", "kunjung", "kursi", "kushartono", "l", "laba", "ladang", "laku", "laku", "laku", "laku", "laku", "laku", "laku", "laku", "laku", "lampung", "langsung", "langsung", "langsung", "langsung", "langsung", "langsung", "langsung", "langsung", "langsung", "langsung", "lanjut", "lanjut", "lanjut", "lanjut", "lapor", "lapor", "lapor", "lapor", "lapor", "lapor", "lapor", "latih", "latih", "latih", "latih", "launching", "layak", "layak", "layak", "layak", "layan", "layan", "layan", "layan", "layan", "layan", "layar", "layar", "layar", "lengkap", "lengkap", "lengkap", "lengkap", "lengkap", "lengkap", "lengkap", "lilur", "listrik", "lomba", "lulus", "m", "m", "m", "m", "m", "m", "macet", "madrasatul", "mafia", "maha", "main", "main", "main", "main", "main", "main", "makan", "makan", "makan", "makan", "makan", "malang", "malang", "mamdani", "manager", "manager", "manager", "mandalika", "manggarai", "masalah", "masud", "masud", "masud", "masud", "masyarakat", "masyarakat", "masyarakat", "masyarakat", "masyarakat", "masyarakat", "masyarakat", "masyarakat", "masyayikh", "mati", "mati", "mati", "mati", "maulid", "mbatu", "mbg", "mbg", "mec", "mediator", "menag", "menteri", "menteri", "menteri", "menteri", "menteri", "menu", "menu", "merah", "merah", "mergosari", "mesir", "mesir", "mesir", "mesir", "mesir", "mia", "milik", "milik", "milik", "milik", "milik", "milik", "milik", "milik", "milik", "milik", "min", "misi", "misi", "mm", "modal", "modal", "modal", "mojokerto", "mojokerto", "mojokerto", "moral", "moral", "moral", "motor", "motor", "motor", "ms", "muchit", "muchlis", "mudah", "mudah", "mudah", "mudah", "mudah", "mudah", "mudir", "mufassir", "muhammad", "muhammad", "muhammad", "muhammad", "muktamar", "mullah", "multipolar", "museum", "museum", "musibah", "musibah", "musibah", "mustain", "nabi", "nabi", "nasaruddin", "nba", "ndalem", "ne", "negara", "negara", "negara", "negara", "negara", "negara", "negara", "negara", "neraka", "netral", "new", "nganjuk", "nomor", "nomor", "nomor", "nomor", "nomor", "nook", "nu", "nu", "nu", "nu", "nuklir", "nuklir", "nuna", "omo", "omoway", "orang", "orang", "orang", "orang", "orang", "orang", "orang", "orang", "orang", "orang", "osbourne", "pabrik", "pabrik", "pakai", "pakai", "pakar", "pakuwon", "panas", "panas", "pancasila", "pancasila", "parivision", "parkinson", "parkir", "parkir", "parkir", "partai", "pas", "pas", "pasta", "pbnu", "pbnu", "pegawai", "pem", "penting", "penting", "penting", "penting", "penuh", "penuh", "penuh", "penuh", "penuh", "penuh", "penuh", "penuh", "pergunu", "pergunu", "perintah", "perintah", "perintah", "perintah", "perintah", "perintah", "perintah", "perintah", "persen", "persen", "persen", "persen", "pertamina", "pertamina", "pesantren", "pesantren", "pesantren", "pesantren", "pesantren", "pesantren", "pesantren", "piala", "pidana", "pilih", "pilih", "pilih", "pilih", "pilih", "pilih", "pilih", "pimpin", "pimpin", "pimpin", "pimpin", "pimpin", "pimpin", "pimpin", "pimpin", "pizza", "playoff", "pohon", "pohon", "pojok", "politik", "politik", "politik", "politik", "politik", "politik", "polres", "polres", "posisi", "posisi", "posisi", "power", "pppk", "prakira", "praktis", "praktis", "praktis", "prb", "presiden", "presiden", "presiden", "presiden", "presiden", "presiden", "probolinggo", "probolinggo", "program", "program", "program", "program", "program", "program", "program", "property", "proses", "proses", "proses", "proses", "proyek", "proyek", "proyek", "proyek", "proyek", "proyek", "prpp", "pt", "pt", "pt", "pt", "ptkk", "pungkas", "pungkas", "pungkas", "pungkas", "pungkas", "pungkas", "pungkas", "pungkas", "pupuk", "purba", "pw", "pwi", "qowim", "quran", "rasulullah", "rawan", "rawit", "rekam", "rekam", "rekrut", "restoran", "revol", "rhoma", "ribu", "ribu", "ribu", "ribu", "ribu", "rizki", "roni", "rp", "rp", "rp", "rp", "rp", "rp", "rp", "rs", "rubrik", "rumah", "rumah", "rumah", "rumah", "rumah", "rumah", "rumah", "rumah", "rumah", "rusak", "russell", "sadig", "sae", "sahabat", "sakit", "sakit", "sakit", "sakit", "sakti", "sambut", "sambut", "sambut", "sambut", "sambut", "sambut", "santri", "santri", "santri", "santri", "santri", "saran", "sas", "satu", "satu", "satu", "satu", "satu", "satu", "saudi", "saw", "sbi", "scoopy", "sebar", "sebar", "sedekah", "sedekah", "sehat", "sehat", "sehat", "sehat", "sehat", "sehat", "sehat", "selamat", "selamat", "selamat", "selamat", "sembako", "sembako", "semen", "semen", "semi", "seni", "serial", "serta", "serta", "serta", "serta", "serta", "serta", "serta", "sesuai", "sesuai", "sesuai", "sesuai", "sesuai", "sesuai", "sesuai", "sesuai", "sesuai", "sesuai", "shalawat", "sifat", "siksa", "simbol", "simbol", "simbol", "sinergitas", "singgah", "sk", "slhs", "sman", "smartphone", "smkn", "smkn", "snouck", "soekarno", "soekarno", "spirit", "sppg", "sppg", "standar", "standar", "strategis", "strategis", "strategis", "strategis", "stroller", "suasana", "suasana", "suhu", "suhu", "sumatera", "sumenep", "super", "super", "supporter", "surabaya", "surabaya", "surabaya", "surabaya", "surabaya", "surabaya", "surabaya", "surabaya", "surabaya", "surabaya", "surat", "surat", "surat", "surat", "surat", "surat", "surat", "surya", "surya", "suspensi", "suwandi", "syafii", "tafsir", "tanah", "tanah", "tanah", "tanah", "tanah", "tanding", "tanding", "tangan", "tangan", "tangan", "tangan", "tangan", "tangan", "tangan", "tanjungrejo", "tas", "taylor", "tebal", "tebang", "tebang", "tebuireng", "tebuireng", "tebuireng", "teheran", "tekstualis", "tempel", "temu", "temu", "temu", "temu", "temu", "temu", "temu", "tenaga", "tenaga", "tenaga", "tenaga", "terima", "terima", "terima", "terima", "terima", "terima", "terima", "terima", "the", "the", "the", "the", "the", "the", "ti", "tim", "tim", "tim", "tim", "tim", "tim", "timur", "timur", "timur", "timur", "timur", "timur", "timur", "timur", "tinggal", "tinggal", "tinggal", "tinggal", "tinggal", "tinggal", "tingkat", "tingkat", "tingkat", "tingkat", "tingkat", "tingkat", "tingkat", "tingkat", "tingkat", "tinjau", "tipe", "tobat", "tolak", "tolak", "tolak", "tolak", "topping", "transaksi", "trump", "trump", "tuban", "tuban", "tuhan", "tuhan", "tuhan", "tulis", "tulis", "tulis", "tulis", "tulis", "tulungagung", "tulungagung", "tulungagung", "tundra", "turnamen", "turnamen", "turnamen", "turnamen", "turun", "turun", "turun", "turun", "turun", "turun", "ubud", "ulama", "ulama", "ulama", "ulama", "ulama", "ulama", "ulama", "ulayat", "universal", "upacara", "upt", "urus", "urus", "urus", "urus", "urus", "urus", "urus", "usaha", "usaha", "usaha", "usaha", "usaha", "usaha", "usaha", "usaha", "usaha", "ustadz", "vario", "verifikasi", "veronica", "vietnam", "wa", "wa", "wa", "wafat", "wajah", "wajah", "wali", "wali", "wali", "wali", "warga", "warga", "warga", "warga", "warga", "warga", "wib", "wib", "wib", "wib", "wib", "wib", "wisata", "wisata", "wisatawan", "wisatawan", "wonokerto", "wonokromo", "x", "yahya", "yahya", "yaman", "york", "yuli", "zainal", "zohran"]}, "R": 30, "lambda.step": 0.01, "plot.opts": {"xlab": "PC1", "ylab": "PC2"}, "topic.order": [2, 9, 3, 10, 8, 7, 5, 6, 4, 1]};
+
+function LDAvis_load_lib(url, callback){
+  var s = document.createElement('script');
+  s.src = url;
+  s.async = true;
+  s.onreadystatechange = s.onload = callback;
+  s.onerror = function(){console.warn("failed to load library " + url);};
+  document.getElementsByTagName("head")[0].appendChild(s);
+}
+
+if(typeof(LDAvis) !== "undefined"){
+   // already loaded: just create the visualization
+   !function(LDAvis){
+       new LDAvis("#" + "ldavis_el22121263210257462562287919950", ldavis_el22121263210257462562287919950_data);
+   }(LDAvis);
+}else if(typeof define === "function" && define.amd){
+   // require.js is available: use it to load d3/LDAvis
+   require.config({paths: {d3: "https://d3js.org/d3.v5"}});
+   require(["d3"], function(d3){
+      window.d3 = d3;
+      LDAvis_load_lib("https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.4.0/pyLDAvis/js/ldavis.v3.0.0.js", function(){
+        new LDAvis("#" + "ldavis_el22121263210257462562287919950", ldavis_el22121263210257462562287919950_data);
+      });
+    });
+}else{
+    // require.js not available: dynamically load d3 & LDAvis
+    LDAvis_load_lib("https://d3js.org/d3.v5.js", function(){
+         LDAvis_load_lib("https://cdn.jsdelivr.net/gh/bmabey/pyLDAvis@3.4.0/pyLDAvis/js/ldavis.v3.0.0.js", function(){
+                 new LDAvis("#" + "ldavis_el22121263210257462562287919950", ldavis_el22121263210257462562287919950_data);
+            })
+         });
+}
+</script></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="scraping_manengemet.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">PTA Management</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#import-library">IMPORT LIBRARY</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-dataset">LOAD DATASET</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-teks-preprocessing-ke-list-kata">KONVERSI TEKS PREPROCESSING KE LIST KATA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#buat-dictionary-dan-corpus-untuk-lda">BUAT DICTIONARY DAN CORPUS UNTUK LDA</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#train-lda-model-ekstraksi-fitur-topik">TRAIN LDA MODEL (EKSTRAKSI FITUR TOPIK)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konversi-distribusi-topik-ke-fitur-numerik">KONVERSI DISTRIBUSI TOPIK KE FITUR NUMERIK</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encode-label-dan-split-data-versi-fixed-20">ENCODE LABEL DAN SPLIT DATA (VERSI FIXED 20%)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#latih-model-klasifikasi-logistic-regression">LATIH MODEL KLASIFIKASI (LOGISTIC REGRESSION)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#evaluasi-hasil-klasifikasi">EVALUASI HASIL KLASIFIKASI</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#visualisasi-topik-lda">VISUALISASI TOPIK LDA</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
