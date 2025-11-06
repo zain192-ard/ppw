@@ -409,7 +409,15 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">get_internal_links</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://pta.trunojoyo.ac.id&quot;</span>
+<span class="n">START_URL</span> <span class="o">=</span> <span class="s2">&quot;https://pta.trunojoyo.ac.id/c_search/byprod/7&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0&quot;</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_internal_links</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Ambil semua link internal dari satu halaman&quot;&quot;&quot;</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
@@ -428,7 +436,7 @@ document.write(`
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error akses </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="p">[]</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">crawl_graph</span><span class="p">(</span><span class="n">start_url</span><span class="p">,</span> <span class="n">max_pages</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">crawl_graph</span><span class="p">(</span><span class="n">start_url</span><span class="p">,</span> <span class="n">max_pages</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
     <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
     <span class="n">to_visit</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_url</span><span class="p">]</span>
     <span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
@@ -439,35 +447,37 @@ document.write(`
             <span class="k">continue</span>
         <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Crawling: </span><span class="si">{</span><span class="n">current</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-        
+
         <span class="n">links</span> <span class="o">=</span> <span class="n">get_internal_links</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
         <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
             <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">current</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">link</span><span class="p">})</span>
             <span class="k">if</span> <span class="n">link</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span> <span class="ow">and</span> <span class="n">link</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">to_visit</span><span class="p">:</span>
                 <span class="n">to_visit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
-    
+
     <span class="k">return</span> <span class="n">edges</span>
 
-<span class="c1"># Jalankan crawler graph</span>
+<span class="c1"># Jalankan crawler</span>
 <span class="n">edges</span> <span class="o">=</span> <span class="n">crawl_graph</span><span class="p">(</span><span class="n">START_URL</span><span class="p">,</span> <span class="n">max_pages</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
 
-<span class="c1"># Simpan ke DataFrame</span>
+<span class="c1"># Simpan hasil</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">to_excel</span><span class="p">(</span><span class="s2">&quot;pta_graph.xlsx&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;pta_graph.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># atau gunakan to_excel(&quot;pta_graph.xlsx&quot;, index=False, engine=&quot;openpyxl&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ File berhasil disimpan.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/7
-Crawling: https://pta.trunojoyo.ac.id/welcome/detail/090211200001
-Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/25
-Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/7/3
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/21
 Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/22
-Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/8
+Crawling: https://pta.trunojoyo.ac.id/c_search/byfac/4
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/32
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/19
+Crawling: https://pta.trunojoyo.ac.id/welcome/detail/090211200001
 Crawling: https://pta.trunojoyo.ac.id/c_search/byfac/1
-Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/15
-Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/99
-Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/40
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/2
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/6
+✅ File berhasil disimpan.
 </pre></div>
 </div>
 </div>
@@ -505,27 +515,27 @@ Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/40
     <tr>
       <th>0</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/welcome/detail/090...</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/21</td>
     </tr>
     <tr>
       <th>1</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/25</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/22</td>
     </tr>
     <tr>
       <th>2</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/7/3</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byfac/4</td>
     </tr>
     <tr>
       <th>3</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/22</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/32</td>
     </tr>
     <tr>
       <th>4</th>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/8</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/19</td>
     </tr>
     <tr>
       <th>...</th>
@@ -533,33 +543,33 @@ Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/40
       <td>...</td>
     </tr>
     <tr>
-      <th>606</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/40</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/99</td>
+      <th>612</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/24</td>
     </tr>
     <tr>
-      <th>607</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/40</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byfac/7</td>
+      <th>613</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/99</td>
     </tr>
     <tr>
-      <th>608</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/40</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/10</td>
+      <th>614</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/8</td>
     </tr>
     <tr>
-      <th>609</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/40</td>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/32</td>
-    </tr>
-    <tr>
-      <th>610</th>
-      <td>https://pta.trunojoyo.ac.id/c_search/byprod/40</td>
+      <th>615</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
       <td>https://pta.trunojoyo.ac.id/c_search/byprod/18</td>
+    </tr>
+    <tr>
+      <th>616</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/detail/080...</td>
     </tr>
   </tbody>
 </table>
-<p>611 rows × 2 columns</p>
+<p>617 rows × 2 columns</p>
 </div></div></div>
 </div>
 </section>
