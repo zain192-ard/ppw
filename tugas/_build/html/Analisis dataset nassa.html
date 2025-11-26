@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Fungsi untuk load data &#8212; My sample book</title>
+    <title>Analisis Data Nasa &#8212; My sample book</title>
   
   
   
@@ -191,11 +191,7 @@
 <li class="toctree-l1"><a class="reference internal" href="clutering_email.html">clutering email</a></li>
 <li class="toctree-l1"><a class="reference internal" href="graphlnk.html">GRAPH LINK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20webusage.html">Analisis dataset webusage</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Fungsi untuk load data</a></li>
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Analisis Data Nasa</a></li>
 </ul>
 
     </div>
@@ -381,7 +377,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Fungsi untuk load data</h1>
+    <h1>Analisis Data Nasa</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -391,13 +387,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fungsi untuk load data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-memproses-data">Fungsi untuk memproses data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-melakukan-sessonize-data">Fungsi untuk melakukan sessonize data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-membuat-matrix">Fungsi untuk membuat matrix</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#memulai-proses-pemanggilan-fungsi">Memulai proses pemanggilan fungsi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-load-data">Fungsi untuk load data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-memproses-data">Fungsi untuk memproses data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-melakukan-sessonize-data">Fungsi untuk melakukan sessonize data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-membuat-matrix">Fungsi untuk membuat matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memulai-proses-pemanggilan-fungsi">Memulai proses pemanggilan fungsi</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -408,7 +403,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-data-nasa">
+<h1>Analisis Data Nasa<a class="headerlink" href="#analisis-data-nasa" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timedelta</span>
@@ -430,7 +427,7 @@ document.write(`
 </div>
 </div>
 <section id="fungsi-untuk-load-data">
-<h1>Fungsi untuk load data<a class="headerlink" href="#fungsi-untuk-load-data" title="Link to this heading">#</a></h1>
+<h2>Fungsi untuk load data<a class="headerlink" href="#fungsi-untuk-load-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">load_data</span><span class="p">(</span><span class="n">file_path</span><span class="p">):</span>
@@ -493,7 +490,7 @@ document.write(`
 </div>
 </section>
 <section id="fungsi-untuk-memproses-data">
-<h1>Fungsi untuk memproses data<a class="headerlink" href="#fungsi-untuk-memproses-data" title="Link to this heading">#</a></h1>
+<h2>Fungsi untuk memproses data<a class="headerlink" href="#fungsi-untuk-memproses-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">preprocess_data</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">asset_extensions</span><span class="o">=</span><span class="n">ASSET_EXTENSIONS</span><span class="p">):</span>
@@ -540,7 +537,7 @@ document.write(`
 </div>
 </section>
 <section id="fungsi-untuk-melakukan-sessonize-data">
-<h1>Fungsi untuk melakukan sessonize data<a class="headerlink" href="#fungsi-untuk-melakukan-sessonize-data" title="Link to this heading">#</a></h1>
+<h2>Fungsi untuk melakukan sessonize data<a class="headerlink" href="#fungsi-untuk-melakukan-sessonize-data" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sessionize_data</span><span class="p">(</span><span class="n">df_clean</span><span class="p">,</span> <span class="n">session_timeout</span><span class="o">=</span><span class="n">SESSION_TIMEOUT</span><span class="p">):</span>
@@ -575,7 +572,7 @@ document.write(`
 </div>
 </section>
 <section id="fungsi-untuk-membuat-matrix">
-<h1>Fungsi untuk membuat matrix<a class="headerlink" href="#fungsi-untuk-membuat-matrix" title="Link to this heading">#</a></h1>
+<h2>Fungsi untuk membuat matrix<a class="headerlink" href="#fungsi-untuk-membuat-matrix" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">create_matrix</span><span class="p">(</span><span class="n">df_sessionized</span><span class="p">):</span>
@@ -610,7 +607,7 @@ document.write(`
 </div>
 </section>
 <section id="memulai-proses-pemanggilan-fungsi">
-<h1>Memulai proses pemanggilan fungsi<a class="headerlink" href="#memulai-proses-pemanggilan-fungsi" title="Link to this heading">#</a></h1>
+<h2>Memulai proses pemanggilan fungsi<a class="headerlink" href="#memulai-proses-pemanggilan-fungsi" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df_raw</span> <span class="o">=</span> <span class="n">load_data</span><span class="p">(</span><span class="n">log_file_path</span><span class="p">)</span>
@@ -2025,6 +2022,7 @@ Matriks hasil juga disimpan ke &#39;hasil_matriks_sesiNASA.csv&#39;
 </div></div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -2081,13 +2079,12 @@ Matriks hasil juga disimpan ke &#39;hasil_matriks_sesiNASA.csv&#39;
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Fungsi untuk load data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-memproses-data">Fungsi untuk memproses data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-melakukan-sessonize-data">Fungsi untuk melakukan sessonize data</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-membuat-matrix">Fungsi untuk membuat matrix</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#memulai-proses-pemanggilan-fungsi">Memulai proses pemanggilan fungsi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-load-data">Fungsi untuk load data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-memproses-data">Fungsi untuk memproses data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-melakukan-sessonize-data">Fungsi untuk melakukan sessonize data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fungsi-untuk-membuat-matrix">Fungsi untuk membuat matrix</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#memulai-proses-pemanggilan-fungsi">Memulai proses pemanggilan fungsi</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
