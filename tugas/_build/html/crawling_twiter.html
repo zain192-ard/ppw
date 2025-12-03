@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>&lt;no title&gt; &#8212; My sample book</title>
+    <title>Crawling Twiter &#8212; My sample book</title>
   
   
   
@@ -178,7 +178,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Pengantar_web_mining.html">Pengantar Web Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
@@ -192,6 +192,7 @@
 <li class="toctree-l1"><a class="reference internal" href="graphlnk.html">GRAPH LINK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20webusage.html">Analisis dataset webusage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20nassa.html">Analisis Data Nasa</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Crawling Twiter</a></li>
 </ul>
 
     </div>
@@ -364,9 +365,7 @@ document.write(`
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</button>
+
 </div></div>
       
     </div>
@@ -377,19 +376,11 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1><no title></h1>
+    <h1>Crawling Twiter</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -399,7 +390,9 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section class="tex2jax_ignore mathjax_ignore" id="crawling-twiter">
+<h1>Crawling Twiter<a class="headerlink" href="#crawling-twiter" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#@title Twitter Auth Token</span>
 
@@ -422,9 +415,9 @@ document.write(`
 <span class="o">!</span><span class="nv">NODE_MAJOR</span><span class="o">=</span><span class="m">20</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_</span><span class="nv">$NODE_MAJOR</span><span class="s2">.x nodistro main&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>tee<span class="w"> </span>/etc/apt/sources.list.d/nodesource.list
 
 <span class="o">!</span>sudo<span class="w"> </span>apt-get<span class="w"> </span>update
-<span class="o">!</span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>nodejs<span class="w"> </span>-y
+<span class="c1"># !sudo apt-get install nodejs -y</span>
 
-<span class="o">!</span>node<span class="w"> </span>-v
+<span class="c1"># !node -v</span>
 </pre></div>
 </div>
 </div>
@@ -438,26 +431,15 @@ Requirement already satisfied: six&gt;=1.5 in /home/codespace/.local/lib/python3
 
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> A new release of pip is available: <span class=" -Color -Color-Red">25.1.1</span> -&gt; <span class=" -Color -Color-Green">25.3</span>
 <span class=" -Color -Color-Bold">[</span><span class=" -Color -Color-Blue">notice</span><span class=" -Color -Color-Bold">]</span> To update, run: <span class=" -Color -Color-Green">python3 -m pip install --upgrade pip</span>
-Get:1 https://dl.google.com/linux/chrome/deb stable InRelease [1825 B]
-Hit:2 https://dl.yarnpkg.com/debian stable InRelease     
-Get:3 https://dl.google.com/linux/chrome/deb stable/main amd64 Packages [1198 B]
-Hit:4 https://repo.anaconda.com/pkgs/misc/debrepo/conda stable InRelease       
-Get:5 https://packages.microsoft.com/repos/microsoft-ubuntu-noble-prod noble InRelease [3600 B]
-Get:6 https://packages.microsoft.com/repos/microsoft-ubuntu-noble-prod noble/main amd64 Packages [73.4 kB]
-Hit:7 http://archive.ubuntu.com/ubuntu noble InRelease                         
-Get:8 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]      
-Get:9 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
-Get:10 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1181 kB]
-Get:11 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
-Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [2056 kB]
-Get:13 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1687 kB]
-Get:14 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [35.9 kB]
-Get:15 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2925 kB]
-Get:16 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1942 kB]
-Get:17 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [34.3 kB]
-Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [33.1 kB]
-Get:19 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2781 kB]
-Fetched 13.1 MB in 6s (2186 kB/s)                                              
+Hit:1 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:2 https://deb.nodesource.com/node_20.x nodistro InRelease       
+Hit:3 https://repo.anaconda.com/pkgs/misc/debrepo/conda stable InRelease
+Hit:4 https://dl.yarnpkg.com/debian stable InRelease                   
+Hit:5 https://packages.microsoft.com/repos/microsoft-ubuntu-noble-prod noble InRelease
+Hit:6 http://archive.ubuntu.com/ubuntu noble InRelease                       
+Hit:7 http://archive.ubuntu.com/ubuntu noble-updates InRelease               
+Hit:8 http://security.ubuntu.com/ubuntu noble-security InRelease
+Hit:9 http://archive.ubuntu.com/ubuntu noble-backports InRelease
 Reading package lists... Done
 Reading package lists... Done
 Building dependency tree... Done
@@ -466,36 +448,20 @@ ca-certificates is already the newest version (20240203).
 curl is already the newest version (8.5.0-2ubuntu10.6).
 gnupg is already the newest version (2.4.4-2ubuntu17.3).
 0 upgraded, 0 newly installed, 0 to remove and 101 not upgraded.
+File &#39;/etc/apt/keyrings/nodesource.gpg&#39; exists. ?2004hOverwrite? (y/N) 
+gpg: signal Interrupt caught ... exiting
+^C
 deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main
-Hit:1 https://dl.google.com/linux/chrome/deb stable InRelease
-Hit:2 https://dl.yarnpkg.com/debian stable InRelease                           
-Hit:3 https://repo.anaconda.com/pkgs/misc/debrepo/conda stable InRelease       
-Get:4 https://deb.nodesource.com/node_20.x nodistro InRelease [12.1 kB]        
-Hit:5 https://packages.microsoft.com/repos/microsoft-ubuntu-noble-prod noble InRelease
-Get:6 https://deb.nodesource.com/node_20.x nodistro/main amd64 Packages [13.1 kB]
+Hit:1 https://packages.microsoft.com/repos/microsoft-ubuntu-noble-prod noble InRelease
+Hit:2 https://dl.google.com/linux/chrome/deb stable InRelease
+Hit:3 https://dl.yarnpkg.com/debian stable InRelease                   
+Hit:4 https://repo.anaconda.com/pkgs/misc/debrepo/conda stable InRelease
+Hit:5 https://deb.nodesource.com/node_20.x nodistro InRelease                  
+Hit:6 http://security.ubuntu.com/ubuntu noble-security InRelease               
 Hit:7 http://archive.ubuntu.com/ubuntu noble InRelease                         
-Hit:8 http://archive.ubuntu.com/ubuntu noble-updates InRelease               
-Get:9 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
-Hit:10 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-Get:11 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1182 kB]
-Fetched 1333 kB in 3s (483 kB/s)    
+Hit:8 http://archive.ubuntu.com/ubuntu noble-updates InRelease
+Hit:9 http://archive.ubuntu.com/ubuntu noble-backports InRelease
 Reading package lists... Done
-Reading package lists... Done
-Building dependency tree... Done
-Reading state information... Done
-The following NEW packages will be installed:
-  nodejs
-0 upgraded, 1 newly installed, 0 to remove and 101 not upgraded.
-Need to get 32.0 MB of archives.
-After this operation, 197 MB of additional disk space will be used.
-Get:1 https://deb.nodesource.com/node_20.x nodistro/main amd64 nodejs amd64 20.19.6-1nodesource1 [32.0 MB]
-Fetched 32.0 MB in 1s (61.2 MB/s)
-Selecting previously unselected package nodejs.
-(Reading database ... 74462 files and directories currently installed.)
-Preparing to unpack .../nodejs_20.19.6-1nodesource1_amd64.deb ...
-Unpacking nodejs (20.19.6-1nodesource1) ...
-Setting up nodejs (20.19.6-1nodesource1) ...
-Processing triggers for man-db (2.12.0-4build2) ...
 v22.17.0
 </pre></div>
 </div>
@@ -503,8 +469,8 @@ v22.17.0
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;ihsg.csv&#39;</span>
-<span class="n">search_keyword</span> <span class="o">=</span> <span class="s1">&#39;ihsg lang:id&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;saham.csv&#39;</span>
+<span class="n">search_keyword</span> <span class="o">=</span> <span class="s1">&#39;saham lang:id&#39;</span>
 <span class="n">limit</span> <span class="o">=</span> <span class="mi">1000</span>
 
 <span class="c1"># Install missing dependencies for Playwright/Chromium</span>
@@ -522,42 +488,13 @@ Note, selecting &#39;libatk1.0-0t64&#39; instead of &#39;libatk1.0-0&#39;
 Note, selecting &#39;libatk-bridge2.0-0t64&#39; instead of &#39;libatk-bridge2.0-0&#39;
 Note, selecting &#39;libgtk-3-0t64&#39; instead of &#39;libgtk-3-0&#39;
 libatk1.0-0t64 is already the newest version (2.52.0-1build1).
-libatk1.0-0t64 set to manually installed.
 libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
-libatk-bridge2.0-0t64 set to manually installed.
+libgdk-pixbuf2.0-0 is already the newest version (2.40.2-3build2).
 libgtk-3-0t64 is already the newest version (3.24.41-4ubuntu1.3).
-libgtk-3-0t64 set to manually installed.
+libgbm-dev is already the newest version (25.0.7-0ubuntu0.24.04.2).
 libxss1 is already the newest version (1:1.2.3-1build3).
-libxss1 set to manually installed.
-The following additional packages will be installed:
-  libgdk-pixbuf-xlib-2.0-0
-The following NEW packages will be installed:
-  libgbm-dev libgdk-pixbuf-xlib-2.0-0 libgdk-pixbuf2.0-0
-0 upgraded, 3 newly installed, 0 to remove and 101 not upgraded.
-Need to get 54.6 kB of archives.
-After this operation, 172 kB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libgbm-dev amd64 25.0.7-0ubuntu0.24.04.2 [9840 B]
-Get:2 http://archive.ubuntu.com/ubuntu noble/universe amd64 libgdk-pixbuf-xlib-2.0-0 amd64 2.40.2-3build2 [42.3 kB]
-Get:3 http://archive.ubuntu.com/ubuntu noble/universe amd64 libgdk-pixbuf2.0-0 amd64 2.40.2-3build2 [2454 B]
-Fetched 54.6 kB in 1s (43.3 kB/s)            
-Selecting previously unselected package libgbm-dev:amd64.
-(Reading database ... 79825 files and directories currently installed.)
-Preparing to unpack .../libgbm-dev_25.0.7-0ubuntu0.24.04.2_amd64.deb ...
-Unpacking libgbm-dev:amd64 (25.0.7-0ubuntu0.24.04.2) ...
-Selecting previously unselected package libgdk-pixbuf-xlib-2.0-0:amd64.
-Preparing to unpack .../libgdk-pixbuf-xlib-2.0-0_2.40.2-3build2_amd64.deb ...
-Unpacking libgdk-pixbuf-xlib-2.0-0:amd64 (2.40.2-3build2) ...
-Selecting previously unselected package libgdk-pixbuf2.0-0:amd64.
-Preparing to unpack .../libgdk-pixbuf2.0-0_2.40.2-3build2_amd64.deb ...
-Unpacking libgdk-pixbuf2.0-0:amd64 (2.40.2-3build2) ...
-Setting up libgdk-pixbuf-xlib-2.0-0:amd64 (2.40.2-3build2) ...
-Setting up libgbm-dev:amd64 (25.0.7-0ubuntu0.24.04.2) ...
-Setting up libgdk-pixbuf2.0-0:amd64 (2.40.2-3build2) ...
-Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
-?25h<span class=" -Color -Color-White -Color-White-BGBlack">npm</span> <span class=" -Color -Color-Black -Color-Black-BGYellow">WARN</span> <span class=" -Color -Color-Magenta">deprecated</span> inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
-<span class=" -Color -Color-White -Color-White-BGBlack">npm</span> <span class=" -Color -Color-Black -Color-Black-BGYellow">WARN</span> <span class=" -Color -Color-Magenta">deprecated</span> glob@7.2.3: Glob versions prior to v9 are no longer supported
-<span class=" -Color -Color-White -Color-White-BGBlack">npm</span> <span class=" -Color -Color-Black -Color-Black-BGYellow">WARN</span> <span class=" -Color -Color-Magenta">deprecated</span> rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
-?25hm##################) ⠼ reify:lodash: <span class=" -Color -Color-Green -Color-Green-BGBlack">http</span> <span class=" -Color -Color-Magenta">fetch</span> GET 200 https://registry.npmjs.ET 200y.n<span class=" -Color -Color-Bold -Color-Bold-Green">Tweet Harvest [v2.6.1]</span>
+0 upgraded, 0 newly installed, 0 to remove and 101 not upgraded.
+<span class=" -Color -Color-Bold -Color-Bold-Green">Tweet Harvest [v2.6.1]</span>
 
 <span class=" -Color -Color-Blue">Research by </span><span class=" -Color -Color-Bold -Color-Bold-Blue">Helmi Satria</span>
 <span class=" -Color -Color-Blue">Use it for Educational Purposes only!</span>
@@ -572,119 +509,228 @@ Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
 <span class=" -Color -Color-Blue">Opening twitter search page...</span>
 
 
--- Scrolling... (1)
-<span class=" -Color -Color-Yellow">Filling in keywords: ihsg lang:id</span>
+-- Scrolling... (1) (2)
+<span class=" -Color -Color-Yellow">Filling in keywords: saham lang:id</span>
 
- (2) (3)<span class=" -Color -Color-Green">Created new directory: /workspaces/ppw/tugas/tweets-data</span>
+ (3)
 
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
 <span class=" -Color -Color-Yellow">Total tweets saved: 19</span>
 
 -- Scrolling... (1) (2) (3)
 
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
 <span class=" -Color -Color-Yellow">Total tweets saved: 39</span>
 
--- Scrolling... (1) (2) (3)
+-- Scrolling... (1) (2)
 
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
 <span class=" -Color -Color-Yellow">Total tweets saved: 59</span>
 
 -- Scrolling... (1) (2)
 
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
 <span class=" -Color -Color-Yellow">Total tweets saved: 79</span>
 
 -- Scrolling... (1) (2)
 
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 95</span>
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 98</span>
 
--- Scrolling... (1) (2)
+-- Scrolling... (1) (2) (3)
 
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 109</span>
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 114</span>
 
 --Taking a break, waiting for 10 seconds...
 
 -- Scrolling... (1) (2)
 
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 119</span>
-
--- Scrolling... (1)
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 125</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 131</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 135</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 138</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 143</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 147</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 149</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 151</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 152</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 153</span>
-
-
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 155</span>
-[v2.6.1] No more tweets found, please check your search criteria and csv file result
-
--- Scrolling... (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) (14) (15) (16) (17) (18) (19) (20) (21)<span class=" -Color -Color-Yellow">No more tweets found, please check your search criteria and csv file result</span>
-<span class=" -Color -Color-Yellow">Timeout reached 1 times, making sure again...</span>
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 129</span>
 
 -- Scrolling... (1) (2)
 
-<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/ihsg.csv</span>
-<span class=" -Color -Color-Yellow">Total tweets saved: 156</span>
-[v2.6.1] No more tweets found, please check your search criteria and csv file result
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 143</span>
 
--- Scrolling... (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) (14) (15) (16) (17) (18) (19) (20) (21)<span class=" -Color -Color-Yellow">No more tweets found, please check your search criteria and csv file result</span>
-<span class=" -Color -Color-Yellow">Timeout reached 2 times, making sure again...</span>
+-- Scrolling... (1) (2)
 
--- Scrolling... (1) (2)[v2.6.1] No more tweets found, please check your search criteria and csv file result
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 153</span>
 
--- Scrolling... (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) (14) (15) (16) (17) (18) (19) (20) (21)<span class=" -Color -Color-Yellow">No more tweets found, please check your search criteria and csv file result</span>
-<span class=" -Color -Color-Yellow">Timeout reached 3 times, making sure again...</span>
+-- Scrolling... (1)
 
--- Scrolling... (1)[v2.6.1] No more tweets found, please check your search criteria and csv file result
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 163</span>
 
--- Scrolling... (1) (2) (3) (4) (5) (6) (7) (8) (9) (10) (11) (12) (13) (14) (15) (16) (17) (18) (19) (20)Got 156 tweets, done scrolling...
-<span class=" -Color -Color-White -Color-White-BGBlack">npm</span> <span class=" -Color -Color-Cyan -Color-Cyan-BGBlack">notice</span> 
-<span class=" -Color -Color-White -Color-White-BGBlack">npm</span> <span class=" -Color -Color-Cyan -Color-Cyan-BGBlack">notice</span> New <span class=" -Color -Color-Red">major</span> version of npm available! <span class=" -Color -Color-Red">9.8.1</span> -&gt; <span class=" -Color -Color-Green">11.6.4</span>
-<span class=" -Color -Color-White -Color-White-BGBlack">npm</span> <span class=" -Color -Color-Cyan -Color-Cyan-BGBlack">notice</span> Changelog: <span class=" -Color -Color-Cyan">https://github.com/npm/cli/releases/tag/v11.6.4</span>
-<span class=" -Color -Color-White -Color-White-BGBlack">npm</span> <span class=" -Color -Color-Cyan -Color-Cyan-BGBlack">notice</span> Run <span class=" -Color -Color-Green">npm install -g npm@11.6.4</span> to update!
-<span class=" -Color -Color-White -Color-White-BGBlack">npm</span> <span class=" -Color -Color-Cyan -Color-Cyan-BGBlack">notice</span> 
+-- Scrolling... (1)
 
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 173</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 185</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 196</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 206</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 215</span>
+
+--Taking a break, waiting for 10 seconds...
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 223</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 231</span>
+
+-- Scrolling... (1) (2)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 240</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 249</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 258</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 265</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 272</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 279</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 285</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 291</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 296</span>
+
+-- Scrolling... (1) (2) (3)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 316</span>
+
+--Taking a break, waiting for 10 seconds...
+
+-- Scrolling... (1) (2)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 322</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 327</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 333</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 339</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 345</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 351</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 357</span>
+
+-- Scrolling... (1)
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 363</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 369</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 373</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 378</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 382</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 385</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 388</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 391</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 394</span>
+
+
+<span class=" -Color -Color-Blue">Your tweets saved to: /workspaces/ppw/tugas/tweets-data/saham.csv</span>
+<span class=" -Color -Color-Yellow">Total tweets saved: 397</span>
+[v2.6.1] Error parsing response json: {&quot;_type&quot;:&quot;Response&quot;,&quot;_guid&quot;:&quot;response@a78cf5da26a5806c252cd75375dabfe3&quot;}
+[v2.6.1] Most likely, you have already exceeded the Twitter rate limit. Read more on https://x.com/elonmusk/status/1675187969420828672.
+[v2.6.1] Error parsing response json: {&quot;_type&quot;:&quot;Response&quot;,&quot;_guid&quot;:&quot;response@2e70a2885b5634bba26779f12b86579a&quot;}
+[v2.6.1] Most likely, you have already exceeded the Twitter rate limit. Read more on https://x.com/elonmusk/status/1675187969420828672.
+[v2.6.1] Error parsing response json: {&quot;_type&quot;:&quot;Response&quot;,&quot;_guid&quot;:&quot;response@51ea6159299337c2a4a7e56b7fb9c419&quot;}
+[v2.6.1] Most likely, you have already exceeded the Twitter rate limit. Read more on https://x.com/elonmusk/status/1675187969420828672.
+[v2.6.1] Error parsing response json: {&quot;_type&quot;:&quot;Response&quot;,&quot;_guid&quot;:&quot;response@6ac2811fbf50050f86b3c8540d1604be&quot;}
+[v2.6.1] Most likely, you have already exceeded the Twitter rate limit. Read more on https://x.com/elonmusk/status/1675187969420828672.
+[v2.6.1] Error parsing response json: {&quot;_type&quot;:&quot;Response&quot;,&quot;_guid&quot;:&quot;response@fe5a164d54838859fd1a13b447fa5b9a&quot;}
+[v2.6.1] Most likely, you have already exceeded the Twitter rate limit. Read more on https://x.com/elonmusk/status/1675187969420828672.
+^C
 </pre></div>
 </div>
 </div>
@@ -747,92 +793,92 @@ Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
   <tbody>
     <tr>
       <th>0</th>
-      <td>1995879080085127261</td>
-      <td>Tue Dec 02 15:33:48 +0000 2025</td>
-      <td>8</td>
-      <td>SLOT GACOR HARI INI TERBARU 2025 BONUS SPIN GR...</td>
-      <td>1995879080085127261</td>
-      <td>https://pbs.twimg.com/media/G7LJav6bcAANIXC.jpg</td>
+      <td>1992917649479901509</td>
+      <td>Mon Nov 24 11:26:08 +0000 2025</td>
+      <td>663</td>
+      <td>screening awal gw kalau cari saham 1. Dari ami...</td>
+      <td>1992917649479901509</td>
+      <td>https://pbs.twimg.com/media/G6hEBJ8akAA3vM1.jpg</td>
       <td>NaN</td>
       <td>in</td>
       <td>NaN</td>
       <td>0</td>
-      <td>3</td>
-      <td>0</td>
-      <td>https://x.com/undefined/status/199587908008512...</td>
-      <td>4844847323</td>
+      <td>2</td>
+      <td>63</td>
+      <td>https://x.com/undefined/status/199291764947990...</td>
+      <td>1345898259445817345</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>1995853623805575273</td>
-      <td>Tue Dec 02 13:52:39 +0000 2025</td>
-      <td>8</td>
-      <td>️‍ SLOT GACOR HARI INI ️‍ Situs MANTUL138 meru...</td>
-      <td>1995853623805575273</td>
-      <td>https://pbs.twimg.com/media/G7KySbOb0AA4eu4.jpg</td>
+      <td>1992363107331788973</td>
+      <td>Sat Nov 22 22:42:35 +0000 2025</td>
+      <td>1344</td>
+      <td>Rahasia Menyaring Saham Turnaround Multibagger...</td>
+      <td>1992363107331788973</td>
+      <td>https://pbs.twimg.com/media/G6ZF94sbIAAfxyt.jpg</td>
       <td>NaN</td>
       <td>in</td>
       <td>NaN</td>
-      <td>0</td>
-      <td>2</td>
-      <td>0</td>
-      <td>https://x.com/undefined/status/199585362380557...</td>
-      <td>4421723482</td>
+      <td>8</td>
+      <td>15</td>
+      <td>286</td>
+      <td>https://x.com/undefined/status/199236310733178...</td>
+      <td>1509650609120718860</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1995856521989894368</td>
-      <td>Tue Dec 02 14:04:10 +0000 2025</td>
-      <td>7</td>
-      <td>️‍ SLOT GACOR HARI INI ️‍ Situs MANTUL138 meru...</td>
-      <td>1995856521989894368</td>
-      <td>https://pbs.twimg.com/amplify_video_thumb/1995...</td>
+      <td>1995363539469705605</td>
+      <td>Mon Dec 01 05:25:14 +0000 2025</td>
+      <td>505</td>
+      <td>Struktur IPO $RLCO M-ARA ARB 35% TM- No Waran ...</td>
+      <td>1995363539469705605</td>
+      <td>https://pbs.twimg.com/media/G7Dy2IYa0AA-HRo.png</td>
       <td>NaN</td>
       <td>in</td>
       <td>NaN</td>
-      <td>0</td>
-      <td>4</td>
-      <td>0</td>
-      <td>https://x.com/undefined/status/199585652198989...</td>
-      <td>2233376174</td>
+      <td>2</td>
+      <td>13</td>
+      <td>74</td>
+      <td>https://x.com/undefined/status/199536353946970...</td>
+      <td>1634788663</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>1995777768177762479</td>
-      <td>Tue Dec 02 08:51:14 +0000 2025</td>
-      <td>72</td>
-      <td>Sesuai analisa purbayamology mudah bagi IHSG m...</td>
-      <td>1995777768177762479</td>
-      <td>https://pbs.twimg.com/media/G7JtH91bgAAykM-.png</td>
+      <td>1993259031247700235</td>
+      <td>Tue Nov 25 10:02:40 +0000 2025</td>
+      <td>149</td>
+      <td>Shm! baru tau sekarang bisa lock saham pesan d...</td>
+      <td>1993259031247700235</td>
+      <td>https://pbs.twimg.com/media/G6l6hQ0bwAA7DQa.jpg</td>
       <td>NaN</td>
       <td>in</td>
       <td>NaN</td>
-      <td>2</td>
-      <td>2</td>
-      <td>2</td>
-      <td>https://x.com/undefined/status/199577776817776...</td>
-      <td>1409160713252179975</td>
+      <td>9</td>
+      <td>49</td>
+      <td>23</td>
+      <td>https://x.com/undefined/status/199325903124770...</td>
+      <td>1336580251493646343</td>
       <td>NaN</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>1988825314160431200</td>
-      <td>Thu Nov 13 04:24:40 +0000 2025</td>
-      <td>202</td>
-      <td>Legenda mengatakan ketika booming komoditas 20...</td>
-      <td>1988825314160431200</td>
-      <td>https://pbs.twimg.com/media/G5m6E7ZacAMrlkd.jpg</td>
+      <td>1993512148874752177</td>
+      <td>Wed Nov 26 02:48:28 +0000 2025</td>
+      <td>355</td>
+      <td>Daftar pantauan Berdasarkan jenis Setup: 1. Tr...</td>
+      <td>1993512148874752177</td>
+      <td>https://pbs.twimg.com/media/G6pglCOaYAAcUl3.png</td>
       <td>NaN</td>
       <td>in</td>
       <td>NaN</td>
       <td>2</td>
-      <td>11</td>
-      <td>15</td>
-      <td>https://x.com/undefined/status/198882531416043...</td>
-      <td>1170586096578678785</td>
+      <td>12</td>
+      <td>35</td>
+      <td>https://x.com/undefined/status/199351214887475...</td>
+      <td>1305725907584286720</td>
       <td>NaN</td>
     </tr>
     <tr>
@@ -854,103 +900,104 @@ Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
       <td>...</td>
     </tr>
     <tr>
-      <th>151</th>
-      <td>1994738121309647004</td>
-      <td>Sun Nov 30 23:01:23 +0000 2025</td>
-      <td>217</td>
-      <td>@yourhusband93 @ganggaliabasal @loveliestbunny...</td>
-      <td>1995266942182273071</td>
+      <th>392</th>
+      <td>1995367890955207049</td>
+      <td>Mon Dec 01 05:42:32 +0000 2025</td>
+      <td>47</td>
+      <td>Shm! Gess sorry oot aku anak rantau dari sumat...</td>
+      <td>1995367890955207049</td>
       <td>NaN</td>
-      <td>yourhusband93</td>
+      <td>NaN</td>
       <td>in</td>
       <td>NaN</td>
-      <td>0</td>
-      <td>2</td>
       <td>4</td>
-      <td>https://x.com/undefined/status/199526694218227...</td>
-      <td>1954354960323497984</td>
+      <td>10</td>
+      <td>4</td>
+      <td>https://x.com/undefined/status/199536789095520...</td>
+      <td>1336580251493646343</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>152</th>
-      <td>1994629223135547525</td>
-      <td>Sun Nov 30 04:18:10 +0000 2025</td>
-      <td>4</td>
-      <td>@neollexador Sid kan ada? Itulah mungkin kenap...</td>
-      <td>1994984272487411967</td>
+      <th>393</th>
+      <td>1994647485466448183</td>
+      <td>Sat Nov 29 10:46:13 +0000 2025</td>
+      <td>12</td>
+      <td>@desmondwira Transaksi tgl 6 Oktober dilakukan...</td>
+      <td>1994719543063974277</td>
       <td>NaN</td>
-      <td>neollexador</td>
+      <td>desmondwira</td>
       <td>in</td>
       <td>NaN</td>
       <td>0</td>
       <td>1</td>
+      <td>1</td>
+      <td>https://x.com/undefined/status/199471954306397...</td>
+      <td>80564666</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>394</th>
+      <td>1992124649040392657</td>
+      <td>Sat Nov 22 06:55:02 +0000 2025</td>
+      <td>22</td>
+      <td>Kejadian lagi Harus ada tindakan sanksi ke sek...</td>
+      <td>1992124649040392657</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>in</td>
+      <td>NaN</td>
       <td>0</td>
-      <td>https://x.com/undefined/status/199498427248741...</td>
+      <td>1</td>
+      <td>6</td>
+      <td>https://x.com/undefined/status/199212464904039...</td>
       <td>1260798424393211904</td>
       <td>NaN</td>
     </tr>
     <tr>
-      <th>153</th>
-      <td>1994993474157121714</td>
-      <td>Sun Nov 30 04:54:44 +0000 2025</td>
+      <th>395</th>
+      <td>1995741893670699469</td>
+      <td>Tue Dec 02 10:51:38 +0000 2025</td>
+      <td>6</td>
+      <td>$BUVA bakal gini</td>
+      <td>1995808070304497949</td>
+      <td>NaN</td>
+      <td>JudiSaham</td>
+      <td>in</td>
+      <td>NaN</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>https://x.com/undefined/status/199580807030449...</td>
+      <td>1294174592055967746</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>396</th>
+      <td>1992548573159043255</td>
+      <td>Sun Nov 23 10:59:34 +0000 2025</td>
       <td>99</td>
-      <td>saya kenal orang yg kalau marah ke anaknya (ma...</td>
-      <td>1994993474157121714</td>
+      <td>Relate ga sama UU BUMN kemarin yg di protes ? ...</td>
+      <td>1992548573159043255</td>
       <td>NaN</td>
       <td>NaN</td>
       <td>in</td>
       <td>NaN</td>
       <td>0</td>
       <td>11</td>
-      <td>2</td>
-      <td>https://x.com/undefined/status/199499347415712...</td>
+      <td>24</td>
+      <td>https://x.com/undefined/status/199254857315904...</td>
       <td>1260798424393211904</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>154</th>
-      <td>1993859034957664399</td>
-      <td>Thu Nov 27 01:46:52 +0000 2025</td>
-      <td>253</td>
-      <td>Tapi di Cina senegara dari dulu hampir tiap ha...</td>
-      <td>1993859034957664399</td>
-      <td>NaN</td>
-      <td>NaN</td>
-      <td>in</td>
-      <td>NaN</td>
-      <td>1</td>
-      <td>29</td>
-      <td>23</td>
-      <td>https://x.com/undefined/status/199385903495766...</td>
-      <td>1260798424393211904</td>
-      <td>NaN</td>
-    </tr>
-    <tr>
-      <th>155</th>
-      <td>1993692371247329677</td>
-      <td>Wed Nov 26 14:44:36 +0000 2025</td>
-      <td>5</td>
-      <td>IHSG jadi otw 8800?? https://t.co/mCqIsD9V1n</td>
-      <td>1993692371247329677</td>
-      <td>https://pbs.twimg.com/media/G6sEY4nbwAE0TYj.jpg</td>
-      <td>NaN</td>
-      <td>in</td>
-      <td>NaN</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>https://x.com/undefined/status/199369237124732...</td>
-      <td>1387028810550243331</td>
       <td>NaN</td>
     </tr>
   </tbody>
 </table>
-<p>156 rows × 15 columns</p>
-</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of rows in the DataFrame is: 156
+<p>397 rows × 15 columns</p>
+</div></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The number of rows in the DataFrame is: 397
 </pre></div>
 </div>
 </div>
 </div>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -997,21 +1044,6 @@ Processing triggers for libc-bin (2.39-0ubuntu8.4) ...
             </div>
             
             
-              
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="simple visible nav section-nav flex-column">
-</ul>
-
-  </nav></div>
-
-</div></div>
               
             
           </div>
