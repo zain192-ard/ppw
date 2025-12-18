@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Link Deploy UAS &#8212; My sample book</title>
+    <title>Link Graph Scraping &#8212; My sample book</title>
   
   
   
@@ -57,10 +57,9 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'link_deploy';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'linkscraping copy';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Page Rank Berita" href="pagerank_berita.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -123,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -178,7 +179,7 @@
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Pengantar_web_mining.html">Pengantar Web Mining</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
@@ -199,7 +200,7 @@
 <li class="toctree-l1"><a class="reference internal" href="graph_berita.html">Graph Berita</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagerank_pta.html">Page PTA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagerank_berita.html">Page Rank Berita</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Link Deploy UAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="link_deploy.html">Link Deploy UAS</a></li>
 </ul>
 
     </div>
@@ -271,7 +272,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flink_deploy.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Flinkscraping copy.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +302,7 @@
       
       
       
-      <li><a href="_sources/link_deploy.ipynb" target="_blank"
+      <li><a href="_sources/linkscraping copy.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +384,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Link Deploy UAS</h1>
+    <h1>Link Graph Scraping</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,9 +398,191 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="link-deploy-uas">
-<h1>Link Deploy UAS<a class="headerlink" href="#link-deploy-uas" title="Link to this heading">#</a></h1>
-<p><a class="reference external" href="https://huggingface.co/spaces/ZainF/PPW">https://huggingface.co/spaces/ZainF/PPW</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="link-graph-scraping">
+<h1>Link Graph Scraping<a class="headerlink" href="#link-graph-scraping" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://pta.trunojoyo.ac.id&quot;</span>
+<span class="n">START_URL</span> <span class="o">=</span> <span class="s2">&quot;https://pta.trunojoyo.ac.id/c_search/byprod/7&quot;</span> <span class="c1"># Manajemen</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="n">BASE_URL</span> <span class="o">=</span> <span class="s2">&quot;https://pta.trunojoyo.ac.id&quot;</span>
+<span class="n">START_URL</span> <span class="o">=</span> <span class="s2">&quot;https://pta.trunojoyo.ac.id/c_search/byprod/7&quot;</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;User-Agent&quot;</span><span class="p">:</span> <span class="s2">&quot;Mozilla/5.0&quot;</span><span class="p">}</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">get_internal_links</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Ambil semua link internal dari satu halaman&quot;&quot;&quot;</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+        <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="s2">&quot;html.parser&quot;</span><span class="p">)</span>
+        <span class="n">links</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
+            <span class="n">href</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="s2">&quot;href&quot;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">)</span> <span class="ow">or</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">BASE_URL</span><span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;javascript&quot;</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s2">&quot;/&quot;</span><span class="p">):</span>
+                        <span class="n">href</span> <span class="o">=</span> <span class="n">BASE_URL</span> <span class="o">+</span> <span class="n">href</span>
+                    <span class="n">links</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">href</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;#&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">links</span><span class="p">))</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error akses </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">crawl_graph</span><span class="p">(</span><span class="n">start_url</span><span class="p">,</span> <span class="n">max_pages</span><span class="o">=</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">visited</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">to_visit</span> <span class="o">=</span> <span class="p">[</span><span class="n">start_url</span><span class="p">]</span>
+    <span class="n">edges</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">while</span> <span class="n">to_visit</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">visited</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_pages</span><span class="p">:</span>
+        <span class="n">current</span> <span class="o">=</span> <span class="n">to_visit</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">current</span> <span class="ow">in</span> <span class="n">visited</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">visited</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Crawling: </span><span class="si">{</span><span class="n">current</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+        <span class="n">links</span> <span class="o">=</span> <span class="n">get_internal_links</span><span class="p">(</span><span class="n">current</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+            <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;source&quot;</span><span class="p">:</span> <span class="n">current</span><span class="p">,</span> <span class="s2">&quot;target&quot;</span><span class="p">:</span> <span class="n">link</span><span class="p">})</span>
+            <span class="k">if</span> <span class="n">link</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited</span> <span class="ow">and</span> <span class="n">link</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">to_visit</span><span class="p">:</span>
+                <span class="n">to_visit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">link</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">edges</span>
+
+<span class="c1"># Jalankan crawler</span>
+<span class="n">edges</span> <span class="o">=</span> <span class="n">crawl_graph</span><span class="p">(</span><span class="n">START_URL</span><span class="p">,</span> <span class="n">max_pages</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="c1"># Simpan hasil</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s2">&quot;pta_graph.csv&quot;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># atau gunakan to_excel(&quot;pta_graph.xlsx&quot;, index=False, engine=&quot;openpyxl&quot;)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;✅ File berhasil disimpan.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/7
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/21
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/22
+Crawling: https://pta.trunojoyo.ac.id/c_search/byfac/4
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/32
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/19
+Crawling: https://pta.trunojoyo.ac.id/welcome/detail/090211200001
+Crawling: https://pta.trunojoyo.ac.id/c_search/byfac/1
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/2
+Crawling: https://pta.trunojoyo.ac.id/c_search/byprod/6
+✅ File berhasil disimpan.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>source</th>
+      <th>target</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/21</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/22</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byfac/4</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/32</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/7</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/19</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>612</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/24</td>
+    </tr>
+    <tr>
+      <th>613</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/99</td>
+    </tr>
+    <tr>
+      <th>614</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/8</td>
+    </tr>
+    <tr>
+      <th>615</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/18</td>
+    </tr>
+    <tr>
+      <th>616</th>
+      <td>https://pta.trunojoyo.ac.id/c_search/byprod/6</td>
+      <td>https://pta.trunojoyo.ac.id/welcome/detail/080...</td>
+    </tr>
+  </tbody>
+</table>
+<p>617 rows × 2 columns</p>
+</div></div></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -432,15 +615,6 @@ document.write(`
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="pagerank_berita.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Page Rank Berita</p>
-      </div>
-    </a>
 </div>
                 </footer>
               
