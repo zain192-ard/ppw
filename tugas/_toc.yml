@@ -20,3 +20,6 @@ chapters:
   - file: data_fb
   - file: peper
   - file: UAS
+  - file: graph_berita
+  - file: pagerank_pta
+  - file: pagerank_berita

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>GRAPH LINK &#8212; My sample book</title>
+    <title>Graph Berita &#8212; My sample book</title>
   
   
   
@@ -57,11 +57,11 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'graphlnk';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'graph_berita';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Analisis dataset webusage" href="Analisis%20dataset%20webusage.html" />
-    <link rel="prev" title="clutering email" href="clutering_email.html" />
+    <link rel="next" title="Page PTA" href="pagerank_pta.html" />
+    <link rel="prev" title="UAS" href="UAS.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -190,14 +190,14 @@
 <li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="klasifikasikan_berita.html">Klasifikasi Berita</a></li>
 <li class="toctree-l1"><a class="reference internal" href="clutering_email.html">clutering email</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">GRAPH LINK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphlnk.html">GRAPH LINK</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20webusage.html">Analisis dataset webusage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20nassa.html">Analisis Data Nasa</a></li>
 <li class="toctree-l1"><a class="reference internal" href="crawling_twiter.html">Crawling Twiter</a></li>
 <li class="toctree-l1"><a class="reference internal" href="data_fb.html">Data FB</a></li>
 <li class="toctree-l1"><a class="reference internal" href="peper.html">Peper</a></li>
 <li class="toctree-l1"><a class="reference internal" href="UAS.html">UAS</a></li>
-<li class="toctree-l1"><a class="reference internal" href="graph_berita.html">Graph Berita</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Graph Berita</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagerank_pta.html">Page PTA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="pagerank_berita.html">Page Rank Berita</a></li>
 </ul>
@@ -271,7 +271,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgraphlnk.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fgraph_berita.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -301,7 +301,7 @@
       
       
       
-      <li><a href="_sources/graphlnk.ipynb" target="_blank"
+      <li><a href="_sources/graph_berita.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +383,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>GRAPH LINK</h1>
+    <h1>Graph Berita</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -397,8 +397,8 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="graph-link">
-<h1>GRAPH LINK<a class="headerlink" href="#graph-link" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="graph-berita">
+<h1>Graph Berita<a class="headerlink" href="#graph-berita" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
@@ -409,7 +409,7 @@ document.write(`
 <span class="c1"># Memuat Data </span>
 <span class="c1"># -------------------------------------------------------------------</span>
 
-<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;pta_graph.csv&#39;</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="s1">&#39;pagerank500_edges_berita_new.csv&#39;</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
         <span class="n">file_path</span><span class="p">,</span>
@@ -427,16 +427,19 @@ document.write(`
 <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Terjadi error saat membaca file: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
+
 <span class="c1"># -------------------------------------------------------------------</span>
 <span class="c1"># Membuat Graf Penuh (untuk Analisis)</span>
+<span class="c1"># -------------------------------------------------------------------</span>
+<span class="c1"># buat graf berarah (DiGraph) dari DataFrame pandas</span>
 <span class="c1"># -------------------------------------------------------------------</span>
 
 <span class="k">if</span> <span class="s1">&#39;df&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
     <span class="n">G_full</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span>
         <span class="n">df</span><span class="p">,</span>
-        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span>   <span class="c1"># ✅ kolom sesuai file csv</span>
-        <span class="n">target</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span>   <span class="c1"># ✅ kolom sesuai file csv</span>
-        <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
+        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Halaman Sumber&#39;</span><span class="p">,</span>
+        <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Link Keluar (Internal)&#39;</span><span class="p">,</span>
+        <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span> <span class="c1"># Penting: create_using=nx.DiGraph()</span>
     <span class="p">)</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Informasi Graf Penuh ---&quot;</span><span class="p">)</span>
@@ -446,13 +449,15 @@ document.write(`
 <span class="c1"># -------------------------------------------------------------------</span>
 <span class="c1"># Membuat Subgraph (untuk Visualisasi)</span>
 <span class="c1"># -------------------------------------------------------------------</span>
+<span class="c1"># ambil 100 edge pertama dari data untuk digambar</span>
+<span class="c1"># -------------------------------------------------------------------</span>
 
 <span class="k">if</span> <span class="s1">&#39;df&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
     <span class="n">df_sample</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">G_sample</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">from_pandas_edgelist</span><span class="p">(</span>
         <span class="n">df_sample</span><span class="p">,</span>
-        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;source&#39;</span><span class="p">,</span>
-        <span class="n">target</span><span class="o">=</span><span class="s1">&#39;target&#39;</span><span class="p">,</span>
+        <span class="n">source</span><span class="o">=</span><span class="s1">&#39;Halaman Sumber&#39;</span><span class="p">,</span>
+        <span class="n">target</span><span class="o">=</span><span class="s1">&#39;Link Keluar (Internal)&#39;</span><span class="p">,</span>
         <span class="n">create_using</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">DiGraph</span><span class="p">()</span>
     <span class="p">)</span>
 
@@ -463,67 +468,100 @@ document.write(`
 <span class="c1"># -------------------------------------------------------------------</span>
 <span class="c1"># Visualisasi Subgraph</span>
 <span class="c1"># -------------------------------------------------------------------</span>
+<span class="c1"># Menggambar G_sample (bukan G_full)</span>
+<span class="c1"># -------------------------------------------------------------------</span>
 
 <span class="k">if</span> <span class="s1">&#39;G_sample&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Membuat visualisasi subgraph...&quot;</span><span class="p">)</span>
     
+    <span class="c1"># Mengatur ukuran gambar</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+    
+    <span class="c1"># Menentukan layout</span>
+    <span class="c1"># &#39;spring_layout&#39; adalah layout yang baik untuk graf umum</span>
+    <span class="c1"># k=0.5 dan iterations=50 membantu &#39;menyebarkan&#39; node</span>
     <span class="n">pos</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">spring_layout</span><span class="p">(</span><span class="n">G_sample</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">iterations</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
     
+    <span class="c1"># Menggambar graf</span>
     <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span>
         <span class="n">G_sample</span><span class="p">,</span>
         <span class="n">pos</span><span class="p">,</span>
-        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span>
-        <span class="n">node_size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>
-        <span class="n">font_size</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>
-        <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>
-        <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-|&gt;&#39;</span><span class="p">,</span>
-        <span class="n">arrowsize</span><span class="o">=</span><span class="mi">15</span>
+        <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>      <span class="c1"># Tampilkan label (ID node)</span>
+        <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;skyblue&#39;</span><span class="p">,</span>  <span class="c1"># Warna node</span>
+        <span class="n">node_size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span>         <span class="c1"># Ukuran node</span>
+        <span class="n">font_size</span><span class="o">=</span><span class="mi">9</span><span class="p">,</span>           <span class="c1"># Ukuran font label</span>
+        <span class="n">edge_color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span>     <span class="c1"># Warna edge</span>
+        <span class="n">arrows</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>           <span class="c1"># Tampilkan panah (karena ini DiGraph)</span>
+        <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-|&gt;&#39;</span><span class="p">,</span>      <span class="c1"># Gaya panah</span>
+        <span class="n">arrowsize</span><span class="o">=</span><span class="mi">15</span>           <span class="c1"># Ukuran panah</span>
     <span class="p">)</span>
     
     <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Visualisasi Subgraph (100 Tautan Pertama)&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Menyimpan gambar ke file</span>
     <span class="n">output_image_path</span> <span class="o">=</span> <span class="s2">&quot;subgraph.png&quot;</span>
     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">output_image_path</span><span class="p">)</span>
     
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Visualisasi subgraph telah disimpan ke &#39;</span><span class="si">{</span><span class="n">output_image_path</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
-
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Visualisasi subgraph telah disimpan ke &#39;</span><span class="si">{</span><span class="n">output_image_path</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+    
 <span class="c1"># -------------------------------------------------------------------</span>
-<span class="c1"># Analisis Graf Penuh (PageRank + Degree)</span>
+<span class="c1"># Analisis Graf Penuh (Menghitung PageRank)</span>
+<span class="c1"># -------------------------------------------------------------------</span>
+<span class="c1"># gunakan graf penuh (G_full) untuk analisis</span>
 <span class="c1"># -------------------------------------------------------------------</span>
 
 <span class="k">if</span> <span class="s1">&#39;G_full&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Menghitung PageRank pada GRAF PENUH...&quot;</span><span class="p">)</span>
+    <span class="c1"># Ini mungkin butuh beberapa detik</span>
     <span class="n">pagerank_scores</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">pagerank</span><span class="p">(</span><span class="n">G_full</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.85</span><span class="p">)</span>
+    
+    <span class="c1"># Mengurutkan node berdasarkan skor PageRank</span>
     <span class="n">sorted_pagerank</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">pagerank_scores</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- 5 Node Teratas Berdasarkan PageRank ---&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_pagerank</span><span class="p">[:</span><span class="mi">5</span><span class="p">]):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">. Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">score</span><span class="si">:</span><span class="s2">.8f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-    
+
+    <span class="c1"># Variabel baru untuk menyimpan ID node teratas</span>
     <span class="n">top_node_id</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="k">if</span> <span class="n">sorted_pagerank</span><span class="p">:</span>
         <span class="n">top_node_id</span> <span class="o">=</span> <span class="n">sorted_pagerank</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Node teratas adalah: </span><span class="si">{</span><span class="n">top_node_id</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
+<span class="c1"># -------------------------------------------------------------------</span>
+<span class="c1"># Analisis Pengikut (In-Degree) dan Diikuti (Out-Degree)</span>
+<span class="c1"># -------------------------------------------------------------------</span>
+
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Menghitung Jumlah Pengikut (In-Degree) dan Diikuti (Out-Degree)...&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Menghitung in-degree (link masuk / pengikut)</span>
+    <span class="c1"># Ini adalah DegreeView: (node, jumlah_pengikut)</span>
     <span class="n">in_degrees</span> <span class="o">=</span> <span class="n">G_full</span><span class="o">.</span><span class="n">in_degree</span><span class="p">()</span>
+    
+    <span class="c1"># Menghitung out-degree (link keluar / diikuti)</span>
+    <span class="c1"># Ini adalah DegreeView: (node, jumlah_diikuti)</span>
     <span class="n">out_degrees</span> <span class="o">=</span> <span class="n">G_full</span><span class="o">.</span><span class="n">out_degree</span><span class="p">()</span>
     
+    <span class="c1"># Mengurutkan berdasarkan &#39;Pengikut&#39; (In-Degree) terbanyak</span>
     <span class="n">sorted_in_degree</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">in_degrees</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># Mengurutkan berdasarkan &#39;Diikuti&#39; (Out-Degree) terbanyak</span>
     <span class="n">sorted_out_degree</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">out_degrees</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- 5 Node Teratas Berdasarkan Jumlah Pengikut (In-Degree) ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Node yang paling banyak di-link oleh halaman lain)&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">degree</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_in_degree</span><span class="p">[:</span><span class="mi">5</span><span class="p">]):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">. Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">degree</span><span class="si">}</span><span class="s2"> pengikut&quot;</span><span class="p">)</span>
         
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- 5 Node Teratas Berdasarkan Jumlah Diikuti (Out-Degree) ---&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;(Node yang paling banyak me-link ke halaman lain)&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="p">(</span><span class="n">node</span><span class="p">,</span> <span class="n">degree</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sorted_out_degree</span><span class="p">[:</span><span class="mi">5</span><span class="p">]):</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">. Node </span><span class="si">{</span><span class="n">node</span><span class="si">}</span><span class="s2">: mengikuti </span><span class="si">{</span><span class="n">degree</span><span class="si">}</span><span class="s2"> halaman&quot;</span><span class="p">)</span>
     
+    <span class="c1"># Menampilkan info untuk node teratas dari PageRank (jika ada)</span>
     <span class="k">if</span> <span class="n">top_node_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Analisis Detail Node PageRank Teratas (Node </span><span class="si">{</span><span class="n">top_node_id</span><span class="si">}</span><span class="s2">) ---&quot;</span><span class="p">)</span>
+        <span class="c1"># G_full.in_degree(node) mengambil nilai spesifik untuk node itu</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah Pengikut (In-Degree): </span><span class="si">{</span><span class="n">G_full</span><span class="o">.</span><span class="n">in_degree</span><span class="p">(</span><span class="n">top_node_id</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Jumlah Diikuti (Out-Degree): </span><span class="si">{</span><span class="n">G_full</span><span class="o">.</span><span class="n">out_degree</span><span class="p">(</span><span class="n">top_node_id</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -531,75 +569,72 @@ document.write(`
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Data berhasil dimuat. Berikut 5 baris pertama:
-                                          source  \
-0  https://pta.trunojoyo.ac.id/c_search/byprod/7   
-1  https://pta.trunojoyo.ac.id/c_search/byprod/7   
-2  https://pta.trunojoyo.ac.id/c_search/byprod/7   
-3  https://pta.trunojoyo.ac.id/c_search/byprod/7   
-4  https://pta.trunojoyo.ac.id/c_search/byprod/7   
-
-                                           target  
-0  https://pta.trunojoyo.ac.id/c_search/byprod/21  
-1  https://pta.trunojoyo.ac.id/c_search/byprod/22  
-2    https://pta.trunojoyo.ac.id/c_search/byfac/4  
-3  https://pta.trunojoyo.ac.id/c_search/byprod/32  
-4  https://pta.trunojoyo.ac.id/c_search/byprod/19  
+              Halaman Sumber                      Link Keluar (Internal)
+0  https://bangsaonline.com/                    https://bangsaonline.com
+1  https://bangsaonline.com/  https://bangsaonline.com/user/registration
+2  https://bangsaonline.com/              https://bangsaonline.com/feed/
+3  https://bangsaonline.com/               https://bangsaonline.com/live
+4  https://bangsaonline.com/                   https://bangsaonline.com/
 
 Info DataFrame:
 &lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 617 entries, 0 to 616
+RangeIndex: 10383 entries, 0 to 10382
 Data columns (total 2 columns):
- #   Column  Non-Null Count  Dtype 
----  ------  --------------  ----- 
- 0   source  617 non-null    object
- 1   target  617 non-null    object
+ #   Column                  Non-Null Count  Dtype 
+---  ------                  --------------  ----- 
+ 0   Halaman Sumber          10383 non-null  object
+ 1   Link Keluar (Internal)  10383 non-null  object
 dtypes: object(2)
-memory usage: 9.8+ KB
+memory usage: 162.4+ KB
 
 --- Informasi Graf Penuh ---
-Jumlah Node (halaman): 131
-Jumlah Edge (tautan): 617
+Jumlah Node (halaman): 1392
+Jumlah Edge (tautan): 10383
 
 --- Informasi Subgraph (untuk Visualisasi) ---
-Jumlah Node (sample): 68
+Jumlah Node (sample): 100
 Jumlah Edge (sample): 100
 
 Membuat visualisasi subgraph...
-✅ Visualisasi subgraph telah disimpan ke &#39;subgraph.png&#39;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Visualisasi subgraph telah disimpan ke &#39;subgraph.png&#39;
 
 Menghitung PageRank pada GRAF PENUH...
 
 --- 5 Node Teratas Berdasarkan PageRank ---
-1. Node https://pta.trunojoyo.ac.id/c_search/byprod/7: 0.00822990
-2. Node https://pta.trunojoyo.ac.id/c_search/byprod/21: 0.00822990
-3. Node https://pta.trunojoyo.ac.id/c_search/byprod/22: 0.00822990
-4. Node https://pta.trunojoyo.ac.id/c_search/byfac/4: 0.00822990
-5. Node https://pta.trunojoyo.ac.id/c_search/byprod/32: 0.00822990
+1. Node https://bangsaonline.com/feed/: 0.00166288
+2. Node https://bangsaonline.com/live: 0.00166288
+3. Node http://www.bangsaonline.com/berita-video: 0.00166288
+4. Node http://www.bangsaonline.com/indeks: 0.00166288
+5. Node http://www.bangsaonline.com/epaper: 0.00166288
 
-Node teratas adalah: https://pta.trunojoyo.ac.id/c_search/byprod/7
+Node teratas adalah: https://bangsaonline.com/feed/
 
 Menghitung Jumlah Pengikut (In-Degree) dan Diikuti (Out-Degree)...
 
 --- 5 Node Teratas Berdasarkan Jumlah Pengikut (In-Degree) ---
-1. Node https://pta.trunojoyo.ac.id/c_search/byprod/7: 10 pengikut
-2. Node https://pta.trunojoyo.ac.id/c_search/byprod/21: 10 pengikut
-3. Node https://pta.trunojoyo.ac.id/c_search/byprod/22: 10 pengikut
-4. Node https://pta.trunojoyo.ac.id/c_search/byfac/4: 10 pengikut
-5. Node https://pta.trunojoyo.ac.id/c_search/byprod/32: 10 pengikut
+(Node yang paling banyak di-link oleh halaman lain)
+1. Node https://bangsaonline.com/feed/: 98 pengikut
+2. Node https://bangsaonline.com/live: 98 pengikut
+3. Node http://www.bangsaonline.com/berita-video: 98 pengikut
+4. Node http://www.bangsaonline.com/indeks: 98 pengikut
+5. Node http://www.bangsaonline.com/epaper: 98 pengikut
 
 --- 5 Node Teratas Berdasarkan Jumlah Diikuti (Out-Degree) ---
-1. Node https://pta.trunojoyo.ac.id/welcome/detail/090211200001: mengikuti 67 halaman
-2. Node https://pta.trunojoyo.ac.id/c_search/byprod/7: mengikuti 62 halaman
-3. Node https://pta.trunojoyo.ac.id/c_search/byprod/21: mengikuti 62 halaman
-4. Node https://pta.trunojoyo.ac.id/c_search/byprod/22: mengikuti 62 halaman
-5. Node https://pta.trunojoyo.ac.id/c_search/byfac/4: mengikuti 62 halaman
+(Node yang paling banyak me-link ke halaman lain)
+1. Node https://bangsaonline.com/: mengikuti 114 halaman
+2. Node https://bangsaonline.com: mengikuti 114 halaman
+3. Node https://bangsaonline.com/kanal/opini: mengikuti 111 halaman
+4. Node https://bangsaonline.com/kanal/jatim-timur: mengikuti 110 halaman
+5. Node https://bangsaonline.com/kanal/jatim-barat: mengikuti 110 halaman
 
---- Analisis Detail Node PageRank Teratas (Node https://pta.trunojoyo.ac.id/c_search/byprod/7) ---
-Jumlah Pengikut (In-Degree): 10
-Jumlah Diikuti (Out-Degree): 62
+--- Analisis Detail Node PageRank Teratas (Node https://bangsaonline.com/feed/) ---
+Jumlah Pengikut (In-Degree): 98
+Jumlah Diikuti (Out-Degree): 0
 </pre></div>
 </div>
-<img alt="_images/5b4f408e97df54e19d446b1e80ffb79c82772fae60cd042f0426edd6b7751d24.png" src="_images/5b4f408e97df54e19d446b1e80ffb79c82772fae60cd042f0426edd6b7751d24.png" />
+<img alt="_images/f46332e9d6787724f18265b797b28cf0b1c4479631582cf2763980e2038a49ba.png" src="_images/f46332e9d6787724f18265b797b28cf0b1c4479631582cf2763980e2038a49ba.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -688,24 +723,6 @@ Jumlah Diikuti (Out-Degree): 62
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>--- Menganalisis Koneksi untuk Node Teratas (https://pta.trunojoyo.ac.id/c_search/byprod/7) ---
-
-Jumlah &#39;Pengikut&#39; (Predecessors): 10
-Daftar Pengikut: [&#39;https://pta.trunojoyo.ac.id/c_search/byprod/7&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/21&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/22&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/4&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/32&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/19&#39;, &#39;https://pta.trunojoyo.ac.id/welcome/detail/090211200001&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/1&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/2&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/6&#39;]
-
-Jumlah &#39;Yang Diikuti&#39; (Successors): 62
-Daftar Yang Diikuti: [&#39;https://pta.trunojoyo.ac.id/c_search/byprod/21&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/22&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/4&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/32&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/19&#39;, &#39;https://pta.trunojoyo.ac.id/welcome/detail/090211200001&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/1&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/2&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/6&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/17&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/7/2&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/30&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/100&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/38&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/9&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/35&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/12&#39;, &#39;https://pta.trunojoyo.ac.id/welcome/detail/100211200002&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/7/207&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/33&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/14&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/28&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/7/3&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/36&#39;, &#39;https://pta.trunojoyo.ac.id/welcome/detail/080211100050&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/3&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/25&#39;, &#39;https://pta.trunojoyo.ac.id/welcome/detail/080211100044&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/20&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/11&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/41&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/39&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/23&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/40&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/16&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/13&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/15&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/37&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/1&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/2&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/7&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/99&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/5&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/10&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/27&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/4&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/3&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/29&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/31&#39;, &#39;https://pta.trunojoyo.ac.id/welcome/detail/080211100070&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/5&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/26&#39;, &#39;https://pta.trunojoyo.ac.id/&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/7&#39;, &#39;https://pta.trunojoyo.ac.id/c_template/&#39;, &#39;https://pta.trunojoyo.ac.id/c_contact/&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byfac/6&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/24&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/99&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/8&#39;, &#39;https://pta.trunojoyo.ac.id/c_search/byprod/18&#39;]
-
-Total node unik untuk divisualisasikan: 62
-
-Membuat visualisasi untuk lingkungan node teratas...
-Menggambar graf dengan 62 node dan 548 edge.
-Visualisasi node teratas telah disimpan ke &#39;top_pagerank_node_graph.png&#39;
-</pre></div>
-</div>
-<img alt="_images/218561ac69c1bb531b6efabe4a2afc241907b1699917742b0a33140b4591fc47.png" src="_images/218561ac69c1bb531b6efabe4a2afc241907b1699917742b0a33140b4591fc47.png" />
-</div>
 </div>
 </section>
 
@@ -740,20 +757,20 @@ Visualisasi node teratas telah disimpan ke &#39;top_pagerank_node_graph.png&#39;
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="clutering_email.html"
+       href="UAS.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">clutering email</p>
+        <p class="prev-next-title">UAS</p>
       </div>
     </a>
     <a class="right-next"
-       href="Analisis%20dataset%20webusage.html"
+       href="pagerank_pta.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Analisis dataset webusage</p>
+        <p class="prev-next-title">Page PTA</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

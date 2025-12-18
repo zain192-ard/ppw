@@ -1,0 +1,814 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Page Rank Berita &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'pagerank_berita';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Page PTA" href="pagerank_pta.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pp.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/pp.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profil
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Pengantar_web_mining.html">Pengantar Web Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_berita.html">Crawling Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linkscraping.html">Link Graph Scraping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scraping_manengemet.html">PTA Management</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="klasifikasikan_berita.html">Klasifikasi Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clutering_email.html">clutering email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphlnk.html">GRAPH LINK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20webusage.html">Analisis dataset webusage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20nassa.html">Analisis Data Nasa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_twiter.html">Crawling Twiter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_fb.html">Data FB</a></li>
+<li class="toctree-l1"><a class="reference internal" href="peper.html">Peper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="UAS.html">UAS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graph_berita.html">Graph Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pagerank_pta.html">Page PTA</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Page Rank Berita</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpagerank_berita.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/pagerank_berita.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Page Rank Berita</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="page-rank-berita">
+<h1>Page Rank Berita<a class="headerlink" href="#page-rank-berita" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">urllib.parse</span><span class="w"> </span><span class="kn">import</span> <span class="n">urljoin</span><span class="p">,</span> <span class="n">urlparse</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">deque</span>  <span class="c1"># Antrian (queue) yang efisien</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">build_pagerank_dataset</span><span class="p">(</span><span class="n">start_url</span><span class="p">,</span> <span class="n">max_pages</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.1</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Melakukan crawling multi-halaman untuk membangun edge list untuk PageRank.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="n">pages_to_visit</span> <span class="o">=</span> <span class="n">deque</span><span class="p">([</span><span class="n">start_url</span><span class="p">])</span>
+    <span class="n">visited_pages</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">edge_list</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">hostname</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">start_url</span><span class="p">)</span><span class="o">.</span><span class="n">hostname</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">hostname</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Hostname tidak ditemukan. Pastikan URL diawali &#39;https://&#39; atau &#39;http://&#39;&quot;</span><span class="p">)</span>
+        <span class="n">base_hostname</span> <span class="o">=</span> <span class="n">hostname</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;www.&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">AttributeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error: URL awal tidak valid -&gt; &#39;</span><span class="si">{</span><span class="n">start_url</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Detail: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Halaman Sumber&quot;</span><span class="p">,</span> <span class="s2">&quot;Link Keluar (Internal)&quot;</span><span class="p">])</span> 
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Memulai crawl dari: </span><span class="si">{</span><span class="n">start_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Domain target: </span><span class="si">{</span><span class="n">base_hostname</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Batas halaman: </span><span class="si">{</span><span class="n">max_pages</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="n">IGNORED_EXTENSIONS</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="s1">&#39;.png&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;.gif&#39;</span><span class="p">,</span> <span class="s1">&#39;.svg&#39;</span><span class="p">,</span> <span class="s1">&#39;.bmp&#39;</span><span class="p">,</span> <span class="s1">&#39;.tiff&#39;</span><span class="p">,</span> <span class="s1">&#39;.webp&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.pdf&#39;</span><span class="p">,</span> <span class="s1">&#39;.doc&#39;</span><span class="p">,</span> <span class="s1">&#39;.docx&#39;</span><span class="p">,</span> <span class="s1">&#39;.xls&#39;</span><span class="p">,</span> <span class="s1">&#39;.xlsx&#39;</span><span class="p">,</span> <span class="s1">&#39;.ppt&#39;</span><span class="p">,</span> <span class="s1">&#39;.pptx&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.zip&#39;</span><span class="p">,</span> <span class="s1">&#39;.rar&#39;</span><span class="p">,</span> <span class="s1">&#39;.gz&#39;</span><span class="p">,</span> <span class="s1">&#39;.tar&#39;</span><span class="p">,</span> <span class="s1">&#39;7z&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;.mkv&#39;</span><span class="p">,</span> <span class="s1">&#39;.avi&#39;</span><span class="p">,</span> <span class="s1">&#39;.mov&#39;</span><span class="p">,</span> <span class="s1">&#39;.mp3&#39;</span><span class="p">,</span> <span class="s1">&#39;.wav&#39;</span><span class="p">,</span> <span class="s1">&#39;.ogg&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;.css&#39;</span><span class="p">,</span> <span class="s1">&#39;.js&#39;</span><span class="p">,</span> <span class="s1">&#39;.xml&#39;</span><span class="p">,</span> <span class="s1">&#39;.json&#39;</span><span class="p">,</span> <span class="s1">&#39;.csv&#39;</span>
+    <span class="p">)</span>
+
+    <span class="c1"># Kita akan mencari segmen path &#39;iklan&#39;</span>
+    <span class="n">IGNORED_PATH_SEGMENTS</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;iklan&#39;</span><span class="p">,)</span>
+
+    <span class="k">while</span> <span class="n">pages_to_visit</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">visited_pages</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">max_pages</span><span class="p">:</span>
+        <span class="n">current_url</span> <span class="o">=</span> <span class="n">pages_to_visit</span><span class="o">.</span><span class="n">popleft</span><span class="p">()</span>
+        
+        <span class="k">if</span> <span class="n">current_url</span> <span class="ow">in</span> <span class="n">visited_pages</span><span class="p">:</span>
+            <span class="k">continue</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">parsed_current_url</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">current_url</span><span class="p">)</span> <span class="c1"># Parse sekali saja</span>
+            <span class="n">cleaned_url_path</span> <span class="o">=</span> <span class="n">parsed_current_url</span><span class="o">.</span><span class="n">path</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  -&gt; [SKIP] URL tidak valid: </span><span class="si">{</span><span class="n">current_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span> 
+
+        <span class="k">if</span> <span class="n">cleaned_url_path</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">IGNORED_EXTENSIONS</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  -&gt; [SKIP] Mengabaikan file (dari ekstensi): </span><span class="si">{</span><span class="n">current_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+            
+        
+        <span class="c1"># Pecah path menjadi segmen: &#39;/berita/iklan/123&#39; -&gt; [&#39;&#39;, &#39;berita&#39;, &#39;iklan&#39;, &#39;123&#39;]</span>
+        <span class="n">current_path_segments</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">cleaned_url_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span> 
+        
+        <span class="c1"># Cek apakah ada irisan (intersection) antara segmen path dan segmen yang diabaikan</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">current_path_segments</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">IGNORED_PATH_SEGMENTS</span><span class="p">):</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  -&gt; [SKIP] Mengabaikan path terlarang: </span><span class="si">{</span><span class="n">current_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">continue</span>
+       
+            
+        <span class="n">visited_pages</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">current_url</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">visited_pages</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">max_pages</span><span class="si">}</span><span class="s2">] Crawling: </span><span class="si">{</span><span class="n">current_url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">delay</span><span class="p">)</span>
+            
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">head_response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">current_url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">head_response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span> 
+                <span class="n">content_type</span> <span class="o">=</span> <span class="n">head_response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="s1">&#39;text/html&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">content_type</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  -&gt; [SKIP] Mengabaikan tipe konten non-HTML: </span><span class="si">{</span><span class="n">content_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+            <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">head_err</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s1">&#39;head_response&#39;</span> <span class="ow">in</span> <span class="nb">locals</span><span class="p">()</span> <span class="ow">and</span> <span class="n">head_response</span><span class="o">.</span><span class="n">status_code</span> <span class="o">&gt;=</span> <span class="mi">400</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  -&gt; Gagal (HEAD): </span><span class="si">{</span><span class="n">current_url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">head_err</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                        <span class="k">continue</span>
+                <span class="k">pass</span>
+
+            <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">current_url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            
+            <span class="n">final_content_type</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;Content-Type&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="s1">&#39;text/html&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">final_content_type</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  -&gt; [SKIP] Mengabaikan tipe konten non-HTML (setelah GET): </span><span class="si">{</span><span class="n">final_content_type</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                    <span class="k">continue</span>
+            
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+            <span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            
+            <span class="k">for</span> <span class="n">link</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+                <span class="n">href</span> <span class="o">=</span> <span class="n">link</span><span class="p">[</span><span class="s1">&#39;href&#39;</span><span class="p">]</span>
+                
+                <span class="k">if</span> <span class="n">href</span><span class="o">.</span><span class="n">startswith</span><span class="p">((</span><span class="s1">&#39;#&#39;</span><span class="p">,</span> <span class="s1">&#39;javascript:&#39;</span><span class="p">,</span> <span class="s1">&#39;mailto:&#39;</span><span class="p">,</span> <span class="s1">&#39;tel:&#39;</span><span class="p">))</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">href</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
+                    <span class="k">continue</span>
+                
+                <span class="n">absolute_url</span> <span class="o">=</span> <span class="n">urljoin</span><span class="p">(</span><span class="n">current_url</span><span class="p">,</span> <span class="n">href</span><span class="p">)</span>
+                <span class="n">absolute_url</span> <span class="o">=</span> <span class="n">absolute_url</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;#&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># Hapus fragment</span>
+
+                <span class="k">try</span><span class="p">:</span>
+                    <span class="n">parsed_absolute_url</span> <span class="o">=</span> <span class="n">urlparse</span><span class="p">(</span><span class="n">absolute_url</span><span class="p">)</span>
+                    
+                    
+                    <span class="n">absolute_url_path</span> <span class="o">=</span> <span class="n">parsed_absolute_url</span><span class="o">.</span><span class="n">path</span>
+                    <span class="n">found_path_segments</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">absolute_url_path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">))</span>
+                    
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">found_path_segments</span><span class="o">.</span><span class="n">isdisjoint</span><span class="p">(</span><span class="n">IGNORED_PATH_SEGMENTS</span><span class="p">):</span>
+                        <span class="c1"># Jangan tambahkan ke antrian jika path-nya diabaikan</span>
+                        <span class="k">continue</span>
+                    
+
+                    <span class="n">link_hostname</span> <span class="o">=</span> <span class="n">parsed_absolute_url</span><span class="o">.</span><span class="n">hostname</span>
+                    <span class="k">if</span> <span class="n">link_hostname</span> <span class="ow">and</span> <span class="n">link_hostname</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="n">base_hostname</span><span class="p">):</span>
+                        <span class="n">edge_list</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">current_url</span><span class="p">,</span> <span class="n">absolute_url</span><span class="p">])</span>
+                        <span class="k">if</span> <span class="n">absolute_url</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">visited_pages</span><span class="p">:</span>
+                            <span class="n">pages_to_visit</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">absolute_url</span><span class="p">)</span>
+                <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+                    <span class="c1"># Jika URL yang ditemukan tidak valid</span>
+                    <span class="k">continue</span>
+
+        <span class="k">except</span> <span class="n">requests</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">RequestException</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;  -&gt; Gagal mengakses (GET) </span><span class="si">{</span><span class="n">current_url</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Crawl selesai. Total </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">visited_pages</span><span class="p">)</span><span class="si">}</span><span class="s2"> halaman di-visit.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">edge_list</span><span class="p">)</span><span class="si">}</span><span class="s2"> link (edge) ditemukan.&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">edge_list</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Tidak ada edge yang ditemukan. DataFrame akan kosong.&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Halaman Sumber&quot;</span><span class="p">,</span> <span class="s2">&quot;Link Keluar (Internal)&quot;</span><span class="p">])</span>
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">edge_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Halaman Sumber&quot;</span><span class="p">,</span> <span class="s2">&quot;Link Keluar (Internal)&quot;</span><span class="p">])</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop_duplicates</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset akhir memiliki </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span><span class="si">}</span><span class="s2"> edge.&quot;</span><span class="p">)</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1"># --- Bagian Utama untuk Menjalankan Kode ---</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    
+    <span class="n">target_url</span> <span class="o">=</span> <span class="s2">&quot;https://bangsaonline.com/&quot;</span>
+    <span class="n">batas_halaman</span> <span class="o">=</span> <span class="mi">100</span>
+    
+    <span class="n">start_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    
+    <span class="n">pagerank_df</span> <span class="o">=</span> <span class="n">build_pagerank_dataset</span><span class="p">(</span><span class="n">target_url</span><span class="p">,</span> <span class="n">max_pages</span><span class="o">=</span><span class="n">batas_halaman</span><span class="p">,</span> <span class="n">delay</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+    
+    <span class="n">end_time</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+    <span class="n">duration</span> <span class="o">=</span> <span class="n">end_time</span> <span class="o">-</span> <span class="n">start_time</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">pagerank_df</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Contoh Hasil Dataset (Head) ---&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">pagerank_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+        
+        <span class="n">output_filename</span> <span class="o">=</span> <span class="s2">&quot;pagerank500_edges_berita_new.csv&quot;</span>
+        <span class="n">pagerank_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">output_filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">File berhasil disimpan ke </span><span class="si">{</span><span class="n">output_filename</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Dataset akhir kosong, tidak ada file CSV yang disimpan.&quot;</span><span class="p">)</span>
+
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">--- Selesai ---&quot;</span><span class="p">)</span>
+    <span class="n">minutes</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">//</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="n">seconds</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">duration</span> <span class="o">%</span> <span class="mi">60</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total waktu eksekusi: </span><span class="si">{</span><span class="n">minutes</span><span class="si">}</span><span class="s2"> menit </span><span class="si">{</span><span class="n">seconds</span><span class="si">}</span><span class="s2"> detik (</span><span class="si">{</span><span class="n">duration</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> detik)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Memulai crawl dari: https://bangsaonline.com/
+Domain target: bangsaonline.com
+Batas halaman: 100
+
+[1/100] Crawling: https://bangsaonline.com/
+[2/100] Crawling: https://bangsaonline.com
+[3/100] Crawling: https://bangsaonline.com/user/registration
+  -&gt; Gagal (HEAD): https://bangsaonline.com/user/registration: 500 Server Error: Internal Server Error for url: https://bangsaonline.com/user/registration
+[4/100] Crawling: https://bangsaonline.com/feed/
+  -&gt; [SKIP] Mengabaikan tipe konten non-HTML: application/xml
+[5/100] Crawling: https://bangsaonline.com/live
+[6/100] Crawling: https://bangsaonline.com/kanal/jawa-timur
+[7/100] Crawling: https://bangsaonline.com/kanal/jatim-metro
+[8/100] Crawling: https://bangsaonline.com/kanal/jatim-tengah
+[9/100] Crawling: https://bangsaonline.com/kanal/jatim-utara
+[10/100] Crawling: https://bangsaonline.com/kanal/jatim-selatan
+[11/100] Crawling: https://bangsaonline.com/kanal/jatim-timur
+[12/100] Crawling: https://bangsaonline.com/kanal/jatim-barat
+[13/100] Crawling: https://bangsaonline.com/kanal/jatim-madura
+[14/100] Crawling: https://bangsaonline.com/kanal/nasional
+[15/100] Crawling: https://bangsaonline.com/kanal/nusantara
+[16/100] Crawling: https://bangsaonline.com/kanal/politik
+[17/100] Crawling: https://bangsaonline.com/kanal/birokrasi
+[18/100] Crawling: https://bangsaonline.com/kanal/religia
+[19/100] Crawling: https://bangsaonline.com/kanal/tj-islam-sehari-hari
+[20/100] Crawling: https://bangsaonline.com/kanal/tafsir-al-quran-aktual
+[21/100] Crawling: https://bangsaonline.com/kanal/pesantren
+[22/100] Crawling: https://bangsaonline.com/kanal/ormas
+[23/100] Crawling: https://bangsaonline.com/kanal/hukum-dan-kriminal
+[24/100] Crawling: https://bangsaonline.com/kanal/ekonomi
+[25/100] Crawling: https://bangsaonline.com/kanal/entrepreneur
+[26/100] Crawling: https://bangsaonline.com/kanal/entertain-sport
+[27/100] Crawling: https://bangsaonline.com/kanal/selebriti
+[28/100] Crawling: https://bangsaonline.com/kanal/wisata
+[29/100] Crawling: https://bangsaonline.com/kanal/lifestyle
+[30/100] Crawling: https://bangsaonline.com/kanal/olahraga
+[31/100] Crawling: https://bangsaonline.com/kanal/otomotif
+[32/100] Crawling: http://www.bangsaonline.com/berita-video
+[33/100] Crawling: https://bangsaonline.com/kanal/pendidikan
+[34/100] Crawling: https://bangsaonline.com/kanal/kesehatan
+[35/100] Crawling: https://bangsaonline.com/kanal/tren
+[36/100] Crawling: https://bangsaonline.com/kanal/kuliner
+[37/100] Crawling: https://bangsaonline.com/kanal/figur
+[38/100] Crawling: https://bangsaonline.com/kanal/sejarah-dan-budaya
+[39/100] Crawling: https://bangsaonline.com/kanal/internasional
+[40/100] Crawling: https://bangsaonline.com/kanal/unik-aneh
+[41/100] Crawling: https://bangsaonline.com/kanal/peristiwa
+[42/100] Crawling: https://bangsaonline.com/kanal/teknologi
+[43/100] Crawling: https://bangsaonline.com/kanal/komunitas-dan-lingkungan
+[44/100] Crawling: http://www.bangsaonline.com/indeks
+[45/100] Crawling: https://bangsaonline.com/berita/156575/mengembalikan-nu-kepada-para-kiai-sepuh-bukan-kiai-kampungan
+[46/100] Crawling: https://bangsaonline.com/kanal/opini
+[47/100] Crawling: https://bangsaonline.com/berita/156466/tafsir-al-hajj-28-29-hilah-dalam-nadzar
+[48/100] Crawling: https://bangsaonline.com/berita-video/156056/pemkab-malang-dan-bea-cukai-musnahkan-32-juta-batang-rokok-ilegal-1
+[49/100] Crawling: https://bangsaonline.com/berita-video/
+[50/100] Crawling: https://bangsaonline.com/berita/154277/tafsir-al-hajj-24-25-fiqh-al-haram
+[51/100] Crawling: https://bangsaonline.com/berita/156563/dugaan-korupsi-dana-blud-rsud-moh-zyn-kejari-sampang-ungkap-peluang-lebih-dari-1-tersangka
+[52/100] Crawling: https://bangsaonline.com/berita/156582/bea-cukai-sidoarjo-musnahkan-93-juta-batang-rokok-ilegal-senilai-rp139-miliar
+[53/100] Crawling: https://bangsaonline.com/berita/156580/lewat-sosialisasi-ekspor-impor-wali-kota-mojokerto-dorong-ikm-ukm-naik-kelas
+[54/100] Crawling: https://bangsaonline.com/berita/156576/asn-protes-ke-polres-situbondo-tuntut-penahanan-tersangka-pengeroyokan
+[55/100] Crawling: https://bangsaonline.com/berita/156573/harga-sembako-di-jatim-terus-menunjukkan-penurunan-hari-ini-cabai-rawit-merosot-rp7-ribu
+[56/100] Crawling: https://bangsaonline.com/berita/156565/dinas-pendidikan-dan-kebudayaan-kota-pasuruan-mengucapkan-selamat-hari-ibu
+[57/100] Crawling: https://bangsaonline.com/berita/156585/pergerakan-harga-emas-lotus-archi-hari-ini-1-gram-naik-rp12-ribu
+[58/100] Crawling: https://bangsaonline.com/berita/156583/wamendag-tinjau-harga-pangan-di-mojokerto-jelang-nataru
+[59/100] Crawling: https://bangsaonline.com/berita/156584/dalam-sepekan-emas-galeri24-naik-rp69-ribu-simak-harga-selengkapnya-berikut-ini
+[60/100] Crawling: https://bangsaonline.com/berita/156581/harga-pangan-aceh-18-desember-2025-rawit-hijau-dan-cabai-keriting-turun-drastis-telur-bawang-naik
+[61/100] Crawling: https://bangsaonline.com/berita/156579/sambut-tahun-baru-2026-mui-sukolilo-gelar-doa-bersama
+[62/100] Crawling: https://bangsaonline.com/berita/156578/merosot-lagi-harga-cabai-rawit-di-surabaya-hari-ini-turun-rp7-300
+[63/100] Crawling: https://bangsaonline.com/berita/156577/skrining-riwayat-kesehatan-di-mobile-jkn-dorong-deteksi-dini-penyakit-kronis
+[64/100] Crawling: https://bangsaonline.com/berita/156574/perkuat-pembinaan-atlet-pelajar-pemprov-jatim-revitalisasi-smanor-sidoarjo
+[65/100] Crawling: https://bangsaonline.com/berita/156572/kiai-asep-undang-1-936-kepala-sekolah-di-jatim-bongkar-rahasia-sukses-amanatul-ummah
+[66/100] Crawling: https://bangsaonline.com/berita/156446/prakiraan-cuaca-sidoarjo-hari-ini-kamis-18-desember-2025-suhu-24-31°c-kecepatan-angin-3-8-ms
+[67/100] Crawling: https://bangsaonline.com/berita/156560/korban-banjir-sumatera-akan-terima-bantuan-rp3-juta-untuk-perabotan-rumah
+[68/100] Crawling: https://bangsaonline.com/berita/156448/prakiraan-cuaca-jombang-hari-ini-kamis-18-desember-2025-suhu-23-31°c-kecepatan-angin-4-2-ms
+[69/100] Crawling: https://bangsaonline.com/berita/156570/pt-sig-pabrik-tuban-rehab-rumah-milik-lansia-di-merakurak
+[70/100] Crawling: https://bangsaonline.com/berita/156568/gus-dur-stempel-digital-dan-labirin-modernitas-di-markas-besar-nu-1
+[71/100] Crawling: https://bangsaonline.com/berita/156447/prakiraan-cuaca-trenggalek-hari-ini-kamis-18-desember-2025-suhu-21-29°c-kecepatan-angin-7-6-ms
+[72/100] Crawling: https://bangsaonline.com/berita/156571/festival-kopi-quds-royal-hotel-surabaya-meriahkan-akhir-tahun-dengan-literasi-dan-seni
+[73/100] Crawling: https://bangsaonline.com/berita/156569/pt-freeport-gelar-pelatihan-apartemen-kepiting-sebagai-solusi-alternatif-usaha-nelayan-gresik
+[74/100] Crawling: https://bangsaonline.com/berita/156567/diabetes-dan-hipertensi-meningkat-bpjs-kesehatan-sidoarjo-gencarkan-program-prolanis
+[75/100] Crawling: https://bangsaonline.com/berita/156566/cegah-korupsi-pemkab-lamongan-terapkan-strategi-digitalisasi
+[76/100] Crawling: https://bangsaonline.com/berita/156564/cimb-niaga-fasilitasi-green-financing-syariah-untuk-dukung-keberlanjutan-ikpt
+[77/100] Crawling: https://bangsaonline.com/berita/156562/bupati-madiun-sampaikan-keputusan-hasil-raperdes-apbdes-seluruh-desa-teken-pakta-integritas
+[78/100] Crawling: https://bangsaonline.com/berita/156561/pramuka-jatim-salurkan-bantuan-rp605-juta-untuk-bencana-di-sumut-sumbar-dan-aceh
+[79/100] Crawling: https://bangsaonline.com/berita/156559/apresiasi-capaian-positif-pemkab-mojokerto-anugerahkan-22-penghargaan-untuk-opd-dan-asn-berprestasi
+[80/100] Crawling: https://bangsaonline.com/berita/156558/polisi-amankan-dua-pengedar-sabu-asal-bawean-gresik
+[81/100] Crawling: https://bangsaonline.com/berita/156557/mubes-hari-terpilih-jadi-ketua-fprb-kabupaten-kediri-periode-2025–2029
+[82/100] Crawling: https://bangsaonline.com/berita/156556/perkuat-antisipasi-bencana-pemkot-batu-gelar-sarasehan-kewilayahan-jelang-nataru-2026
+[83/100] Crawling: https://bangsaonline.com/berita/156555/pemkab-madiun-gandeng-kejari-sosialisasikan-penerapan-kuhp-nasional
+[84/100] Crawling: https://bangsaonline.com/berita/156554/bnn-kabupaten-pasuruan-razia-psk-di-prigen-1-orang-positif-narkoba
+[85/100] Crawling: https://bangsaonline.com/berita/156553/meski-sudah-sidang-dan-kapolres-minta-maaf-salah-tangkap-polres-blitar-masih-picu-amarah-masyarakat
+[86/100] Crawling: https://bangsaonline.com/tag/harga-emas
+[87/100] Crawling: https://bangsaonline.com/tag/desa-gresik
+[88/100] Crawling: https://bangsaonline.com/tag/polda-jatim
+[89/100] Crawling: https://bangsaonline.com/tag/kiai-asep
+[90/100] Crawling: https://bangsaonline.com/tag/kediri
+  -&gt; [SKIP] Mengabaikan file (dari ekstensi): https://bangsaonline.com/images/uploads/ekoran/fb375dfde274a8f63859663208622bb3.jpg
+  -&gt; [SKIP] Mengabaikan file (dari ekstensi): https://bangsaonline.com/images/uploads/ekoran/8cd8c8590dce2bbb0b62270da4117e38.jpg
+  -&gt; [SKIP] Mengabaikan file (dari ekstensi): https://bangsaonline.com/images/uploads/ekoran/0263bf34886b96dfeae8a8ace013a722.jpg
+  -&gt; [SKIP] Mengabaikan file (dari ekstensi): https://bangsaonline.com/images/uploads/ekoran/94b79402f31a4b9de1a770654c75eaeb.jpg
+[91/100] Crawling: https://bangsaonline.com/ekoran
+[92/100] Crawling: https://bangsaonline.com/berita/156519/di-uin-jakarta-kiai-asep-ungkap-kunci-sukses-mengajar-murid-seperti-anak-cari-ikan-di-sungai
+[93/100] Crawling: https://bangsaonline.com/berita/156359/kiai-asep-terkejut-dapat-penghargaan-dari-kpai-sebagai-tokoh-peduli-anak
+[94/100] Crawling: https://bangsaonline.com/berita/156382/forum-muktamar-tebuireng-2025-turats-nabawi-desak-pemerintah-tinjau-ulang-hilirisasi-sda
+[95/100] Crawling: https://bangsaonline.com/kanal/jawa-barat
+[96/100] Crawling: https://bangsaonline.com/kanal/jawa-tengah
+[97/100] Crawling: https://bangsaonline.com/kanal/dki-jakarta
+[98/100] Crawling: https://bangsaonline.com/kanal/di-yogyakarta
+[99/100] Crawling: https://bangsaonline.com/kanal/banten
+[100/100] Crawling: https://bangsaonline.com/kanal/bali
+
+Crawl selesai. Total 100 halaman di-visit.
+Total 14140 link (edge) ditemukan.
+Dataset akhir memiliki 10383 edge.
+
+--- Contoh Hasil Dataset (Head) ---
+              Halaman Sumber                        Link Keluar (Internal)
+0  https://bangsaonline.com/                      https://bangsaonline.com
+1  https://bangsaonline.com/    https://bangsaonline.com/user/registration
+2  https://bangsaonline.com/                https://bangsaonline.com/feed/
+3  https://bangsaonline.com/                 https://bangsaonline.com/live
+4  https://bangsaonline.com/                     https://bangsaonline.com/
+5  https://bangsaonline.com/     https://bangsaonline.com/kanal/jawa-timur
+6  https://bangsaonline.com/    https://bangsaonline.com/kanal/jatim-metro
+7  https://bangsaonline.com/   https://bangsaonline.com/kanal/jatim-tengah
+8  https://bangsaonline.com/    https://bangsaonline.com/kanal/jatim-utara
+9  https://bangsaonline.com/  https://bangsaonline.com/kanal/jatim-selatan
+
+File berhasil disimpan ke pagerank500_edges_berita_new.csv
+
+--- Selesai ---
+Total waktu eksekusi: 0 menit 58 detik (58.11 detik)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="pagerank_pta.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Page PTA</p>
+      </div>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
