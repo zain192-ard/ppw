@@ -1,0 +1,901 @@
+kalimat
+" 
+ 
+ 
+ 
+ 
+https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+43
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+IMPLEMENTASI CONTENT-BASED FILTERING 
+MENGGUNAKAN TF-IDF AND COSINE SIMILARITY 
+UNTUK SISTEM REKOMENDASI RESEP MASAKAN 
+Nova Noor Kamala Sari a,1, Ressa Priskila b,2."
+"*, Putu Bagus Adidyana Anugrah Putra c,3 
+a,b,c Universitas Palangka Raya, Kampus UPR Tunjung Nyaho Jalan Yos Sudarso, Palangka Raya 73112 
+1 novanoorks@it.upr.ac.id ; 2 ressapriskila@it.upr.ac.id *; 3putubagus@it.upr.ac.id  
+* corresponding author 
+ 
+ARTICLE INFO 
+ABSTRACT 
+Keywords 
+Sistem Rekomendasi, 
+Content-based Filtering, 
+Cosine Similarity, 
+TF-IDF, 
+Resep masakan 
+Many housewives are still confused about what dishes they will cook with 
+existing food ingredients."
+"Most housewives get recipe ideas from the 
+website."
+"Recipes from the website have the advantage of being easily 
+accessible, but the disadvantages are sometimes troublesome for users 
+because they have to choose a recipe from which site because there are 
+many sites that contain the same recipe, and most of the recipe websites 
+on the internet do not have a feature to search recipes based on the 
+ingredients they have."
+"The aim of this research is to implement a content-
+based filtering method using TF-IDF and cosine similarity for a recipe 
+recommendation system."
+"The TF-IDF and cosine similarity models are 
+used to find similarity values between material data in the database and 
+the query entered by the user in the search form."
+"The sample data used in 
+this research is 30 recipe data points taken from the website 
+makapahariini.com."
+"As a result, this system displays recipe 
+recommendations that match the query of ingredients inputted by the user 
+on the search form, and based on the test results using root mean square 
+error (RMSE), it can be said that the recommendation system with the 
+content-based filtering method that has been implemented produces quite 
+good recommendations with a value of 0.356359182."
+1.
+"Pendahuluan 
+Kegembiraan masyarakat saat ini untuk memasak cukup besar, karena makanan tidak hanya 
+memenuhi kebutuhan gizi manusia, tetapi juga telah menjadi objek rekreasi bagi sebagian orang untuk 
+melepas penat setelah seharian bekerja."
+"Memasak masih merupakan kegiatan harian utama yang 
+umumnya dilakukan oleh ibu rumah tangga."
+"Nyatanya masih banyak ibu rumah tangga yang masih 
+kebingungan untuk menentukan masakan apa yang akan mereka masak sehingga bahan-bahan yang 
+mereka miliki menjadi rusak akibat tidak kunjung dimasak."
+"Berdasarkan pengamatan penulis beberapa ibu rumah tangga menyimpan bahan-bahan makanan 
+untuk dimasak pada kemudian hari."
+"Sementara itu, beberapa hari selanjutnya ibu rumah tangga 
+menemukan bahan makanan yang mereka simpan menjadi rusak dikarenakan tidak kunjung dimasak, 
+hal ini biasa terjadi karena mereka tidak memiliki ide untuk memasak apa dari bahan-bahan yang 
+mereka miliki."
+"Bahan makanan seperti sayur-sayuran dan daging memiliki daya tahan yang sangat 
+singkat."
+"Jika setiap ibu-ibu yang memiliki bahan tersebut tidak memiliki ide untuk dimasak menjadi 
+masakan apa, berarti tidak sedikit dari bahan-bahan tersebut yang tidak digunakan akan menjadi rusak 
+dan mau tidak mau pun akhirnya terbuang menjadi sampah makanan."
+"https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+44
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+Sebagian besar ibu rumah tangga mendapatkan ide resep dari website resep."
+"Resep dari website 
+tersebut memiliki kelebihan mudah untuk diakses dan memiliki resep yang cukup lengkap, namun 
+kelemahannya terkadang merepotkan pengguna karena harus memilih resep dari situs yang mana, dan 
+terdapat banyak sekali situs yang memuat resep yang sama, serta kebanyakan dari website resep di 
+internet tidak memiliki fitur untuk pencarian resep berdasarkan bahan-bahan yang dimiliki."
+"Sistem rekomendasi merupakan perangkat lunak untuk memberikan rekomendasi kepada pengguna 
+mengenai sesuatu produk yang akan digunakan [1]."
+"Rekomendasi digunakan berdasarkan adanya 
+personalisasi sehingga rekomendasi yang dihasilkan mungkin akan berbeda- beda setiap usernya [2]."
+"Terdapat dua pendekatan yang umumnya digunakan dalam membuat sistem rekomendasi, diantaranya 
+adalah Content-Based Filtering dan Collaborative Filtering serta gabungan kedua metode tersebut yaitu 
+metode Hybrid Filtering."
+"Dari permasalahan yang ada diatas penulis merancang sebuah aplikasi website yang menyimpan 
+sekumpulan resep-resep makanan, dimana didalam website tersebut penulis menambahkan sistem 
+rekomendasi berdasarkan bahan makanan yang diinputkan oleh pengguna."
+"Sistem rekomendasi yang 
+digunakan oleh pengguna adalah Content-Based Filtering [4]."
+"Metode Content-Based Filtering dipilih 
+karena penulis perlu membandingkan konten yang ada dalam database dengan konten yang ingin dicari 
+oleh pengguna, sehingga nantinya sistem  ini akan menampilkan rekomendasi resep yang sesuai dengan 
+query bahan-bahan yang diinputkan oleh pengguna pada form pencarian."
+"Algoritma Content-Based 
+Filtering dipilih untuk melakukan filtering data resep karena algoritma ini bekerja dengan menemukan 
+kesamaan bahan makanan yang digunakan dalam resep dengan bahan makanan yang diinputkan oleh 
+pengguna dan kemudian merekomendasikan resep yang memiliki bahan-bahan yang sama [4]."
+"Tujuan 
+dari penelitian ini adalah menerapkan metode content-based filtering pada sistem rekomendasi resep 
+makanan."
+2.
+"Metodologi Penelitian 
+Alur penelitian yang dilakukan pada penelitian ini terdiri dari identifikasi masalah, studi literatur, 
+pengumpulan data, perancangan, implementasi sistem dan pengujian."
+"Alur penelitian yang dilakukan 
+ditunjukan pada gambar 1 dibawah ini."
+Gambar 1.
+"Alur Penelitian 
+ 
+Berikut adalah penjelasan alur penelitian yang dilakukan."
+1.
+"Identifikasi Masalah  
+ 
+ 
+ 
+ 
+ 
+https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+45
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+Tahap pertama dalam penelitian ini adalah memahami dan mengidentifikasi permasalahan yang 
+akan diteliti."
+"Masalah yang akan diteliti adalah mengenai penerapan metode content-based filtering 
+pada sistem rekomendasi resep makanan."
+2.
+"Studi Literatur  
+Tahapan kedua dalam penelitian ini adalah empelajari literatur, seperti buku, jurnal dan literatur 
+lainnya yang berhubungan dengan penelitian yang akan dilakukan sebagai pendukung dalam 
+penelitian."
+3.
+"Pengumpulan Data  
+Pada tahap ini, dilakukan pengumpulan data dari informasi akurat yang dapat menunjang proses dan 
+hasil penelitian."
+"Metode pengumpulan data dilakukan dengan melakukan observasi terlebih dahulu, 
+selanjutnya menentukan sampel data yang akan digunakan."
+"Data yang digunakan sebagai sampel 
+yaitu data resep dari website masakapahariini.com."
+4.
+"Perancangan Sistem  
+Rancangan sistem dibuat agar sistem yang dibangun dapat efektif dan efisien."
+"Sistem digambarkan 
+secara rinci dengan Data Flow Diagram dan juga dilakukan perancangan user interface."
+5.
+"Implementasi Sistem  
+Sistem yang sudah dirancang lalu diimplementasikan dengan melakukan pengkodean."
+"Pada 
+tahapan ini juga metode Content-Based Filttering akan diimplementasikan pada sistem."
+"Dalam 
+membuat sistem rekomendasi resep makanan, peneliti menggunakan model TF-IDF dan Cosine 
+Similarity untuk mencari nilai kemiripan antara data bahan-bahan yang ada dalam database dengan  
+query yang diinputkan oleh pengguna pada form pencarian."
+"Data string yang ada, akan dicari nilai 
+bobotnya dengan TF-IDF, dari nilai bobot tersebut maka dapat dihitung kemiripan vektor (dokumen) 
+query dengan setiap data bahan-bahan yang ada dalam database dengan menggunakan cosine 
+similarity."
+6.
+"Pengujian Sistem  
+Pada tahap ini akan dilakukan pengujian terhadap sistem rekomendasi dengan metode Content-
+Based Filtering yang sudah diimplementasikan."
+"2.1  Metode Content-Based Filtering 
+Content Based-Filtering pada penelitian ini digunakan untuk mencari, memilih dan melakukan 
+peringkat item berdasarkan kesamaan kata yang sedang dicari pengguna[4]."
+"Kata kunci untuk pencarian 
+yang digunakan adalah bahan-bahan yang dimiliki setiap resep makanan yang telah tercatat dalam 
+sistem nantinya."
+"Pada metode ini, dokumen D direpresentasikan sebagai vektor m dimensional."
+"Dimana 
+setiap dimensi berkorespondensi terhadap term yang berbeda dan m adalah total jumlah term yang 
+dipakai dalam koleksi dokumen."
+"Vektor dokumen ditulis sebagai, wi adalah bobot dari term ti yang menunjukkan tingkat kepentingan."
+Jika pada dokumen D tidak mengandung term ti maka bobot dari wi adalah nol.
+"Bobot term dapat 
+ditentukan dengan menggunakan skema tf-idf."
+"Dilanjutkan dengan mendeteksi kemiripan antar kata 
+yang dicari menggunakan Cosine Similarity [5] ."
+"Langkah awal yang dilakukan adalah menentukan bobot setiap term dari semua dokumen yang ada 
+dengan skema TF-IDF [6] [7]."
+𝑊𝑖.
+𝑗=  𝑡𝑓𝑖.
+"𝑗 𝑋 log⁡(
+𝑁
+𝑑𝑓𝑖)                                                                                                                      (1) 
+ 
+Keterangan: 
+Wi.j 
+= hasil bobot nilai dokumen frequency 
+N 
+= jumlah dokumen yang ada dalam database 
+DF 
+= banyaknya dokumen yang mengandung kata (term) 
+tf 
+= banyaknya kata (term) pada suatu dokumen 
+idf=log(N/df) = Inversed Document Frequency 
+ 
+ 
+ 
+ 
+ 
+https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+46
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+ 
+Selanjutnya bobot yang telah diperoleh akan dimasukkan kedalam rumus cosine similarity untuk 
+menentukan besar nilai kemiripan dokumen tersebut [3] [7]."
+"𝑆𝑖𝑚𝑖𝑙𝑖𝑎𝑟𝑖𝑡𝑦= cos 𝜃
+𝐴.𝐵
+||𝐴||𝐵|| = 
+∑
+𝐴𝑖 𝐵𝑖
+𝑛
+𝑖=1
+√∑
+𝐴𝑖
+2√∑
+𝐵𝐼
+2
+𝑛
+𝑖=1
+𝑛
+𝑖=1
+  
+ 
+ 
+ 
+ 
+ 
+(2) 
+  
+Metode IPA menghasilkan diagram kartesius."
+"Diagram kartesius digunakan untuk mengetahui indikator 
+jasa pelayanan yang memuaskan atau tidak memuaskan konsumen dengan melihat posisi titik 
+kuadrannya."
+"Pertama, perlu dicari titik potong sumbu X dan sumbu Y terhadap angka 0, ini adalah batas 
+untuk 4 kuadran dari Diagram Kartesius."
+"Sistem membagi skor total rata-rata dari kinerja (x̅ ) dan skor 
+total rata-rata harapan (Ӯ) terhadap banyaknya atribut (pertanyaan) seperti perhitungan berikut: 
+ 
+x̅ =
+∑x̅i
+𝐾   dan  Ӯ =
+∑Ӯ𝑖
+𝐾  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+(3) 
+ 
+Keterangan: 
+A 
+ 
+= Vektor A, yang akan dibandingkan kemiripannya 
+B 
+ 
+= Vektor B, yang akan dibandingkan kemiripannya 
+A.B 
+ 
+= dot product antara vektor A dan vektor B 
+|A| 
+ 
+= panjang vektor A 
+|B| 
+ 
+= panjang vektor B 
+|A||B| 
+ 
+= cross product antara |A| dan |B| 
+3."
+"Pembahasan 
+Pembahasan merupakan tahapan penerapan dan pengujian program yang telah dirancang/didesain 
+sebelumnya."
+"Pada penelitian ini, website memiliki tiga pengguna, yaitu Admin, Pengunjung dan 
+Author."
+Gambar 2 menjelaskan perancangan sistem dengan menggunakan Data Flow Diagram.
+Gambar 2.
+"Diagram konteks 
+ 
+Pengimplementasian metode Content-Based Filtering pada sistem ini digunakan untuk mencari data 
+resep makanan yang memiliki bahan-bahan yang sesuai dengan query yang diinputkan oleh pengunjung 
+pada form pencarian."
+"https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+47
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+Berikut pada Gambar 3 merupakan alur proses metode Content-Based Filtering pada sistem 
+rekomendasi."
+Gambar 3.
+"Flowchart Content-Based Filtering 
+ 
+Sebagai contoh penulis membuat sebuah skema pencarian data resep dengan menginputkan query 
+pada form input pencarian."
+"Perhitungan ini dilakukan dengan sampel data resep yang ada pada database 
+sebanyak 30 resep makanan dan 311 term atau kata yang ditemukan untuk dilakukan perbandingan dan 
+pencarian nilai kemiripannya dengan cosine similarity."
+"Disini misalnya ingin melakukan pencarian data 
+resep dengan query pencarian (Q) adalah: “resep bahan jamur ayam dan cabe keriting”."
+"Prosesnya 
+sebagai berikut: 
+a) 
+Sistem akan melakukan preprocessing terhadap semua dokumen (bahan-bahan resep) yang ada 
+dalam database dan melakukan tokenisasi, stop words removal dan steaming [4]."
+Daftar nama-nama resep yang ada dalam database dapat dilihat pada Tabel 1.
+Tabel 1.
+"Daftar nama-nama resep 
+Dokumen 
+Nama Resep 
+D1 
+Resep bahan jamur ayam dan cabe keriting 
+D2 
+Resep Perkedel Tahu Udang Pedas yang Praktis untuk Lauk Lezat 
+D3 
+Resep Rendang Kentang Jamur, Inspirasi Baru Ramadan Tahun Ini 
+D4 
+Resep Jamur Kancing Crispy, Camilan Seru untuk Menyambut Akhir Minggu 
+D5 
+Resep Sayur Oyong Soun yang Gurih dan Segar 
+D6 
+Resep Kangkung Belacan Seafood, Menu Pendamping Pesta Seafood Paling Ajib 
+D7 
+Resep Lumpia Semarang Vegetarian untuk Menu Camilan di Rumah 
+D8 
+Resep Siomay Goreng Ayam Jamur 
+D9 
+Resep Pastel Goreng Isi Sayuran, Kudapan Baru untuk Teh Sore Nanti 
+... 
+... 
+D30 
+Resep Terong Goreng Sambal Teri Serai yang Pedasnya Mantap 
+ 
+ 
+ 
+ 
+ 
+https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+48
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+ 
+Langkah 1 : Prerocessing terhadap semua (n=31) dokumen yang terlibat, yaitu Q, D1, D2, D3 s/d D30 
+Langkah 1a : Lakukan tokenisasi, stop words removal dan steaming."
+"b) 
+Sistem akan melakukan perhitungan nilai bobot pada setiap term dari semua dokumen yang ada 
+termasuk query yang diinputkan pengguna dengan skema TF-IDF."
+"Tentukan bobot untuk setiap term dari 4 dokument tersebut dengan skema tf-idf (persamaan 1) 
+Tabel 2."
+"Hasil skema tf-idf 
+Term 
+Wi.j=tf.idf 
+Q1 
+D1 
+D2 
+D3 
+D4...D30 
+kemangi  
+0  
+1.4914  
+0  
+0  
+…  
+jamur  
+0.45  
+1.35  
+0.45  
+0.45  
+…  
+kancing  
+0  
+0.8893  
+0.8893  
+0  
+…  
+shimeji  
+0  
+1.4914  
+0  
+0  
+…  
+udang  
+0  
+0.6463  
+0  
+0  
+…  
+lengkuas  
+0  
+0.7924  
+0  
+0  
+…  
+memar  
+0  
+1.2926  
+0  
+0  
+…  
+terigu  
+0  
+0.6463  
+0  
+0  
+…  
+serai  
+0  
+0.7132  
+0  
+0  
+…  
+tapioka  
+0  
+0.6463  
+0  
+0  
+…  
+daun  
+0  
+0.5218  
+0.2609  
+0  
+…  
+salam  
+0  
+0.6463  
+0  
+0  
+…  
+santan  
+0  
+1.1903  
+0  
+1.1903  
+…  
+cabai  
+0  
+1.4914  
+0  
+0  
+…  
+rawit  
+0  
+1.4914  
+0  
+0  
+…  
+… 
+… 
+… 
+… 
+… 
+ 
+ayam  
+0.1691  
+0  
+0.6463  
+0  
+…  
+ 
+c) 
+Menghitung nilai kemiripan dengan Cosine Similarity 
+Dari bobot setiap term yang ada, maka dapat dihitung kemiripan vektor [dokumen] query Q dengan 
+setiap dokumen yang ada."
+"Kemiripan antar dokumen dapat dihitung menggunakan cosine similarity 
+(persamaan 2)."
+"Kemudian, hitung hasil perkalian skalar antara Q dan 3 dokumen lain."
+"Hasilnya 
+perkalian dari setiap dokumen dengan Q dijumlahkan (sesuai pembilang pada rumus cosine similarity 
+sebelumnya)."
+"Setelah itu hitung panjang setiap dokumen, termasuk Q. Caranya, kuadratkan bobot setiap 
+term dalam setiap dokumen, jumlahkan nilai kuadrat dan terakhir akarkan."
+"Sebagai contoh, penulis akan mengambil dokumen D3 untuk dilakukan perhitungan nilai cosine 
+similarity nya."
+Terapkan rumus cosine similarity.
+Hitung kemiripan Q dengan D3.
+"Cos (Q, D3)  
+= 0.23109481/(2.624368745*5.514713) 
+= 0.23109481/14.47264  
+= 0.015967701 (pembulatan 4 digit dibelakang koma menjadi 0.016) 
+ 
+Sehingga hasil pencarian dengan query (Q) “resep bahan jamur ayam dan cabe keriting” sistem tetap 
+merekomendasikan untuk resep makanan yang ada pada D3 dengan nilai kemiripan antara Q dan D3 
+adalah 0.016, sedangkan peringkat tertinggi yang direkomendasikan oleh sistem adalah dokumen ke 19 
+atau D19 dengan nilai kemiripan 0.0798 dengan penjabaran sebagai berikut: 
+ 
+ 
+ 
+ 
+ 
+ 
+https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+49
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+Cos (Q, D19)  
+= 1.50259852 / (2.624368745* 7.175459789) 
+= 1.50259852/18.8310524 
+= 0.079793656 (pembulatan 4 digit dibelakang koma menjadi 0.0798) 
+ 
+D19 atau data resep dengan judul Resep Kroket Sayuran untuk Camilan Selama di Rumah Aja 
+direkomendasikan paling atas karena memiliki nilai (score) kemiripan yang paling tinggi dibanding 
+dengan data resep lainya."
+"Hal ini bisa dilihat pada Tabel 3 berikut ini yang menampilkan nilai akhir 
+cosine similarity setiap resep (D) berdasarkan query (Q) diatas."
+Tabel 3.
+"Nilai akhir cosine similarity setiap resep (D) berdasarkan query (Q) 
+Dokumen 
+Nama Resep 
+Score 
+D1  
+Resep bahan jamur ayam dan cabe keriting  
+0.0425 
+D2  
+Resep Perkedel Tahu Udang Pedas yang Praktis untuk Lauk Lezat  
+0.0219 
+D3  
+Resep Rendang Kentang Jamur, Inspirasi Baru Ramadan Tahun Ini  
+0.016 
+D4  
+Resep Jamur Kancing Crispy, Camilan Seru untuk Menyambut Akhir Minggu  
+0.0322 
+D5  
+Resep Sayur Oyong Soun yang Gurih dan Segar  
+0.0041 
+D6  
+Resep Kangkung Belacan Seafood, Menu Pendamping Pesta Seafood Paling Ajib  
+0.0627 
+D7  
+Resep Lumpia Semarang Vegetarian untuk Menu Camilan di Rumah  
+0.0091 
+D8  
+Resep Siomay Goreng Ayam Jamur  
+0.018 
+D9  
+Resep Pastel Goreng Isi Sayuran, Kudapan Baru untuk Teh Sore Nanti  
+0.0036 
+D10  
+Resep Semur Rebung Tahu Udang, Cara Baru Menyajikan Rebung  
+0.0547 
+D11  
+Resep Tahu Campur, Masakan Jawa Timur Paling Favor...  
+0 
+D12  
+Resep Martabak Telor Daging Bayam, Camilan Gurih yang Bikin Nagih  
+0.0022 
+D13  
+Resep Cah Kangkung Manis yang Pas Untuk Aneka Lauk  
+0.0027 
+D14  
+Resep Pangsit Goreng Ayam Viral yang Enak dan Bikin Nagih  
+0.0173 
+D15  
+Resep Kebab Mini Daging Sapi, Camilan Lezat Untuk Akhir Pekan  
+0 
+D16  
+Cara Membuat Sate Jamur Kecap Pedas, Camilan untuk Akhir Tahun  
+0.0768  
+D17  
+Resep Tumis Genjer Taoco, Sajian Sedap untuk Makan Siangmu  
+0.0025  
+D18  
+Resep Kimchi Kaldu Jamur untuk Teman Nonton Drakor  
+0.0142  
+D19  
+Resep Kroket Sayuran untuk Camilan Selama di Rumah Aja  
+0.0798  
+D20  
+Cara Masak Capcay Kuah Udang, Hangatkan Suasana Kekeluargaan  
+0.0042  
+D21  
+Kreasi Resep Cah Kangkung Sapi dengan Bumbu Rujak  
+0  
+D22  
+Resep Tumis Kacang Panjang Teri, Sayuran Sehat Sekaligus Praktis  
+0.0023  
+D23  
+Resep Terong Goreng Sambal Teri Serai yang Pedasnya Mantap  
+0  
+… 
+… 
+… 
+D30  
+Resep Rujak Tahu, Selalu Tampil Segar dan Menggiurkan  
+0.0019  
+Pengujian terhadap sistem rekomendasi dengan metode Content-Based Filtering yang sudah 
+diimplementasikan dilkukan dengan Root Mean Squared Error."
+"Root Mean Square Error (RMSE) 
+merupakan uji hasil rekomendasi yang diberikan oleh sistem apakah dapat menghasilkan rekomendasi 
+yang baik dan diterima oleh pengguna [8]."
+"RMSE dapat diartikan besarnya tingkat kesalahan hasil 
+prediksi, dimana semakin kecil nilai RMSE maka hasil prediksi akan semakin baik atau [9][10[11]]."
+Berikut persamaan dari Root Mean Square Error (RMSE).
+"𝑅𝑀𝑆𝐸= √∑
+(𝐴𝑡− 𝐹𝑡)2
+𝑛
+𝑡=1
+𝑛
+  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+(4) 
+ 
+Dimana : 
+At = Nilai Data Aktual 
+Ft = Nilai Hasil Peramalan 
+N = Banyaknya data 
+∑ = Summation (Jumlahkan Keseluruhan Nilai) 
+ 
+ 
+ 
+ 
+ 
+ 
+https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+50
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+Dari hasil perhitungan Root Mean Squared Error (RMSE) seperti yang ditunjukkan pada Tabel 4 dapat 
+dikatakan bahwa sistem rekomendasi dengan metode Content-Based Filtering yang sudah 
+diimplementasikan menghasilkan rekomendasi yang cukup akurat, karena nilai Root Mean Squared 
+Error (RMSE) semakin kecil dan mendekati nol (0)."
+Tabel 4.
+"Hasil Pengujian RMSE 
+ 
+No."
+"Data Dokumen 
+Data Aktual 
+Nilai Peramalan 
+|y-y`|2 
+1 
+D1 
+1 
+0.0425 
+0.91680625 
+2 
+D2 
+0 
+0.019 
+0.000361 
+3 
+D3 
+1 
+0.016 
+0.968256 
+4 
+D4 
+1 
+0.0322 
+0.93663684 
+5 
+D5 
+0 
+0.0041 
+0.00001681 
+6 
+D6 
+0 
+0.0627 
+0.00393129 
+7 
+D7 
+0 
+0.0091 
+0.00008281 
+8 
+D8 
+1 
+0.018 
+0.964324 
+9 
+D9 
+0 
+0.0036 
+0.00001296 
+10 
+D10 
+0 
+0.0547 
+0.00299209 
+11 
+D11 
+0 
+0 
+0 
+12 
+D12 
+0 
+0.0022 
+0.00000484 
+13 
+D13 
+0 
+0.0027 
+0.00000729 
+14 
+D14 
+0 
+0.0173 
+0.00029929 
+15 
+D15 
+0 
+0 
+0 
+16 
+D16 
+0 
+0.0768 
+0.00589824 
+17 
+D17 
+0 
+0.0025 
+0.00000625 
+18 
+D18 
+0 
+0.0142 
+0.00020164 
+19 
+D19 
+0 
+0.0798 
+0.00636804 
+20 
+D20 
+0 
+0.0042 
+0.00001764 
+21 
+D21 
+0 
+0 
+0 
+22 
+D22 
+0 
+0.0023 
+0.00000529 
+23 
+D23 
+0 
+0 
+0 
+24 
+D24 
+0 
+0.0028 
+0.00000784 
+25 
+D25 
+0 
+0.0021 
+0.00000441 
+26 
+D26 
+0 
+0.0494 
+0.00244036 
+27 
+D27 
+0 
+0.0022 
+0.00000484 
+28 
+D28 
+0 
+0.0326 
+0.00106276 
+29 
+D29 
+0 
+0.0019 
+0.00000361 
+30 
+D30 
+0 
+0.0019 
+0.00000361 
+Nilai RMSE 
+0.356359182 
+ 
+ 
+4."
+"Kesimpulan 
+ 
+Hasil penelitian yang telah di lakukan yaitu mengimplementasikan content based filtering 
+menggunakan TF-IDF and cosine similarity untuk sistem rekomendasi resep masakan."
+"Sampel data 
+yang digunakan pada penelitian ini adalah 30 data resep masakan yang diambil dari website 
+masakapahariini.com."
+"Hasil rekomendasi akan mencari 5 rekomendasi resep berdasarkan resep 
+preferensi atau query bahan-bahan yang diinputkan oleh pengguna pada form pencarian."
+"Berdasarkan 
+hasil pengujian menggunakan Root Mean Square Error dapat dikatakan bahwa sistem rekomendasi 
+dengan metode Content-Based Filtering yang sudah diimplementasikan menghasilkan rekomendasi 
+yang cukup akurat, karena nilai Root Mean Squared Error (RMSE) mendekati nol (0)."
+"https://doi.org/10.47111/JTI 
+Available online at https://e-journal.upr.ac.id/index.php/JTI 
+ 
+51
+[E-ISSN 2656-0321] 
+[Vol 18 No 1] 
+[Januari 2024] 
+Daftar Pustaka 
+[1] Februariyanti, H., Laksono, A. D., Wibowo, J. S., & Utomo, M. S. (2021)."
+"Implementasi Metode 
+Collaborative Filtering Untuk Sistem Rekomendasi Penjualan Pada Toko Mebel."
+"Jurnal 
+Khatulistiwa Informatika, 9(1)."
+"[2]  Putri, M. W., Muchayan, A., & Kamisutara, M. (2020)."
+"Sistem Rekomendasi Produk Pena 
+Eksklusif Menggunakan Metode Content-Based Filtering dan TF-IDF."
+"JOINTECS (Journal of 
+Information Technology and Computer Science), 5(3), 229-236."
+"[3] Larasati, F. B."
+"A., & Februariyanti, H. (2021)."
+"Sistem Rekomendasi Product Emina Cosmetics 
+Dengan Menggunakan Metode Content-Based Filtering."
+"Jurnal Manajemen Informatika Dan 
+Sistem Informasi, 4(1), 45-54."
+"[4] Alkaff, M., Khatimi, H., & Eriadi, A."
+(2020).
+"Sistem Rekomendasi Buku Menggunakan Weighted 
+Tree Similarity dan Content Based Filtering."
+"MATRIK J. Manajemen, Tek."
+Inform.
+"dan Rekayasa 
+Komput, 20(1), 193-202."
+"[5] Christian, Y., & Kelvin, K. (2022)."
+"Rancang Bangun Aplikasi Kursus Online Berbasis Web 
+Dengan Sistem Rekomendasi Metode Content-Based Filtering."
+"Rabit: Jurnal Teknologi dan 
+Sistem Informasi Univrab, 7(1), 23-36."
+"[6] Nastiti, P. (2019)."
+"Penerapan Metode Content Based Filtering dalam Implementasi Sistem 
+Rekomendasi Tanaman Pangan."
+"Teknika, 8(1), 1-10."
+"[7] Ardiansyah, R., Bianto, M. A., & Saputra, B. D. (2023)."
+"Sistem Rekomendasi Buku Perpustakaan 
+Sekolah menggunakan Metode Content-Based Filtering."
+"Jurnal CoSciTech (Computer Science 
+and Information Technology), 4(2), 510-518."
+"[8] Shalannanda, W., Mulia, R. F., Muttaqien, A. I., Hibatullah, N. R., & Firdaus, A."
+(2022).
+"Singular 
+value decomposition model application for e-commerce recommendation system: Aplikasi model 
+dekomposisi nilai tunggal untuk sistem rekomendasi e-commerce."
+"JITEL (Jurnal Ilmiah 
+Telekomunikasi, Elektronika, dan Listrik Tenaga), 2(2), 103-110."
+"[9] Wibisono, C., Haryadi, L. S., Widyaya, J. E., & Liliawati, S. L. (2021)."
+"Sistem Rekomendasi Suku 
+Cadang Berdasarkan Item Based Filtering."
+"Jurnal Teknik Informatika dan Sistem Informasi, 7(1)."
+"[10] Syah, R. D. (2020)."
+"Performa Algoritma User K-Nearest Neighbors pada Sistem Rekomendasi di 
+Tokopedia."
+"Jurnal Informatika Universitas Pamulang, 5(3), 302-306."
+"[11] Khusna, A. N., Delasano, K. P., & Saputra, D. C. E. (2021)."
+"Penerapan User-Based Collaborative 
+Filtering Algorithm."
+"Matrik: Jurnal Manajemen, Teknik Informatika Dan Rekayasa 
+Komputer, 20(2), 293-304."

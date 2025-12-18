@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>&lt;no title&gt; &#8212; My sample book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'peper';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="UAS.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="data_fb.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/pp.jpg" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/pp.jpg" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Profil
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Pengantar_web_mining.html">Pengantar Web Mining</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Crawling.html">Crawling</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_pta.html">Crawling PTA TRUNOJOYO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_berita.html">Crawling Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="linkscraping.html">Link Graph Scraping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scraping_manengemet.html">PTA Management</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="LDA.html">LDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="klasifikasikan_berita.html">Klasifikasi Berita</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clutering_email.html">clutering email</a></li>
+<li class="toctree-l1"><a class="reference internal" href="graphlnk.html">GRAPH LINK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20webusage.html">Analisis dataset webusage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Analisis%20dataset%20nassa.html">Analisis Data Nasa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="crawling_twiter.html">Crawling Twiter</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fpeper.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/peper.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1><no title></h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">pymupdf</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Collecting pymupdf
+  Downloading pymupdf-1.26.6-cp310-abi3-manylinux_2_28_x86_64.whl.metadata (3.4 kB)
+Downloading pymupdf-1.26.6-cp310-abi3-manylinux_2_28_x86_64.whl (24.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ <span class=" -Color -Color-Green">24.1/24.1 MB</span> <span class=" -Color -Color-Red">39.6 MB/s</span> eta <span class=" -Color -Color-Cyan">0:00:00</span>
+?25hInstalling collected packages: pymupdf
+Successfully installed pymupdf-1.26.6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pymupdf</span>
+
+<span class="n">doc</span> <span class="o">=</span> <span class="n">pymupdf</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s2">&quot;rekom.pdf&quot;</span><span class="p">)</span> <span class="c1"># open a document</span>
+<span class="n">out</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;output.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="c1"># create a text output</span>
+<span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">:</span> <span class="c1"># iterate the document pages</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;utf8&quot;</span><span class="p">)</span> <span class="c1"># get plain text (is in UTF-8)</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="c1"># write text of page</span>
+    <span class="n">out</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">bytes</span><span class="p">((</span><span class="mi">12</span><span class="p">,)))</span> <span class="c1"># write page delimiter (form feed 0x0C)</span>
+<span class="n">out</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
+<span class="err">!</span><span class="n">pip</span> <span class="n">install</span> <span class="n">nltk</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt&#39;</span><span class="p">)</span>  <span class="c1"># hanya perlu sekali</span>
+<span class="n">nltk</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;punkt_tab&#39;</span><span class="p">)</span>  <span class="c1"># opsional, untuk versi terbaru NLTK (≥3.8.2)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[nltk_data] Downloading package punkt to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt.zip.
+[nltk_data] Downloading package punkt_tab to /root/nltk_data...
+[nltk_data]   Unzipping tokenizers/punkt_tab.zip.
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;output.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">teks</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">teks</span><span class="p">[:</span><span class="mi">200</span><span class="p">])</span>  <span class="c1"># tampilkan 200 karakter pertama</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ISSN : 2355-9365
+e-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5034
+ 
+Sistem Pemberi Rekomendasi Pakaian 
+Menggunakan Metode Content-Based 
+Filtering 
+ 
+1st Ridho Bagus Ekasanjaya 
+Fa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Install: pip install nltk</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">nltk</span>
+
+
+<span class="c1">#text = &quot;Ini adalah kalimat pertama. Ini kalimat kedua? Ya!&quot;</span>
+<span class="n">sentences</span> <span class="o">=</span> <span class="n">nltk</span><span class="o">.</span><span class="n">sent_tokenize</span><span class="p">(</span><span class="n">teks</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sentences</span><span class="p">)</span>
+<span class="c1"># Output: [&#39;Ini adalah kalimat pertama.&#39;, &#39;Ini kalimat kedua?&#39;, &#39;Ya!&#39;]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;ISSN : 2355-9365\ne-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5034\n \nSistem Pemberi Rekomendasi Pakaian \nMenggunakan Metode Content-Based \nFiltering \n \n1st Ridho Bagus Ekasanjaya \nFakultas Informatika \nUniversitas Telkom \nBandung, Indonesia \nridhoekasanjaya@student.telkomuniversity.ac.id \n2nd Agung Toto Wibowo \nFakultas Informatika \nUniversitas Telkom \nBandung, Indonesia \nagungtoto@telkomuniversity.ac.id \n \n \nAbstrak \n- \nPakaian \nmerupakan \nsuatu \nyang \nmenunjukan suatu identitas seseorang.&#39;, &#39;Melalui pakaian \nseseorang dapat menilai suatu kepribadian, iman, \nprofesi dan status sosial.&#39;, &#39;Perkembangan teknologi \nmenyebabkan \nmudahnya \nsuatu \ninformasi \ntidak \nterkecuali informasi mengenai trend pakaian.&#39;, &#39;Hal \ntersebut menyebabkan banyaknya desain pakaian \nsehingga mempersulit memilih mana pakaian yang \nsesuai untuk konsumen.&#39;, &#39;Oleh karena itu dibangun suatu \nsistem yang mempermudah calon konsumen untuk \nmemilih \npakaian.&#39;, &#39;Sistem \nrekomendasi \npakaian \nmenggunakan metode content-based filtering akan \nmembantu calon konsumen untuk memilih pakaian yang \nsesuai berdasarkan yang disukai oleh pengguna.&#39;, &#39;Kata Kunci - Sistem rekomendasi; Content-based \nfiltering; Pakaian \n \nI. \nPENDAHULUAN \n \nIndustri pakaian adalah salah satu industri yang \nbesar di seluruh dunia.&#39;, &#39;Salah satu hal yang tetap \nkonstan sepanjang peradaban manusia adalah manusia \nyang menutupi tubuhnya dengan selembar kain.&#39;, &#39;Awalnya, kain ini dipakai sebagai pelindung dari \nkerasnya iklim pada zaman tersebut.&#39;, &#39;Kemudian, ketika \nkita manusia belajar untuk menjaga diri kita sendiri \ndari iklim yang tak kenal ampun, kain itu mulai \nmelayani tujuan yang berbeda.&#39;, &#39;Fashion akhir-akhir ini \nmenampilkan individualitas orang tersebut [1].&#39;, &#39;Pada saat ini, pesatnya pertumbuhan industri \npakaian berkontribusi pada desain pakaian yang \nkompleks dan besar.&#39;, &#39;Terlalu banyak informasi tentang \ndesain pakaian menyebabkan dilema memilih pakaian \nyang berbeda saat konsumen berbelanja di toko \npakaian atau situs web.&#39;, &#39;Oleh karena itu, perlu untuk \nmenerapkan cara otomatis dan efisien untuk \nmenyaring informasi sehingga konsumen dapat \nmembeli pakaian yang sesuai dengan lebih mudah [4].&#39;, &#39;Sistem rekomendasi dapat membantu pengguna \nuntuk menemukan item yang relevan dengan minat \nmereka dengan memanfaatkan sejumlah besar \ninformasi produk dan sinyal pengguna seperti \ntampilan produk, item yang diikuti atau diabaikan, \npembelian atau kunjungan halaman web untuk \nmenentukan bagaimana, kapan, dan apa yang harus \ndirekomendasikan kepada pelanggan mereka.&#39;, &#39;Selain \nmemungkinkan rekomendasi yang disesuaikan agar \nsesuai dengan keranjang belanja atau lemari pakaian \npelanggan yang ada, kumpulan data ini membantu \nmengungkap wawasan lain yang berguna untuk sistem \npemberi rekomendasi, seperti struktur gaya busana, \npreferensi kelompok sosial, atau evolusi tren lintas \nwaktu dan lokasi.&#39;, &#39;[5] \nSistem rekomendasi pakaian dapat didefinisikan \nsebagai sarana pencocokan fitur antara produk fashion \ndan pengguna atau konsumen di bawah kriteria \npencocokan tertentu.&#39;, &#39;Profil pengguna yang terdefinisi \ndengan baik dapat membedakan sistem rekomendasi \nyang lebih personal atau disesuaikan dari sistem \nkonvensional.&#39;, &#39;[3] \nSalah satu pendekatan yang digunakan dalam \nsistem rekomendasi  yaitu content-based filtering yang \nartinya pemfilteran berbasis konten dimana sistem ini \nmemberikan rekomendasi untuk menebak apa yang \ndisukai atau sesuai dengan pengguna berdasarkan \naktivitas \npengguna \ntersebut.&#39;, &#39;Dalam \nsistem \nrekomendasi pakaian menggunakan metode content-\nbased filtering akan memberikan rekomendasi \nberdasarkan atribut dari produk yang disukai oleh \nkonsumen seperti warna pakaian dan model pakaian.&#39;, &#39;II.&#39;, &#39;KAJIAN TEORI \n \nA. Sistem Rekomendasi \nSistem rekomendasi adalah suatu sistem yang \ndigunakan oleh pengguna untuk mendapatkan produk \nyang diinginkan.&#39;, &#39;Tujuan dari sistem rekomendasi \nadalah untuk meningkatkan penjualan dengan cara \nmerekomendasikan \nproduk-produk \nyang \nsesuai \ndengan pengguna atau konsumen.&#39;, &#39;Konsep sistem \nrekomendasi telah banyak digunakan secara luas oleh \n\x0cISSN : 2355-9365\ne-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5035\n \nhampir seluruh sektor bisnis dimana seorang \nkonsumen memerlukan informasi untuk membuat \nsuatu keputusan [8].&#39;, &#39;Sebuah \nsistem \nrekomendasi \nharus \ndapat \nmembangun dan memelihara user model atau user \nprofile yang berisi ketertarikan pengguna.&#39;, &#39;Sebagai \ncontoh, pada sebuah toko buku, sistem menyimpan \nbuku apa saja yang pengunjung lihat atau beli di masa \nlalu.&#39;, &#39;Hal ini untuk memprediksi buku-buku lainnya \nyang mungkin diminati oleh pengunjung [12].&#39;, &#39;Sistem rekomendasi memiliki beberapa metode \nyang umum digunakan yaitu, content-based filtering, \ncollaborative filtering (User-based filtering dan Item-\nbased \nfiltering) \ndan hybrid \nyang \nmerupakan \npenggabungan dari kedua metode tersebut.&#39;, &#39;Pada \ncollaborative filtering, metode dibagi lagi menjadi dua \nyaitu user-based yang mana pengguna memainkan \nperan penting dan item-based yang mana item yang \nlebih memainkan peran penting [11].&#39;, &#39;B. Content-Based Filtering \nContent-based filtering adalah salah satu metode \nyang biasa digunakan pada sistem rekomendasi.&#39;, &#39;Metode ini menggunakan kata kunci dan atribut yang \nditetapkan \npada \nobjek \ndalam \ndatabase \ndan \nmencocokan \ndengan \npengguna.&#39;, &#39;Metode \nini \nmemanfaatkan content tertentu untuk membuat sistem \nrekomendasi produk yang serupa atau mirip kepada \npengguna.&#39;, &#39;Sistem \nrekomendasi \ncontent-based \nmerekomendasikan item yang mirip dengan yang \ndisukai pengguna sebelumnya.&#39;, &#39;Nilai kesamaan antar \nitem dihitung berdasarkan fitur yang ada pada setiap \nkonten [13].&#39;, &#39;Metode ini bersifat user independence, tidak \nbergantung pada situasi apakah item tersebut \nmerupakan item baru (yang belum pernah dipilih oleh \npengguna manapun) maupun bukan item baru.&#39;, &#39;Jika \nseorang pengguna telah memesan suatu menu \nhidangan pada kategori tertentu maka sistem akan \nmencoba merekomendasikan menu hidangan dengan \nkategori serupa yang juga tersedia di restoran lain \nyang mungkin akan disukai juga oleh pengguna \ntersebut [16].&#39;, &#39;C. TF-IDF \nTerm Frequency-Inverse Document Frequency \nadalah ukuran yang menggambarkan pentingnya suatu \nistilah terhadap suatu dokumen dalam sebuah \nkumpulan atau korpus.&#39;, &#39;Untuk mendapatkan TF, \ndibutuhkan beberapa istilah yang sering muncul pada \nsuatu dokumen.&#39;, &#39;TF-IDF akan membentuk suatu profil pengguna \nberdasarkan bobot vector komponen suatu item.&#39;, &#39;TF \nmerupakan jumlah term pada suatu dokumen.&#39;, &#39;IDF \nadalah untuk menghitung seberapa pentingnya sebuah \nkata.&#39;, &#39;Perhitungan \nTF-IDF \nbertujuan \nuntuk \nmemberikan bobot nilai pada sebuah kata yang dilihat \ndari seberapa sering kata tersebut muncul didalam \nsuatu dokumen.&#39;, &#39;Berikut rumus TF-IDF: \nTF −IDF =  �㕇�㔹(þ, þ) ∗�㔼�㔷�㔹(þ) \n(1) \nKeterangan:   \n�㕇�㔹(þ, þ)  = hitungan jumlah t muncul pada d \n�㔼�㔷�㔹(þ)  = kemunculan t dalam dokumen \n \nD. Consine Similarity \nConsine \nsimilarity \nberfungsi \nuntuk \nmembandingkan kemiripan antar dokumen.&#39;, &#39;Consine \nsimilarity menghitung vektor yang terkait antara satu \ndengan yang lain.&#39;, &#39;Nilai similarity yang dihasilkan \nadalah antara nilai 0 dan nilai 1.&#39;, &#39;Nilai 0 menandakan \nuser profile dan item sangat tidak relevan sedangkan \nnilai 1 adalah sebaliknya.&#39;, &#39;[10].&#39;, &#39;Berikut persamaan \nConsine similarity: \ný�㕜ý�㔃=\ný .&#39;, &#39;þ\n(|ý| |þ|) \n \n(2) \nKeterangan: \nA = Vektor pertama \nB = Vektor kedua \n|A| = Panjang vektor A \n|B| = Panjang vektor B \n \nIII.&#39;, &#39;METODE \n \nA. Gambaran Umum Sistem \nContent-based \nfiltering \nadalah \nsalah \nsatu \npendekatan dalam implementasi sistem rekomendasi, \nyang fokus pada karakteristik atau &quot;konten&quot; dari item \nyang direkomendasikan dan preferensi pengguna.&#39;, &#39;Dalam konteks rekomendasi pakaian, content-based \nfiltering akan mempertimbangkan atribut-atribut \npakaian dan preferensi pengguna untuk menghasilkan \nrekomendasi yang sesuai.&#39;, &#39;GAMBAR 1 \nGambar Umum Sistem \n \nDalam pendekatan Content-Based Filtering yang \n\x0cISSN : 2355-9365\ne-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5036\n \ndijelaskan dalam rancangan, profil pengguna dilihat \nsebagai kumpulan kata kunci atau fitur yang \nmenggambarkan preferensi pengguna terhadap item-\nitem tertentu, dalam hal ini adalah pakaian.&#39;, &#39;Ini \nmemungkinkan \nsistem \nrekomendasi \nuntuk \nmengidentifikasi pakaian - pakaian yang memiliki \natribut atau fitur yang relevan dengan preferensi \npengguna.&#39;, &#39;Dalam contoh yang diberikan, kita memiliki User \nA sebagai pengguna utama dan pakaian dengan \nkategori tertentu.&#39;, &#39;Jika User A menyukai pakaian \ndengan kategori t-shirt (misalnya, pakaian A), sistem \nrekomendasi akan menggunakan konsep Content-\nBased Filtering untuk menanggapi preferensi ini.&#39;, &#39;Sistem akan mencari pakaian lain yang memiliki \nkategori yang sama dengan pakaian yang disukai oleh \npengguna, yaitu pakaian dengan kategori t-shirt.&#39;, &#39;Dalam kasus ini, jika kita memiliki pakaian D \ndengan kategori yang sama, yaitu t-shirt, maka sistem \nakan merekomendasikan pakaian D kepada User A. \nDengan kata lain, sistem ini bekerja dengan \nmengidentifikasi atribut atau fitur dari pakaian yang \ndisukai oleh pengguna (kategori t-shirt) dan mencari \npakaian lain yang memiliki atribut atau fitur yang \nserupa untuk direkomendasikan kepada pengguna.&#39;, &#39;B. Gambaran Alur Sistem \nRancangan alur sistem adalah panduan yang \nmenggambarkan langkah-langkah dan komponen-\nkomponen utama yang terlibat dalam implementasi \nsuatu sistem.&#39;, &#39;Dalam rancangan tersebut, alur kerja \nsistem dijelaskan dengan cara yang sistematis untuk \nmencapai tujuan yang diinginkan.&#39;, &#39;GAMBAR 2  \nAlur Perancangan Sistem \n \n \nPada tahap awal, penggunaan sistem dimulai \nketika seorang pengguna, misalnya &quot;User A,&quot; \nberinteraksi dengan platform rekomendasi pakaian.&#39;, &#39;Pertama, sistem akan menerima input dari pengguna \nterkait preferensi pakaian yang mereka sukai.&#39;, &#39;Misalnya, jika User A menyukai pakaian dengan \nkategori t-shirt, ini akan menjadi informasi penting \ndalam membentuk profil preferensi pengguna.&#39;, &#39;Setelah \nmendapatkan \ninformasi \npreferensi \npengguna, sistem akan memproses data pakaian yang \ntersedia.&#39;, &#39;Ini melibatkan ekstraksi atribut-atribut \npenting dari setiap pakaian, seperti kategori, size, \nwarna dan atribut lainnya.&#39;, &#39;Atribut-atribut ini akan \nmembentuk representasi &quot;konten&quot; dari setiap pakaian \ndalam bentuk kata kunci atau fitur yang dapat \ndiidentifikasi oleh sistem.&#39;, &#39;Dengan informasi tentang preferensi pengguna \ndan representasi konten pakaian, sistem kemudian \nakan membangun profil pengguna.&#39;, &#39;Profil ini \nmencerminkan preferensi dan kesukaan pengguna \nterkait atribut-atribut pakaian seperti kategori.&#39;, &#39;Dalam \nkasus ini, profil User A akan mencakup preferensi \nkategori pakaian.&#39;, &#39;Setelah profil pengguna terbentuk, langkah \nselanjutnya adalah melakukan pencocokan antara \nprofil pengguna dan pakaian yang ada.&#39;, &#39;Sistem akan \n\x0cISSN : 2355-9365\ne-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5037\n \nmencari item pakaian dengan atribut-atribut yang \nsesuai dengan profil pengguna, seperti pakaian dengan \nkategori \nt-shirt.&#39;, &#39;Ini \ndapat \ndicapai \ndengan \nmenggunakan metrik kesamaan, seperti cosine \nsimilarity, untuk mengukur sejauh mana pakaian - \npakaian tersebut cocok dengan profil pengguna.&#39;, &#39;Ketika sistem telah mengidentifikasi pakaian - pakaian \nyang cocok dengan profil pengguna, pakaian - pakaian \ntersebut akan direkomendasikan kepada pengguna.&#39;, &#39;Dalam contoh ini, pakaian - pakaian dengan kategori \nt-shirt yang paling cocok dengan profil User A akan \ndianggap sebagai rekomendasi.&#39;, &#39;Pengguna akan \nmenerima rekomendasi ini dan dapat memutuskan \nuntuk membeli pakaian – pakaian tersebut.&#39;, &#39;Tahap akhir dari alur sistem melibatkan umpan \nbalik dari pengguna.&#39;, &#39;Jika pengguna memberikan \numpan balik positif atau negatif terhadap rekomendasi \nyang diberikan, informasi ini dapat digunakan untuk \nmeningkatkan sistem rekomendasi di masa depan.&#39;, &#39;Umpan balik ini dapat membantu sistem memahami \npreferensi \npengguna \ndengan \nlebih \nbaik \ndan \nmemberikan rekomendasi yang lebih akurat.&#39;, &#39;C. Pengambilan Data \n \nPada tahap ini, data pakaian diambil melalui \nkaggle yang terdiri atas 14330 row dengan sepuluh \natribut, yaitu p_id, name, price, colour, brand, img, \nratingCount, avg_rating, description, p_atributtes.&#39;, &#39;D. Preprocessing Data \nSebelum data digunakan, sebaiknya dilakukan \npreprocessing data agar data siap diolah dan \ndigunakan untuk kebutuhan analisis.&#39;, &#39;Pada tahap ini \ndilakukan case folding untuk mengubah seluruh huruf \nkapital menjadi huruf kecil, remove punctuation untuk \nmenghapus seluruh tanda baca pada yang tidak \nmemiliki arti dalam analisis teks, dan stopwords \nremoval yang berfungsi untuk menghapus kata-kata \nyang tidak memiliki makna yang akan mempengaruhi \nkeakuratan hasil analisis.&#39;, &quot;TABEL 1  \nTabel Input dan Output Preprocessing \nInput \nOutput \nBlack printed Kurta with \nPalazzos with dupatta \n&lt;br&gt; &lt;br&gt; &lt;b&gt; Kurta \ndesign:  &lt;/b&gt; &lt;ul&gt; &lt;li&gt; \nEthnic motifs printed &lt;/li&gt; \n&lt;li&gt; Anarkali shape &lt;/li&gt; \n&lt;li&gt; Regular style &lt;/li&gt; \n&lt;li&gt; Mandarin collar,  \nthree-quarter regular \nsleeves &lt;/li&gt; &lt;li&gt; Calf \nlength with flared hem \nblack printed \nkurta palazzos \ndupatta kurta \ndesign ethnic \nmotifs printed \nanarkali shape \nregular style \nmandarin collar \nthreequarter \nregular sleeves \ncalf length \n&lt;/li&gt; &lt;li&gt; Viscose rayon \nmachine weave fabric \n&lt;/li&gt; &lt;/ul&gt; &lt;br&gt; &lt;b&gt; \nPalazzos design:  &lt;/b&gt; \n&lt;ul&gt; &lt;li&gt; Printed Palazzos \n&lt;/li&gt; &lt;li&gt; Elasticated \nwaistband &lt;/li&gt; &lt;li&gt; Slip-\non closure &lt;/li&gt; \n&lt;/ul&gt;Dupatta Length 2.43 \nmeters Width:&amp;nbsp;88 \ncm&lt;br&gt;The model (height \n5&#39;8) is wearing a size \nS100% \nRayon&lt;br&gt;Machine wash \nflared hem \nviscose rayon \nmachine weave \nfabric palazzos \ndesign printed \npalazzos \nelasticated \nwaistband slipon \nclosure dupatta \nlength 243 \nmeters width 88 \ncm model height \n58 wearing size \ns100 rayon \nmachine wash \nOrange solid Kurta with \nPalazzos with \ndupatta&lt;br&gt;&lt;br&gt;&lt;b&gt;Kurta \ndesign: \n&lt;/b&gt;&lt;ul&gt;&lt;li&gt;Solid&lt;/li&gt;&lt;li\n&gt;A-line \nshape&lt;/li&gt;&lt;li&gt;Regular \nstyle&lt;/li&gt;&lt;li&gt;Square neck, \nsleeveless shoulder \nstraps&lt;/li&gt;&lt;li&gt;Calf length \nwith straight \nhem&lt;/li&gt;&lt;li&gt;Viscose \nrayon machine weave \nfabric&lt;/li&gt;&lt;/ul&gt;&lt;br&gt;&lt;b&gt;P\nalazzos design: \n&lt;/b&gt;&lt;ul&gt;&lt;li&gt;Solid \nPalazzos&lt;/li&gt;&lt;li&gt;Elasticat\ned waistband&lt;/li&gt;&lt;li&gt;Zip \nclosure&lt;/li&gt;&lt;/ul&gt;&lt;b&gt;Dupa\ntta \nDesign:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;Flora\nl Printed&lt;/li&gt;&lt;/ul&gt;Kurta \nFabric: Viscose \nrayon&lt;br&gt;Bottom \nFabric:&amp;nbsp;Viscose \nrayon&lt;br&gt;Dupatta Fabric: \nOrganza&lt;br&gt;Hand \nwashThe model (height \n5&#39;8) is wearing a size S \norange solid \nkurta palazzos \ndupatt kurta \ndesign solid \naline shape \nregular style \nsquare neck \nsleeveless \nshoulder straps \ncalf length \nstraight hem \nviscose rayon \nmachine weave \nfabric palazzos \ndesign solid \npalazzos \nelasticated \nwaistband zip \nclosure dupatta \ndesign floral \nprinted kurta \nfabric viscose \nrayon bottom \nfabric viscose \nrayon dupatta \nfabric organza \nhand washthe \nmodel height 58 \nwearing size \nBlack and green printed \nstraight kurta, has a nitched \nround neck, three-quarter \nsleeves, straight hem, side \nslitsMaterial: Cotton&lt;br&gt; \nMachine WashThe model  \nblack \ngreen \nprinted straight \nkurta \nnitched \nround \nneck \nthreequarter \nsleeves straight \nhem \nside \n\x0cISSN : 2355-9365\ne-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5038\n \nslitsmaterial \ncotton machine \nwashthe model \nheight \n \nE. TF-IDF dan Consine Similarity \nSetelah data di preprocessing, data akan \ndilakukan pembobotan dengan proses TF-IDF dan \ncosine similarity untuk menghitung kesamaan antar \ndua buah objek.&quot;, &#39;Tahap awal pada proses TF-IDF yaitu \nmelakukan preprocessing dan tokenisasi yang berguna \nuntuk menghilangkan tanda baca, kata sambung dan \nimbuhan.&#39;, &#39;TABEL 2  \nTokenisasi \nD \nInput \nOutput \nD1 \nVero Moda Women Blue \nSweatshirt \nvero moda women \nblue sweatshirt \nD2 \nVero Moda Women Grey &amp; \nGreen Colourblocked Sweatshirt \nvero moda women \ngrey green \ncolourblock \nsweatshirt \nD3 \nKazo Women Purple Sequin \nPrinted Sweatshirt \nkazo women \npurple sequin \nprinted sweatshirt \n \nSelanjutnya sistem melakukan proses TF-IDF \npada kata-kata pada tabel 3 menggunakan rumus yang \ndijelaskan sebelumnya.&#39;, &#39;Tujuannya untuk menghitung \nseberapa penting kata-kata tersebut muncul pada suatu \ndokumen.&#39;, &#39;TABEL 3 \n Proses TF-IDF \nToken \nTF \nd\nf \nD/\ndf \nID\nF \nTF-IDF \nD\n1 \nD\n2 \nD\n3 \nD1 \nD2 \nD3 \nVero \n1 \n1 \n0 \n2 \n1.&#39;, &#39;5 \n0.1\n76 \n0.1\n76 \n0.1\n76 \n0 \nModa \n1 \n1 \n0 \n2 \n1.&#39;, &#39;5 \n0.1\n76 \n0.1\n76 \n0.1\n76 \n0 \nWomen \n1 \n1 \n1 \n3 \n1 \n0 \n0 \n0 \n0 \nBlue \n1 \n0 \n0 \n1 \n3 \n0.4\n77 \n0.4\n77 \n0 \n0 \nSweats\nhirt \n1 \n1 \n1 \n3 \n1 \n0 \n0 \n0 \n0 \nGrey \n0 \n1 \n0 \n1 \n3 \n0.4\n77 \n0 \n0.4\n77 \n0 \ngreen \n0 \n1 \n0 \n1 \n3 \n0.4\n77 \n0 \n0.4\n77 \n0 \nColourb\nlock \n0 \n1 \n0 \n1 \n3 \n0.4\n77 \n0 \n0.4\n77 \n0 \nkazo \n0 \n0 \n1 \n1 \n3 \n0.4\n77 \n0 \n0 \n0.4\n77 \npurple \n0 \n0 \n1 \n1 \n3 \n0.4\n7 \n0 \n0 \n0.4\n7 \nSetelah mendapatkan nilai TF-IDF, proses \nselanjutnya mencari kesamaan antar dokumen \nmenggunakan consine similarity dengan menghitung \nvektor kemiripan antar dokumen.&#39;, &#39;Tabel 4  \nProses Consine Similarity \nKata \nD1 \nD2 \nD1 \n.&#39;, &#39;D2 \nD1 ^2 \nD2^2 \nVero \n0.176 \n0.176 \n0.0309 \n0.0309 \n0.0309 \nmoda \n0.176 \n0.176 \n0.0309 \n0.0309 \n0.0309 \nwomen \n0 \n0 \n0 \n0 \n0 \nBlue \n0.477 \n0 \n0 \n0.2275 \n0 \nsweatshirt \n0 \n0 \n0 \n0 \n0 \nGrey \n0 \n0.477 \n0 \n0 \n0.2275 \ngreen \n0 \n0.477 \n0 \n0 \n0.2275 \ncolourblock \n0 \n0.477 \n0 \n0 \n0.2275 \nkazo \n0 \n0 \n0 \n0 \n0 \npurple \n0 \n0 \n0 \n0 \n0 \nsequin \n0 \n0 \n0 \n0 \n0 \nprinted \n0 \n0 \n0 \n0 \n0 \ntotal \n0.0618 \n0.2893 \n0.7443 \n \nTABEL 5  \nProses Consine Similarity \nKata \nD1 \nD3 \nD1 .&#39;, &#39;D3 \nD1 ^2 \nD3^2 \nvero \n0.176 \n0 \n0 \n0.0309 \n0 \nmoda \n0.176 \n0 \n0 \n0.0309 \n0 \nwomen \n0 \n0 \n0 \n0 \n0 \nblue \n0.477 \n0 \n0 \n0.2275 \n0 \nsweatshirt \n0 \n0 \n0 \n0 \n0 \ngrey \n0 \n0 \n0 \n0 \n0 \ngreen \n0 \n0 \n0 \n0 \n0 \ncolourblock \n0 \n0 \n0 \n0 \n0 \nkazo \n0 \n0.477 \n0 \n0 \n0.2275 \npurple \n0 \n0.477 \n0 \n0 \n0.2275 \nsequin \n0 \n0.477 \n0 \n0 \n0.2275 \nprinted \n0 \n0.477 \n0 \n0 \n0.2275 \nTotal \n0 \n0.2893 \n0.91 \n \nTABEL 6 \n Proses Consine Similarity \nKata \nD2 \nD3 \nD2 \n.&#39;, &#39;D3 \nD2 ^2 \nD3^2 \nvero \n0.176 \n0 \n0 \n0.0309 \n0 \nmoda \n0.176 \n0 \n0 \n0.0309 \n0 \nwomen \n0 \n0 \n0 \n0 \n0 \nblue \n0 \n0 \n0 \n0 \n0 \nsweatshirt \n0 \n0 \n0 \n0 \n0 \ngrey \n0.477 \n0 \n0 \n0.2275 \n0 \ngreen \n0.477 \n0 \n0 \n0.2275 \n0 \ncolourblock \n0.477 \n0 \n0 \n0.2275 \n0 \nkazo \n0 \n0.477 \n0 \n0 \n0.2275 \npurple \n0 \n0.477 \n0 \n0 \n0.2275 \nsequin \n0 \n0.477 \n0 \n0 \n0.2275 \nprinted \n0 \n0.477 \n0 \n0 \n0.2275 \ntotal \n0 \n0.7449 \n0.91 \n \nBerdasarkan data diatas, sehingga diperoleh nilai \nconsine similarity sebagai berikut: \ný�㕜ý(�㔷1, �㔷2) =\n0.0618\n(0.2893 ∗0.7443) =  0.287 \ný�㕜ý(�㔷1, �㔷3) =\n0\n(0.2893 ∗0.91) =  0 \ný�㕜ý(�㔷2, �㔷3) =\n0\n(0.7443 ∗0.91) =  0 \nDengan hasil tersebut maka D1 dan D2 memiliki \nkemiripan, sedangkan kemiripan antara D1 dan D3 \nserta D2 dan D3 tidak memiliki kemiripan.&#39;, &#39;Nilai \nantara kedua vektor menunjukan nilai kesamaan \n\x0cISSN : 2355-9365\ne-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5039\n \n(similarity) dua buah dokumen yang Dimana nilai \nterbesar adalah 1 dan nilai terkecil adalah 0.&#39;, &#39;Nilai 0 \nmenandakan bahwa tidak ada kemiripan antara dua \ndokumen, sedangkan nilai 1 menandakan bahwa dua \nbuah dokumen mirip atau serupa.&#39;, &#39;Semakin mendekati \n1 maka semakin besar tingkat kemiripan kedua \ndokumen tersebut.&#39;, &#39;F. Modelling \nPada tahap pemodelan, peneliti membuat fungsi \nuntuk rekomendasi pakaian yang sama sesuai hasil \ndari TF-IDF dan cosine similarity yang dibuat.&#39;, &#39;Hasil \nyang akan ditampilkan berupa 10 urutan terdekat \ndengan \nnama \npakaian \nyang \nkita \ndefinisikan.&#39;, &#39;Penggunaan \nrecommendation \nsystem \ndengan \nmenggunakan metode Content based filtering dapat \nmenghasilkan nama - nama produk pakaian yang \nmemiliki kesamaan dari sisi deskripsi yang telah \nditampilkan pada dataset.&#39;, &#39;IV.&#39;, &#39;EVALUASI \n \nSistem \nPemberi \nRekomendasi \nPakaian \nMenggunakan Metode Content-Based Filtering yang \ntelah diimplementasikan memiliki tujuan untuk \nmemberikan rekomendasi pakaian kepada pengguna \nberdasarkan kemiripan karakteristik atau konten \ndengan pakaian yang telah mereka pilih.&#39;, &#39;Fungsi \nrecommendations dalam sistem ini mengambil nama \nsuatu produk sebagai input dan mengembalikan daftar \npakaian yang memiliki kesamaan karakteristik dengan \nproduk tersebut.&#39;, &#39;A. Hasil Pengujian \nPada penelitian ini, penulis melakukan percobaan \ndengan menggunakan tiga pengguna untuk melakukan \nujicoba terhadap sistem.&#39;, &#39;Pengguna akan diminta untuk \nmemasukan satu daftar pakaian lalu sistem akan \nmerekomendasikan 5 item pakaian.&#39;, &#39;TABEL 7  \nPengujian Rekomendasi Sistem \nId \nUser \nItem \nyang \ndicari \nHasil \nRekomendasi \n1 \nBella \nSoch \nGold-\nColoured  \nEmbroidered \nBlouse \nSoch \nGold-\nColoured  \nEmbroidered \nBlouse \nSoch \nWomen \nBlack \nSequin \nEmbellished \nNet \nSaree \nBlouse \nSALWAR \nSTUDIO \nWomen \nPink \nEmbroidered \nSilk Saree \nBlouse \nStudio \nShringaar \nWomen Maroon \nSolid \nSaree \nBlouse \nSoch \nRed \n&amp; \nGolden Printed \nBrocade \nWeaving \nSilk \nSaree Blouse \n2 \nFebby \nFlaher \nWomen Blue \nSolid  Art Silk \nPadded \nBlouse \nFlaher \nPink \nEmbellished \nVelvet Padded \nReadymade \nSaree Blouse \nStudio \nShringaar \nWomen Maroon \nSolid \nSaree \nBlouse \nURBANIC \nBlue &amp; White \nSolid Pleated  \nPlaysuit \nwith \nLace Inserts \nDarzi \nWomen \nGreen &amp; Black \nStriped \nBasic \nJumpsuit \nflaher Women \nGreen &amp; Off-\nWhite \nEmbroidered \nPadded \nSaree \nBlouse \n3 \nIndah \nVero Moda \nWomen Blue \nSweatshirt \n \nVero \nModa \nWomen Maroon \nPrinted \nSweatshirt \nKazo \nWomen \nPurple \nSequin \nPrinted \nSweatshirt \nURBANIC \nWomen Beige \nSolid \nButton \nPullover \nSweatshirt \nVero \nModa \nWomen Grey &amp; \nGreen \nColourblocked \nSweatshirt \n\x0cISSN : 2355-9365\ne-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5040\n \nVero \nModa \nWomen \nGrey \nSweatshirt \n \nB. Analisis Hasil Pengujian \nBerdasarkan hasil pengujian didapatkan hasil top \n5 rekomendasi pakaian, responden akan menentukan \nitem mana saja yang dianggap relevan dan item yang \ntidak relevan.&#39;, &#39;Selanjutnya akan dihitung berapa persen \nhasil yang relevan setiap pengguna dan rata-rata dari \nketiga pengguna tersebut.&#39;, &#39;Pengguna dengan id 1 dan 3 menganggap bahwa \nsistem rekomendasi tersebut menghasilkan 60% item \nyang \nrelevan \nkarena \ndari \nlima \nitem \nyang \ndirekomendasikan, dua diantara nya tidak relevan \nterhadap pengguna tersebut.&#39;, &#39;Sedangkan pengguna \ndengan id 2 memiliki 40% tingkat relevan karena \nhanya dua item yang sesuai dengan yang diharapkan.&#39;, &#39;Dengan uji coba terhadap tiga pengguna tersebut, hasil \nrata-rata tingkat relevan dari sistem rekomendasi ini \nyaitu 53.33%.&#39;, &#39;V. \nKESIMPULAN \n \nSistem Pemberi Rekomendasi Pakaian yang \ndiimplementasikan menggunakan Metode Content-\nBased Filtering berhasil memberikan rekomendasi \nproduk \ndengan \nmempertimbangkan \nkemiripan \nkarakteristik atau konten antar produk.&#39;, &#39;Dalam contoh \npemanggilan fungsi recommendations, kita dapat \nmelihat bahwa sistem memberikan rekomendasi \nproduk yang memiliki kesamaan karakteristik dengan \nproduk input, seperti pada bab sebelumnya.&#39;, &#39;Produk \nyang direkomendasikan termasuk pilihan dengan \nmotif, warna, dan jenis pakaian yang serupa, \nmenciptakan pengalaman belanja yang lebih sesuai \ndengan preferensi pengguna.&#39;, &#39;Metode Content-Based \nFiltering ini memanfaatkan teknik cosine similarity \nuntuk mengukur sejauh mana dua produk mirip satu \nsama lain.&#39;, &#39;Semakin tinggi skor cosine similarity, \nsemakin \nbesar \nkemiripan \nkarakteristik \nproduk \ntersebut.&#39;, &#39;Dengan demikian, sistem dapat memberikan \nrekomendasi yang lebih personal dan sesuai dengan \nselera pengguna berdasarkan preferensi yang terlihat \ndari produk yang telah mereka pilih sebelumnya.&#39;, &#39;REFERENSI \n \n[1] Rohith Kumar, P. v, Uday Nagula, S., &amp; \nNagelli, \nA.&#39;, &#39;(2022).&#39;, &#39;Fashion \nRecommendation \nSystem.&#39;, &#39;10. \nhttps://doi.org/10.22214/ijraset.2022.44\n4362 \n[2] Sarkar, R., Bodla, N., Vasileva, M., Lin, \nY.-L., Beniwal, A., Lu, A., &amp; Medioni, \nG. (n.d.).&#39;, &#39;OutfitTransformer: Outfit \nRepresentations \nfor \nFashion \nRecommendation.&#39;, &#39;[3] Chakraborty, S., Hoque, M. S., Jeem, N. \nR., Biswas, M. C., Bardhan, D., &amp; \nLobaton, \nE. \n(2021).&#39;, &#39;Fashion \nrecommendation systems, models and \nmethods: A review.&#39;, &#39;In Informatics (Vol.&#39;, &#39;8, Issue 3).&#39;, &#39;MDPI AG.&#39;, &#39;[4] Lin, Y.-R., Lin, C.-H., Su, W.-H., Yang, \nH.-Y., Lin, C.-H., Chen, M.-Y., &amp; Wu, \nB.-F. (n.d.).&#39;, &#39;20XX IEEE Clothing \nRecommendation System based on \nVisual Information Analytics.&#39;, &#39;[5] Haque, S., Eberhart, Z., Bansal, A., &amp; \nMcMillan, \nC. \n(2022).&#39;, &#39;Semantic \nSimilarity Metrics for Evaluating Source \nCode \nSummarization.&#39;, &#39;IEEE \nInternational Conference on Program \nComprehension, 2022-March, 36–47.&#39;, &#39;https://doi.org/10.1145/nnnnnnn.nnnnn\nnn \n[6] Venugeetha Y, &amp; Anjan M. (2020).&#39;, &#39;Fashion recommendation system using \nCNN.&#39;, &#39;In International Journal of \nAdvance Research.&#39;, &#39;www.IJARIIT.com \n[7] Liu, Y., Nie, J., Xu, L., Chen, Y., &amp; Xu, \nB.&#39;, &#39;(2018).&#39;, &#39;Clothing Recommendation \nSystem Based on Advanced User-Based \nCollaborative \nFiltering \nAlgorithm.&#39;, &#39;Lecture Notes in Electrical Engineering, \n473, \n436–443.&#39;, &#39;https://doi.org/10.1007/978-981-10-\n7521-6_53 \n[8] Recommendation System for Thesis \nTopics Using Content-based Filtering _ \nKusuma _ IJCCS (Indonesian Journal of \nComputing and Cybernetics Systems).&#39;, &#39;(n.d.).&#39;, &#39;[9] Tri \nWahyo, \nB. \nU., \n&amp; \nWidya \nAnggriawan, A.&#39;, &#39;(2015).&#39;, &#39;Sekolah Tinggi \nManajemen Informatika dan Komputer \nASIA \nMalang \n6 \nSISTEM \nREKOMENDASI PAKET WISATA \n\x0cISSN : 2355-9365\ne-Proceeding of Engineering : Vol.11, No.4 Agustus 2024 | Page 5041\n \nSE-MALANG \nRAYA \nMENGGUNAKAN \nMETODE \nHYBRID CONTENT BASED DAN \nCOLLABORATIVE.&#39;, &#39;In Jurnal Ilmiah \nTeknologi dan Informasi ASIA (Vol.&#39;, &#39;9, \nIssue 1).&#39;, &#39;[10] Ula, N., Setianingsih, C., &amp; Nugrahaeni, \nR. A.&#39;, &#39;(n.d.).&#39;, &#39;SISTEM REKOMENDASI \nLAGU DENGAN METODE CONTENT-\nBASED \nFILTERING \nBERBASIS \nWEBSITE \nWEB-BASED \nSONG \nRECOMMENDATION SYSTEM USING \nCONTENT-BASED FILTERING.&#39;, &#39;[11] Pandya, S., Shah, J., Joshi, N., Ghayvat, \nH., Mukhopadhyay, S. C., &amp; Yap, M. H. \n(n.d.).&#39;, &#39;A \nNovel \nHybrid \nbased \nRecommendation System based on \nClustering and Association Mining.&#39;, &#39;[12] Gantini, T. (2016).&#39;, &#39;Penerapan Metode \nContent-Based Filtering Pada Sistem \nRekomendasi Kegiatan Ekstrakulikuler \n(Studi Kasus di Sekolah ABC).&#39;, &#39;In Jurnal \nTeknik \nInformatika \ndan \nSistem \nInformasi (Vol.&#39;, &#39;2).&#39;, &#39;[13] F. Ricii, L. Rokach, B. Shapira and P. B. \nKantor, \nRecommender \nSystem \nHandbook, New York: Springer, 2011.&#39;, &#39;[14] Melyani, \nCheryl \nAyu.&#39;, &#39;&lt;Hotel \nRecommendation System with Content-\nBased Filtering Approach (Case Study: \nHotel in Yogyakarta on Nusatrip \nWebsite).= J Statistika: Jurnal Ilmiah \nTeori dan Aplikasi Statistika (2022).&#39;, &#39;[15] Rifqi \nHawari, \nAde \net \nal.&#39;, &#39;&lt;Job \nRecommendation System Using the \nContent-Based \nFiltering \nMethod.= Proceedings of International \nConference \non \nMultidiciplinary \nResearch (2022).&#39;, &#39;[16] Mondi, \nRhesa \nHavilah \net \nal.&#39;, &#39;&lt;RECOMMENDATION \nSYSTEM \nWITH \nCONTENT-BASED \nFILTERING \nMETHOD \nFOR \nCULINARY TOURISM IN MANGAN \nAPPLICATION.= (2020).&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">sentences</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;kalimat&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                                               kalimat
+0    ISSN : 2355-9365\ne-Proceeding of Engineering ...
+1    Melalui pakaian \nseseorang dapat menilai suat...
+2    Perkembangan teknologi \nmenyebabkan \nmudahny...
+3    Hal \ntersebut menyebabkan banyaknya desain pa...
+4    Oleh karena itu dibangun suatu \nsistem yang m...
+..                                                 ...
+153  &lt;Hotel \nRecommendation System with Content-\n...
+154              [15] Rifqi \nHawari, \nAde \net \nal.
+155  &lt;Job \nRecommendation System Using the \nConte...
+156           [16] Mondi, \nRhesa \nHavilah \net \nal.
+157  &lt;RECOMMENDATION \nSYSTEM \nWITH \nCONTENT-BASE...
+
+[158 rows x 1 columns]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;kalimat.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">capture</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">networkx</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">networkx</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nx</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">co_matrix_df</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">()</span>
+<span class="n">G</span><span class="o">=</span><span class="n">nx</span><span class="o">.</span><span class="n">from_numpy_array</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">&#39;lightblue&#39;</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">2000</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Graf co-occurence (Dasar)&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/7e531253cf71350449b848cd459b3f012980326ea84adb94d1adc266b1b41fd2.png" src="_images/7e531253cf71350449b848cd459b3f012980326ea84adb94d1adc266b1b41fd2.png" />
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="data_fb.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="UAS.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="simple visible nav section-nav flex-column">
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By The Jupyter Book Community
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

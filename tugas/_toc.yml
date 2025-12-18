@@ -17,3 +17,6 @@ chapters:
   - file: Analisis dataset webusage
   - file: Analisis dataset nassa
   - file: crawling_twiter
+  - file: data_fb
+  - file: peper
+  - file: UAS
